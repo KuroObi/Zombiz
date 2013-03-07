@@ -48,18 +48,18 @@ Git(Commands):
 
 Update your local Project
 
-1.) git pull
+1.)$ git pull
 
 Create your own branche(dont push into the Master!):
 
-1.) git checkout -b [YourBrancheName]
+1.)$ git checkout -b [YourBrancheName]
 
 Commit Something to your branche:
 
-1.) git add [Data]
+1.)$ git add [Data]
 
-2.) git commit -m 'Your Text Here!'
+2.)$ git commit -m 'Your Text Here!'
 
-3.) git remote add origin https://github.com/KuroObi/Zombiz.git
+3.)$ git remote add origin https://github.com/KuroObi/Zombiz.git
 
-4.) git push origing [YourBrancheName]
+4.)$ git push origing [YourBrancheName]
