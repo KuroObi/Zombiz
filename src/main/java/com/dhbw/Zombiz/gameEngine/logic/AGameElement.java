@@ -12,39 +12,36 @@
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  *Project: Zombiz
- *Package: com.dhbw.zombiz
+ *Package: com.dhbw.zombiz.output.audio
  *
- * 
  *Contributors:
  * -Christoph Schabert
 
  ********************************************************************************/
-package com.dhbw.zombiz;
+package com.dhbw.zombiz.gameEngine.logic;
 
-import com.dhbw.zombiz.gameEngine.logic.Item;
-import com.dhbw.zombiz.gameEngine.logic.Player;
-import com.dhbw.zombiz.output.audio.*;
-/**
- * Starts the Main Game
- * 
- * at this State only for test purpose
- *
+/*
+ * TODO:
+ * -implement all variables
+ * -create geter/setters (only if needed)
+ * -redo the Constructor
+ *  
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println("We Are Zombizzzzzzzzzzzzz" );
-        
-        Player p1 = new Player("Me");
+
+public abstract class AGameElement {
 
 
-        //Audio Test
-        /*
-        Thread t1 =   new Thread( new Audio("test") );
-        t1.  start();
-   		*/
-        
-        System.out.println("and NOT!");
-    }
+	final int id;
+	
+
+	public AGameElement(int id) {
+		super();
+		this.id = id;
+	}
+
+
+	public int getId() {
+		return id;
+	}
+	
 }

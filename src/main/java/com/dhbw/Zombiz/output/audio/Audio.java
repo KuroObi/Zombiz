@@ -17,7 +17,7 @@
  *Contributors:
  * -Christoph Schabert
 
- */
+ ********************************************************************************/
 package com.dhbw.zombiz.output.audio;
 import java.io.File;
 import java.io.IOException;
