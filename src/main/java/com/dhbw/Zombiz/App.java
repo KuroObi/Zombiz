@@ -19,11 +19,23 @@
  * -Christoph Schabert
 
  ********************************************************************************/
+<<<<<<< HEAD
 package com.dhbw.zombiz;
 
 import com.dhbw.zombiz.gameEngine.logic.Player;
 import com.dhbw.zombiz.output.audio.Sound;
 import com.dhbw.zombiz.output.display.Screen;
+=======
+package com.dhbw.Zombiz;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.dhbw.Zombiz.gameEngine.logic.Item;
+import com.dhbw.Zombiz.gameEngine.logic.Actor;
+import com.dhbw.Zombiz.gameEngine.parser.XmlParser;
+import com.dhbw.Zombiz.output.audio.*;
+>>>>>>> Jan
 /**
  * Starts the Main Game
  * 
@@ -39,9 +51,24 @@ public class App
 
         //Audio Test
         
+<<<<<<< HEAD
         Sound testSound = new Sound("test");
         testSound.playSound();
 
+=======
+       
+       
+       
+       
+
+
+
+        //Audio Test
+        /*
+        Thread t1 =   new Thread( new Audio("test") );
+        t1.  start();
+   		*/
+>>>>>>> Jan
         
         System.out.println("and NOT!");
     }
