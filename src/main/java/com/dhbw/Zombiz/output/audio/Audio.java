@@ -17,8 +17,8 @@
  *Contributors:
  * -Christoph Schabert
 
- */
-package com.dhbw.zombiz.output.audio;
+ ********************************************************************************/
+package com.dhbw.Zombiz.output.audio;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
