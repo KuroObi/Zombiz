@@ -21,29 +21,27 @@
  ********************************************************************************/
 package com.dhbw.zombiz;
 
-import com.dhbw.zombiz.gameEngine.logic.Item;
 import com.dhbw.zombiz.gameEngine.logic.Player;
-import com.dhbw.zombiz.output.audio.*;
+import com.dhbw.zombiz.output.audio.Sound;
+import com.dhbw.zombiz.output.display.Screen;
 /**
  * Starts the Main Game
  * 
  * at this State only for test purpose
  *
  */
+@SuppressWarnings("unused")
 public class App 
 {
     public static void main( String[] args )
     {
         System.out.println("We Are Zombizzzzzzzzzzzzz" );
-        
-        Player p1 = new Player("Me");
-
 
         //Audio Test
-        /*
-        Thread t1 =   new Thread( new Audio("test") );
-        t1.  start();
-   		*/
+        
+        Sound testSound = new Sound("test");
+        testSound.playSound();
+
         
         System.out.println("and NOT!");
     }

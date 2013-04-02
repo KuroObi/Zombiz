@@ -41,6 +41,7 @@ public class Player {
 	/*
 	 * puts a Item into the Inventory
 	 * if the Inventory is full o is returned
+	 * 
 	 */
 	public int collectItem(Item collected){
 		
