@@ -25,6 +25,7 @@ package com.dhbw.Zombiz;
 import com.dhbw.Zombiz.gameEngine.logic.Player;
 import com.dhbw.Zombiz.output.audio.Sound;
 import com.dhbw.Zombiz.output.display.Screen;
+import com.dhbw.Zombiz.gameEngine.parser.*;
 
 
 
@@ -52,12 +53,19 @@ public class App
         //Audio Test
         
 
-        Sound testSound = new Sound("test");
-        testSound.playSound();
+       // Sound testSound = new Sound("test");
+       // testSound.playSound();
 
-
+       //Screen menu = new Screen();
+       
+       XmlParser p = new XmlParser("src/main/resources/XML/new.xml");
        
        
+       List<Item> pickable  = p.getPickableItems();
+       List<Item> room		= p.getRoomItems();
+       
+       System.out.println("Pickable "+pickable.size());
+       System.out.println("Room "+room.size());
 
 
 

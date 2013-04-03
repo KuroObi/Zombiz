@@ -16,6 +16,7 @@
  *
  *Contributors:
  * -Christoph Schabert
+ * -Jan Brodhaecker
 
  */
 
@@ -36,16 +37,17 @@ public class Item extends AGameElement {
 	String name;
 	String picturePath;
 	String description;
-	String purpose;
-	String primaryLocation;
-	String effect; 
+	int primaryLocation; 
 	String associatedWith;
 	String combinesWith;
 	String condition;
-	String files2dPath;
-	String files3dPath;
-	boolean inInventory;
-	boolean focussed;
+	boolean isCollectible;
+	boolean isUseable;
+	int usableWithItemId;
+	boolean isRoomObject; 
+	int roomObject;
+	int secondaryLocationId;
+	
 	
 
 	public Item(int id) {
@@ -53,119 +55,176 @@ public class Item extends AGameElement {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	//getter & setter
+
+
 	public int getId() {
 		return id;
 	}
+
+
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
+
+
 	public String getName() {
 		return name;
 	}
+
+
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
+
+
 	public String getPicturePath() {
 		return picturePath;
 	}
+
+
 
 	public void setPicturePath(String picturePath) {
 		this.picturePath = picturePath;
 	}
 
+
+
 	public String getDescription() {
 		return description;
 	}
+
+
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public String getPurpose() {
-		return purpose;
-	}
 
-	public void setPurpose(String purpose) {
-		this.purpose = purpose;
-	}
 
-	public String getPrimaryLocation() {
+	public int getPrimaryLocation() {
 		return primaryLocation;
 	}
 
-	public void setPrimaryLocation(String primaryLocation) {
+
+
+	public void setPrimaryLocation(int primaryLocation) {
 		this.primaryLocation = primaryLocation;
 	}
 
-	public String getEffect() {
-		return effect;
-	}
 
-	public void setEffect(String effect) {
-		this.effect = effect;
-	}
 
 	public String getAssociatedWith() {
 		return associatedWith;
 	}
 
+
+
 	public void setAssociatedWith(String associatedWith) {
 		this.associatedWith = associatedWith;
 	}
+
+
 
 	public String getCombinesWith() {
 		return combinesWith;
 	}
 
+
+
 	public void setCombinesWith(String combinesWith) {
 		this.combinesWith = combinesWith;
 	}
+
+
 
 	public String getCondition() {
 		return condition;
 	}
 
+
+
 	public void setCondition(String condition) {
 		this.condition = condition;
 	}
 
-	public String getFiles2dPath() {
-		return files2dPath;
+
+
+	public boolean isCollectible() {
+		return isCollectible;
 	}
 
-	public void setFiles2dPath(String files2dPath) {
-		this.files2dPath = files2dPath;
+
+
+	public void setCollectible(boolean isCollectible) {
+		this.isCollectible = isCollectible;
 	}
 
-	public String getFiles3dPath() {
-		return files3dPath;
+
+
+	public boolean isUseable() {
+		return isUseable;
 	}
 
-	public void setFiles3dPath(String files3dPath) {
-		this.files3dPath = files3dPath;
+
+
+	public void setUseable(boolean isUseable) {
+		this.isUseable = isUseable;
 	}
 
-	public boolean isInInventory() {
-		return inInventory;
+
+
+	public int getUsableWithItemId() {
+		return usableWithItemId;
 	}
 
-	public void setInInventory(boolean inInventory) {
-		this.inInventory = inInventory;
+
+
+	public void setUsableWithItemId(int usableWithItemId) {
+		this.usableWithItemId = usableWithItemId;
 	}
 
-	public boolean isFocussed() {
-		return focussed;
+
+
+	public boolean isRoomObject() {
+		return isRoomObject;
 	}
 
-	public void setFocussed(boolean focussed) {
-		this.focussed = focussed;
+
+
+	public void setRoomObject(boolean isRoomObject) {
+		this.isRoomObject = isRoomObject;
 	}
+
+
+
+	public int getRoomObject() {
+		return roomObject;
+	}
+
+
+
+	public void setRoomObject(int roomObject) {
+		this.roomObject = roomObject;
+	}
+
+
+
+	public int getSecondaryLocationId() {
+		return secondaryLocationId;
+	}
+
+
+
+	public void setSecondaryLocationId(int secondaryLocationId) {
+		this.secondaryLocationId = secondaryLocationId;
+	}
+
+	
+	
 
 	
 
