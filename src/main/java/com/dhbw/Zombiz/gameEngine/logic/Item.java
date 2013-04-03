@@ -18,11 +18,11 @@
  * -Christoph Schabert
 
  */
-<<<<<<< HEAD
-package com.dhbw.zombiz.gameEngine.logic;
-=======
+
+
+
 package com.dhbw.Zombiz.gameEngine.logic;
->>>>>>> Jan
+
 
 /**
  * only for testing !
@@ -31,8 +31,7 @@ package com.dhbw.Zombiz.gameEngine.logic;
  */
 public class Item extends AGameElement {
 
-<<<<<<< HEAD
-=======
+
 	int id;
 	String name;
 	String picturePath;
@@ -48,14 +47,12 @@ public class Item extends AGameElement {
 	boolean inInventory;
 	boolean focussed;
 	
->>>>>>> Jan
+
 	public Item(int id) {
 		super(id);
 		// TODO Auto-generated constructor stub
 	}
 
-<<<<<<< HEAD
-=======
 	
 	//getter & setter
 	public int getId() {
@@ -171,18 +168,5 @@ public class Item extends AGameElement {
 	}
 
 	
-	
-	
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
->>>>>>> Jan
 }

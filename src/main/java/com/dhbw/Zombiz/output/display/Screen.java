@@ -18,8 +18,8 @@
  * -Christoph Schabert
 
  */
-<<<<<<< HEAD
-package com.dhbw.zombiz.output.display;
+package com.dhbw.Zombiz.output.display;
+
 
 import java.awt.*;
 import javax.swing.ImageIcon;
@@ -29,16 +29,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
-=======
-package com.dhbw.Zombiz.output.display;
->>>>>>> Jan
+
+
 
 /**
  * TODO:
  * 
  */
 public class Screen {
-<<<<<<< HEAD
+
 	  Screen() {
 		  JFrame frame = new JFrame();
 	        
@@ -74,9 +73,5 @@ public class Screen {
 	        //jede GUI muss auf dem EventDispatchThread gestartet werden:
 	        SwingUtilities.invokeLater(gui);
 	    }
-=======
-	
-	
 
->>>>>>> Jan
 }

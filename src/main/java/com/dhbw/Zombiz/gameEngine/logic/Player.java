@@ -18,7 +18,7 @@
  * -Christoph Schabert
 
  */
-package com.dhbw.zombiz.gameEngine.logic;
+package com.dhbw.Zombiz.gameEngine.logic;
 
 /**
  * TODO:
