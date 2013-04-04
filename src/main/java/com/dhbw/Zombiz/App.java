@@ -34,6 +34,7 @@ import java.util.List;
 
 import com.dhbw.Zombiz.gameEngine.logic.Item;
 import com.dhbw.Zombiz.gameEngine.logic.Actor;
+import com.dhbw.Zombiz.gameEngine.logic.Room;
 import com.dhbw.Zombiz.gameEngine.parser.XmlParser;
 import com.dhbw.Zombiz.output.audio.*;
 
@@ -58,16 +59,10 @@ public class App
 
        //Screen menu = new Screen();
        
-       XmlParser p = new XmlParser("src/main/resources/XML/new.xml");
+        XmlParser p = new XmlParser("src/main/resources/XML/chapter1.xml");
+        List <String> allItemsInRoom = p.getAllItemsInRoomByRoomId(2);
+        
        
-       
-       List<Item> pickable  = p.getPickableItems();
-       List<Item> room		= p.getRoomItems();
-       
-       System.out.println("Pickable "+pickable.size());
-       System.out.println("Room "+room.size());
-
-
 
         //Audio Test
         /*

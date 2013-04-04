@@ -1,0 +1,2673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ChatMapperProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Title="Games" Version="1.3.0.0" Author="" EmphasisColor1="#E7955B" EmphasisStyle1="b--" EmphasisColor1Label="" EmphasisColor2="#44B634" EmphasisStyle2="b--" EmphasisColor2Label="" EmphasisColor3="#4688E6" EmphasisStyle3="b--" EmphasisColor3Label="" EmphasisColor4="#CCCCCC" EmphasisStyle4="b--" EmphasisColor4Label="">
+  <Description>Project configured for game development.</Description>
+  <Assets>
+    <Actors>
+      <Actor ID="1">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this actor.">
+            <Title>Name</Title>
+            <Value>Henry Harvey Hartmann</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this actor.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what makes this actor unique.">
+            <Title>Description</Title>
+            <Value />
+          </Field>
+          <Field Type="Boolean" Hint="Mark this box if this actor is the main player character.">
+            <Title>IsPlayer</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The actor's age in years.">
+            <Title>Age</Title>
+            <Value>27</Value>
+          </Field>
+          <Field Type="Text" Hint="The actor's gender.">
+            <Title>Gender</Title>
+            <Value>Male</Value>
+          </Field>
+          <Field Type="Text" Hint="Rank or level to signify progression.">
+            <Title>Rank</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Group that the actor is associated with.">
+            <Title>Faction</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Classification to which the actor belongs.">
+            <Title>Class</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Sub-classification to which the actor belongs.">
+            <Title>Subclass</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="What makes this actor special.">
+            <Title>Ability</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Where this actor is from.">
+            <Title>Hometown</Title>
+            <Value />
+          </Field>
+          <Field Type="Files" Hint="2D art assets.">
+            <Title>Texture Files</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Files" Hint="3D art assets.">
+            <Title>Model Files</Title>
+            <Value>[]</Value>
+          </Field>
+        </Fields>
+      </Actor>
+      <Actor ID="2">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this actor.">
+            <Title>Name</Title>
+            <Value>New NPC</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this actor.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what makes this actor unique.">
+            <Title>Description</Title>
+            <Value />
+          </Field>
+          <Field Type="Boolean" Hint="Mark this box if this actor is the main player character.">
+            <Title>IsPlayer</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The actor's age in years.">
+            <Title>Age</Title>
+            <Value>30</Value>
+          </Field>
+          <Field Type="Text" Hint="The actor's gender.">
+            <Title>Gender</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Rank or level to signify progression.">
+            <Title>Rank</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Group that the actor is associated with.">
+            <Title>Faction</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Classification to which the actor belongs.">
+            <Title>Class</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Sub-classification to which the actor belongs.">
+            <Title>Subclass</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="What makes this actor special.">
+            <Title>Ability</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Where this actor is from.">
+            <Title>Hometown</Title>
+            <Value />
+          </Field>
+          <Field Type="Files" Hint="2D art assets.">
+            <Title>Texture Files</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Files" Hint="3D art assets.">
+            <Title>Model Files</Title>
+            <Value>[]</Value>
+          </Field>
+        </Fields>
+      </Actor>
+    </Actors>
+    <Items>
+      <Item ID="1">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Key</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A simple key</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>3</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>001</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="2">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>"Z"-Energy can</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A can that holds the new energydrink "Z"-Energy</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>002</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="3">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Door</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>The door to leave the tutorial</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>001</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="4">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Note with digit 9</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A small peace of paper showing one digit of a code to the reader</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>8</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>8</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>025</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="6">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Pulley</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A rope pulled over a spool to lift heavy things</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>7</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>8</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>010</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="7">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>PIN pad</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A pad with the digits from 0-9 * and # to enter a PIN code</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>2</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>4</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>011</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="8">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Fire prevention board</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A simple locker that holds a crowbar, a tube and an extinguisher</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>15</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>9</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>026</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="9">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Crowbar</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A crowbar like it can be found in any great zombie adventure</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>15</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>019</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="11">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Sprinklingsystem Plan</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A plan that shows one one side how the sprinkling system works. The other side shows an invitation to a lecturs only cake party on the 3rd floor</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>13</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>023</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="12">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Instructions: New ways of lecturing</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A small magazin that tells lecturers how to make the lecture more interesting</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>14</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>030</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="13">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Repair-Tools for elevator</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>Some tools to repair an elevator</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>12</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>22</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>024</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="14">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Bookshelf</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A booksehlf covering one wall of the room. Filled with books</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>10</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>008</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value>isChap1/isChap2</Value>
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="15">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Printer</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A usual printer that is not working. Can be used to get some copies if working or some replacements (Ersatzteile) </Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>10</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>012</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="16">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Window</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A glass window. Can be opened and closed. Is clear</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>8</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>10</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>013</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value>open/closed</Value>
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="5">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Cable</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A simple copper cable</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>011</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="10">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Sponge</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A sponge that is used to whipe whiteboards</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>17</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>013</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="17">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Beamer</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A beamer used in a lecturing room </Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>8</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>10</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>015</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="18">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Fuseblock</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A block where a fuse is broken inside</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>8</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>11</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>19</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>014</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="19">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Fuse</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A fuse that fits into a fuseblock</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>9</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>18</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>016</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="20">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Wastebasket</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>Something to store waste</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>7</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>21</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>009</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="21">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Paperclicp</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A samll metall thing that combines sheets</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>7</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>020</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="22">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Errordetection tool for elevator</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A very hugue and important device to detect errors in an elevator system</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>23</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>017</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="23">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Deblocking system for elevator</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A very heavy device that helps to unblock elevators</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>24</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>029</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="24">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Ferrormagnetic antigravity device</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A very tiny and light magnet</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>031</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="25">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Note with digit 2</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A small peace of paper showing one digit of a code to the reader</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>7</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>7</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>026</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="26">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Note with digit 4</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A small peace of paper showing one digit of a code to the reader</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>9</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>9</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>027</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="27">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Note with digit 1</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A small peace of paper showing one digit of a code to the reader</Value>
+          </Field>
+          <Field Type="Location" Hint="Where is the main home for this item?">
+            <Title>Primary Location</Title>
+            <Value>8</Value>
+          </Field>
+          <Field Type="Location" Hint="The item can be located in more than one location">
+            <Title>Secondary Location</Title>
+            <Value>8</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="If an item contains another one">
+            <Title>contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ItemID</Title>
+            <Value>028</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The ID to identify the object in the associated list">
+            <Title>RoomObjectID</Title>
+            <Value>0</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+    </Items>
+    <Locations>
+      <Location ID="2">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Corridor0</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>A corridor to connect the first four rooms</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>2</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>Connects the first four rooms</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>002</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>RoomObjectID:011 PIN pad</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/1</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="15">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Corridor1</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>This corridor is located in the second floor and connects the four rooms</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>7</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>Connects rooms and elevator</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>026</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>ItemID:019 Crowbar, RoomObjectID:026 Fireprevention equipment, RoomObjectID:027 Elevator, NPC: ,ItemID:011 Cable
+</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/2</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="17">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Corridor2</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>The corridor on the 3rd floor</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>13</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>Connects rooms but all except of one are locked</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>002</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>
+            </Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/3</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="16">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Elevator</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>The inside of a usual elevator that does not work</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>12</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>Cable/wire puzzle to get to the 3rd floor</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>027</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>ItemID: Reperation slot</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/2</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="1">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Lecturingroom0: Tutorial</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>Ordenary lecturing room. All students are zombies and some "Z"-Energy is infront of them</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>The player needs to escape from this room. Player learns how the game works</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>001</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>ItemID:002 "Z"-Energy can, RoomObjectID:001 Door, ItemID:001 Key</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/1</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="7">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Lecturingroom1</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>Another ordenary lecturing room</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>3</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>A bit tutorial and code puzzle</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>007</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>ItemID:026 Note with digit 2, ItemID:020 Paperclip, RoomObjectID:009 Wastebasket</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/1</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="8">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Lecturingroom2</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>And again a lecturing room</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>4</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>A bit tutorial and code puzzle</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>008</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>ItemID:025 Note with digit 9, ItemID:013 Sponge, RoomObjectID:015 Beamer, RoomObjectID:014 Fuseblock, ItemID:025 Note with digit 1</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/1</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="9">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Lecturingroom3</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>The lecturing room in the middle of the other two</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>5</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value />
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>009</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>RoomObjectID:010 Pulley, RoomObjectID:013 Window, ItemID:016 Fuse, ItemID:027 Note with digit 4</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/1</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="11">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Lecturingroom4</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>The lecturing room where an NPC is</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>8</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>An NPC tells you where to find information about a sprinkling system or some lecturing guidance and methods</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>020</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>RoomObjectID:014 Fuseblock</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/2</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="12">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Lecturingroom5</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>A lecturing room where nothing specific is in.</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>9</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>Some trash items are located here. Fills the floor and gives the player more space to explore</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>021</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>ItemID:024 Repair-Tools for elevator</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/2</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="13">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Lecturingroom6</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>The lecturing room where the sprinkling system plan can be found</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>10</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>Player can find sprinkling system plan and invitation to lecturer cake party</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>022</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>ItemID:023 Sprinklingsystem Plan</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/2</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="14">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Lecturingroom7</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>The lecturing room where the lecturing guidance can be found</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>11</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>The player can find the lecturing guidance book.</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>023</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>ItemID:030 Instructions  New ways of lecturing, </Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/2</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="6">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Library</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>A library where survivors hide in a room</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>3</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>Survivors are located here. Important information to flee can be gathered from books</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>006</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="4">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>MensaHorizonte</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>A location where students can get food</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>2</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>End of chapter 1. Saferoom for other survivors</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>004</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>Plate of Mensa food, "Z"-Energy drinks, NPC:</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>D/3</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="10">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Printerroom</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>A room with a printer in it and a panorama like glass front</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>14</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>Nothing in first chapter, except of view. In chap. 2 bookshelf gets important</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>015</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>RoomObjectID:008 Bookshelf, RoomObjectID:012 Printer, RoomObjectID:013</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/3</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="5">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Secretary</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>A secretaries office. On the first view secretary looks dead/ zombie like but if the player wakes her up she is lost in time but gives information</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>2</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>Useful information can be gathered</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>005</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>mug (cup)</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/3</Value>
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="3">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Staircase0</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>A staircase that connects to the second floor</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>6</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>Connection of floors</Value>
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>003</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>NPC: Chemistryprof.</Value>
+          </Field>
+          <Field Type="Actor" Hint="">
+            <Title>Npc</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor and the building where the location can be found">
+            <Title>Building/Floor</Title>
+            <Value>C/1</Value>
+          </Field>
+        </Fields>
+      </Location>
+    </Locations>
+    <Conversations>
+      <Conversation ID="1" NodeColor="White">
+        <Fields>
+          <Field Type="Text" Hint="The title of this conversation.">
+            <Title>Title</Title>
+            <Value>New Conversation</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this conversation. The first is used as the background image.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what happens in this conversation.">
+            <Title>Description</Title>
+            <Value />
+          </Field>
+          <Field Type="Actor" Hint="The actor who is doing most of the talking, or initiates this conversation.">
+            <Title>Actor</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor who is approached or is mostly talked to.">
+            <Title>Conversant</Title>
+            <Value>2</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="Fourth level classification of a story segment.">
+            <Title>Level</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="How does this conversation generally make the actor's feel?">
+            <Title>Mood</Title>
+            <Value />
+          </Field>
+          <Field Type="Location" Hint="Location that this conversation takes place.">
+            <Title>Primary Location</Title>
+            <Value>-1</Value>
+          </Field>
+        </Fields>
+        <DialogEntries>
+          <DialogEntry ID="0" ConversationID="1" IsRoot="true" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>START</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>2</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Text" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of animation files that should be played during this dialogue.">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+            </Fields>
+            <OutgoingLinks />
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+        </DialogEntries>
+      </Conversation>
+    </Conversations>
+  </Assets>
+</ChatMapperProject>

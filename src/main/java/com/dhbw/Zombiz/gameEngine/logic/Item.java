@@ -33,38 +33,27 @@ package com.dhbw.Zombiz.gameEngine.logic;
 public class Item extends AGameElement {
 
 
-	int id;
+	
 	String name;
 	String picturePath;
 	String description;
-	int primaryLocation; 
+	String primaryLocation; 
+	String secondaryLocation;
 	String associatedWith;
 	String combinesWith;
-	String condition;
+	String contains;
 	boolean isCollectible;
 	boolean isUseable;
-	int usableWithItemId;
+	int id;
 	boolean isRoomObject; 
-	int roomObject;
-	int secondaryLocationId;
+	String roomObject;
+	String condition;
 	
 	
 
 	public Item(int id) {
 		super(id);
 		// TODO Auto-generated constructor stub
-	}
-
-
-
-	public int getId() {
-		return id;
-	}
-
-
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 
@@ -105,14 +94,26 @@ public class Item extends AGameElement {
 
 
 
-	public int getPrimaryLocation() {
+	public String getPrimaryLocation() {
 		return primaryLocation;
 	}
 
 
 
-	public void setPrimaryLocation(int primaryLocation) {
+	public void setPrimaryLocation(String primaryLocation) {
 		this.primaryLocation = primaryLocation;
+	}
+
+
+
+	public String getSecondaryLocation() {
+		return secondaryLocation;
+	}
+
+
+
+	public void setSecondaryLocation(String secondaryLocation) {
+		this.secondaryLocation = secondaryLocation;
 	}
 
 
@@ -141,14 +142,14 @@ public class Item extends AGameElement {
 
 
 
-	public String getCondition() {
-		return condition;
+	public String getContains() {
+		return contains;
 	}
 
 
 
-	public void setCondition(String condition) {
-		this.condition = condition;
+	public void setContains(String contains) {
+		this.contains = contains;
 	}
 
 
@@ -177,14 +178,14 @@ public class Item extends AGameElement {
 
 
 
-	public int getUsableWithItemId() {
-		return usableWithItemId;
+	public int getId() {
+		return id;
 	}
 
 
 
-	public void setUsableWithItemId(int usableWithItemId) {
-		this.usableWithItemId = usableWithItemId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 
@@ -201,27 +202,29 @@ public class Item extends AGameElement {
 
 
 
-	public int getRoomObject() {
+	public String getRoomObject() {
 		return roomObject;
 	}
 
 
 
-	public void setRoomObject(int roomObject) {
+	public void setRoomObject(String roomObject) {
 		this.roomObject = roomObject;
 	}
 
 
 
-	public int getSecondaryLocationId() {
-		return secondaryLocationId;
+	public String getCondition() {
+		return condition;
 	}
 
 
 
-	public void setSecondaryLocationId(int secondaryLocationId) {
-		this.secondaryLocationId = secondaryLocationId;
+	public void setCondition(String condition) {
+		this.condition = condition;
 	}
+
+
 
 	
 	
