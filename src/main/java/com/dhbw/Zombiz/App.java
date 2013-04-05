@@ -25,6 +25,7 @@ package com.dhbw.Zombiz;
 import com.dhbw.Zombiz.gameEngine.logic.Player;
 import com.dhbw.Zombiz.output.audio.Sound;
 import com.dhbw.Zombiz.output.display.Screen;
+import com.dhbw.Zombiz.gameEngine.parser.*;
 
 
 
@@ -33,6 +34,7 @@ import java.util.List;
 
 import com.dhbw.Zombiz.gameEngine.logic.Item;
 import com.dhbw.Zombiz.gameEngine.logic.Actor;
+import com.dhbw.Zombiz.gameEngine.logic.Room;
 import com.dhbw.Zombiz.gameEngine.parser.XmlParser;
 import com.dhbw.Zombiz.output.audio.*;
 
@@ -50,11 +52,34 @@ public class App
         System.out.println("We Are Zombizzzzzzzzzzzzz" );
 
         //Audio Test
+<<<<<<< HEAD
         Sound testSound = new Sound("test");
         Sound overSound = new Sound("test2");
         testSound.playSound();
         overSound.playSound();
         
+=======
+        
+
+       // Sound testSound = new Sound("test");
+       // testSound.playSound();
+
+       //Screen menu = new Screen();
+       
+        XmlParser p = new XmlParser("src/main/resources/XML/chapter1.xml");
+        System.out.println("Numbers "+p.getListOfActors().size());
+  
+        
+        
+        
+       
+
+        //Audio Test
+        /*
+        Thread t1 =   new Thread( new Audio("test") );
+        t1.  start();
+   		*/
+>>>>>>> Jan
         
         System.out.println("and NOT!");
     }

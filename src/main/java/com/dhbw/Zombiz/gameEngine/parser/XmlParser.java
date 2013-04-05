@@ -16,28 +16,95 @@ import org.w3c.dom.NodeList;
 import com.dhbw.Zombiz.gameEngine.logic.*;
 
 
-public class XmlParser {
+public  class XmlParser {
 	String xmlFilePath ="";
 	Document xmlFile;
 	boolean debugConsole;
 	
 	List<Actor> listActors = new ArrayList<Actor>();
-	List<Item>	listItems = new ArrayList<Item>();
+	List<Item>	listRoomItems = new ArrayList<Item>();
+	List<Item>	listPickableItems = new ArrayList<Item>();
 	List<Room>	listRooms = new ArrayList<Room>(); 
 	
+	
+	
+	 public Actor getActorById (int actorId){
+		 Actor actor = listActors.get(actorId);
+		 return actor;
+	 }
+	 
+	 public Room getRoomById (int roomId){
+		 Room room = listRooms.get(roomId);
+		 return room;
+	 }
+	 
+	 
+	 public Item getPickableItemById(int itemId){
+		 Item item = listPickableItems.get(itemId);
+		 return item;
+	 }
+	 
+	 public Item getRoomItemsById(int itemId){
+		 Item item = listRoomItems.get(itemId);
+		 return item;
+	 }
+	 
+	 
+	 public List<Item> getAllRoomItemsByRoomId(int roomId){
+		 Room room = getRoomById(roomId);
+		 String roomObjects = room.getGameObjectsIncluded();
+		 String[] values = roomObjects.split(","); 
+		 List<Item> tmpListRoomItems = new ArrayList<Item>();
+		    
+			for(int cntItems=0; cntItems<values.length; cntItems++){
+				if(values[cntItems].contains("RoomObjectID")){
+					String itemId = values[cntItems].substring(13,16);
+					itemId = itemId.replace(":","");
+					Item item = getRoomItemsById(Integer.parseInt(itemId));
+					tmpListRoomItems.add(item);
+				}
+			}
+		 return tmpListRoomItems;
+	 }
+	 
+	 public List<String> getAllItemsInRoomByRoomId(int roomId){
+		 Room room = getRoomById(roomId);
+		 String roomObjects = room.getGameObjectsIncluded();
+		 String[] values = roomObjects.split(","); 
+		 List<String> listItemsInRoom = new ArrayList<String>();
+		    
+			for(int cntItems=0; cntItems<values.length; cntItems++){
+				if(values[cntItems].contains("ItemID")){
+					String item = values[cntItems].substring(7,10);
+					listItemsInRoom.add(item);
+				}
+			}
+		 return listItemsInRoom;
+	 }
+	
+	
+	 
+	 
+	 
+	 
+	 
 	
 	public List<Actor> getListOfActors(){
 		return listActors;
 	}
 	
-	public List<Item> getListOfItems(){
-		return listItems;
-	}
 	
 	public List<Room> getListOfRooms(){
 		return listRooms;
 	}
 	
+	public List<Item> getPickableItems(){
+		return listPickableItems;
+	}
+	
+	public List<Item> getRoomItems(){
+		return listRoomItems;
+	}
 	
 	
 	
@@ -47,8 +114,8 @@ public class XmlParser {
 	    
 	    
 	    getAllActors();
-	    getAllItems();
-	    getAllRooms();
+	  //  getAllItems();
+	  //  getAllRooms();
 	    
 	}
 	
@@ -58,26 +125,26 @@ public class XmlParser {
 	}
 	
 	
-	public void setXmlFilePath(String filePath){
+	private void setXmlFilePath(String filePath){
 		xmlFilePath = filePath;
 		
 	}
 	
-	public String getXmlFilePath(){
+	private String getXmlFilePath(){
 		return xmlFilePath;
 	}
 	
 	
-	public void setXmlFile(Document file){
+	private void setXmlFile(Document file){
 		xmlFile = file;
 	}
 	
-	public Document getXmlFile(){
+	private Document getXmlFile(){
 		return xmlFile;
 	}
 	
 	
-	public void openXmlFile(){
+	private void openXmlFile(){
 		String filePath = getXmlFilePath();
 		
 		
@@ -96,7 +163,7 @@ public class XmlParser {
 	}	
 	
 	
-	public void getAllActors(){
+	private void getAllActors(){
 		Document doc = getXmlFile();
 		NodeList nList = doc.getElementsByTagName("Actor");
 		
@@ -111,14 +178,11 @@ public class XmlParser {
 		System.out.println("");
 		
 		for (int temp = 0; temp < nList.getLength(); temp++) {
-			Actor actor = new Actor(temp);
+		
 			Node nNode = nList.item(temp);
-			
-			
-			
 			Element eElement = (Element) nNode;
-			
-			
+			Actor actor = new Actor(Integer.parseInt(eElement.getElementsByTagName("Value").item(12).getTextContent()));
+
 			if(debugConsole){
 			System.out.println("ActorID: " + eElement.getAttribute("ID"));
 			System.out.println("--------");
@@ -136,14 +200,19 @@ public class XmlParser {
 					else actor.setPlayer(false);
 				actor.setAge(Integer.parseInt(eElement.getElementsByTagName("Value").item(4).getTextContent()));
 				actor.setGender(eElement.getElementsByTagName("Value").item(5).getTextContent());
-				actor.setRank(eElement.getElementsByTagName("Value").item(6).getTextContent());
-				actor.setFaction(eElement.getElementsByTagName("Value").item(7).getTextContent());
-				actor.setActorClass(eElement.getElementsByTagName("Value").item(8).getTextContent());
-				actor.setActorSubClass(eElement.getElementsByTagName("Value").item(9).getTextContent());
-				actor.setAbility(eElement.getElementsByTagName("Value").item(10).getTextContent());
-				actor.setHometown(eElement.getElementsByTagName("Value").item(11).getTextContent());
-				actor.setFiles2dPath(eElement.getElementsByTagName("Value").item(12).getTextContent());
-				actor.setFiles3dPath(eElement.getElementsByTagName("Value").item(13).getTextContent()); 
+				actor.setOccupation(eElement.getElementsByTagName("Value").item(6).getTextContent());
+				actor.setRank(eElement.getElementsByTagName("Value").item(7).getTextContent());
+				actor.setFaction(eElement.getElementsByTagName("Value").item(8).getTextContent());
+				actor.setAbilities(eElement.getElementsByTagName("Value").item(9).getTextContent());
+				if(eElement.getElementsByTagName("Value").item(10).getTextContent().equalsIgnoreCase("True")){
+					actor.setFixedLocation(true);
+					}
+					else actor.setFixedLocation(false);
+				actor.setLocation(eElement.getElementsByTagName("Value").item(11).getTextContent());
+				actor.setActorClass(eElement.getElementsByTagName("Value").item(13).getTextContent());
+				actor.setActorSubClass(eElement.getElementsByTagName("Value").item(14).getTextContent());
+				actor.setFiles2dPath(eElement.getElementsByTagName("Value").item(15).getTextContent());
+				actor.setFiles3dPath(eElement.getElementsByTagName("Value").item(16).getTextContent()); 
 				
 				
 				
@@ -154,14 +223,17 @@ public class XmlParser {
 				System.out.println("Is Player : " + 			eElement.getElementsByTagName("Value").item(3).getTextContent());
 				System.out.println("Age : " + 					eElement.getElementsByTagName("Value").item(4).getTextContent());
 				System.out.println("Gender: " + 				eElement.getElementsByTagName("Value").item(5).getTextContent());
-				System.out.println("Rank : " + 					eElement.getElementsByTagName("Value").item(6).getTextContent());
-				System.out.println("Faction : " + 				eElement.getElementsByTagName("Value").item(7).getTextContent());
-				System.out.println("Class : " + 				eElement.getElementsByTagName("Value").item(8).getTextContent());
-				System.out.println("Subclass : " + 				eElement.getElementsByTagName("Value").item(9).getTextContent()); 
-				System.out.println("Ability : " + 				eElement.getElementsByTagName("Value").item(10).getTextContent()); 
-				System.out.println("Hometown : " + 				eElement.getElementsByTagName("Value").item(11).getTextContent());
-				System.out.println("Texture Files (2D) : " + 	eElement.getElementsByTagName("Value").item(12).getTextContent());
-				System.out.println("Texture Files (3D) : " + 	eElement.getElementsByTagName("Value").item(13).getTextContent());
+				System.out.println("Occupation : " + 			eElement.getElementsByTagName("Value").item(6).getTextContent()); 
+				System.out.println("Rank : " + 					eElement.getElementsByTagName("Value").item(7).getTextContent());
+				System.out.println("Faction : " + 				eElement.getElementsByTagName("Value").item(8).getTextContent());
+				System.out.println("Ability : " + 				eElement.getElementsByTagName("Value").item(9).getTextContent()); 
+				System.out.println("Fixed Location : " + 		eElement.getElementsByTagName("Value").item(10).getTextContent()); 
+				System.out.println("Location : " + 				eElement.getElementsByTagName("Value").item(11).getTextContent()); 
+				System.out.println("NPC Id : " + 				eElement.getElementsByTagName("Value").item(12).getTextContent()); 
+				System.out.println("Class : " + 				eElement.getElementsByTagName("Value").item(13).getTextContent());
+				System.out.println("Subclass : " + 				eElement.getElementsByTagName("Value").item(14).getTextContent()); 
+				System.out.println("Texture Files (2D) : " + 	eElement.getElementsByTagName("Value").item(15).getTextContent());
+				System.out.println("Texture Files (3D) : " + 	eElement.getElementsByTagName("Value").item(16).getTextContent());
 
 				System.out.println("");
 				}
@@ -173,78 +245,10 @@ public class XmlParser {
 	}
 	
 	
-	public void getActorById(int id){
-		Document doc = getXmlFile();
-		NodeList nList = doc.getElementsByTagName("Actor");
-		
-		if(id == 0 || id < 0 || id > nList.getLength()){
-			System.out.println("Please enter a valid ActorID !");
-			return;
-		}
-		
-		if(debugConsole){
-		System.out.println("Actor with ID "+id+" in XML-File");
-		System.out.println("-------------------");
-		System.out.println("");
-		}
-		
-		Node nNode = nList.item(id-1);
-		
-		Element eElement = (Element) nNode;
-		if(debugConsole){
-		System.out.println("ActorID: " + eElement.getAttribute("ID"));
-		System.out.println("--------");
-		}
-		
-		if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-			
-			if(debugConsole){
-			System.out.println("Name : " + 					eElement.getElementsByTagName("Value").item(0).getTextContent());
-			System.out.println("Picture path (?) : " + 		eElement.getElementsByTagName("Value").item(1).getTextContent());
-			System.out.println("Description : " + 			eElement.getElementsByTagName("Value").item(2).getTextContent());
-			System.out.println("Is Player : " + 			eElement.getElementsByTagName("Value").item(3).getTextContent());
-			System.out.println("Age : " + 					eElement.getElementsByTagName("Value").item(4).getTextContent());
-			System.out.println("Gender: " + 				eElement.getElementsByTagName("Value").item(5).getTextContent());
-			System.out.println("Rank : " + 					eElement.getElementsByTagName("Value").item(6).getTextContent());
-			System.out.println("Faction : " + 				eElement.getElementsByTagName("Value").item(7).getTextContent());
-			System.out.println("Class : " + 				eElement.getElementsByTagName("Value").item(8).getTextContent());
-			System.out.println("Subclass : " + 				eElement.getElementsByTagName("Value").item(9).getTextContent()); 
-			System.out.println("Ability : " + 				eElement.getElementsByTagName("Value").item(10).getTextContent()); 
-			System.out.println("Hometown : " + 				eElement.getElementsByTagName("Value").item(11).getTextContent());
-			System.out.println("Texture Files (2D) : " + 	eElement.getElementsByTagName("Value").item(12).getTextContent());
-			System.out.println("Texture Files (3D) : " + 	eElement.getElementsByTagName("Value").item(13).getTextContent());
 
-			System.out.println("");
-			}
-		}	
-	}
-	
-	
-	public void getActorByName(String name){
-			Document doc = getXmlFile();
-			NodeList nList = doc.getElementsByTagName("Actor");
-			int searchedID = 0;
-			
-			for (int temp = 0; temp < nList.getLength(); temp++) {
-				
-				Node nNode = nList.item(temp);
-				Element eElement = (Element) nNode;
-				
-				if(name.equalsIgnoreCase(eElement.getElementsByTagName("Value").item(0).getTextContent())) {
-					searchedID = temp+1;
-					if(debugConsole){
-					System.out.println("Actor with the Name : "+name);
-					System.out.println("-------------------");
-					}
-					getActorById(searchedID);
-				}
-			}
-			
-			
-	}
 	
 
-	public void getAllItems(){
+	private void getAllItems(){
 		Document doc = getXmlFile();
 		NodeList nList = doc.getElementsByTagName("Item");
 		
@@ -259,11 +263,14 @@ public class XmlParser {
 		
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			
-			Item item = new Item(temp);
+			
 			Node nNode = nList.item(temp);
 			
 			Element eElement = (Element) nNode;
 			
+			boolean tmpIsRoomObject = false;
+			Item item = new Item(Integer.parseInt(eElement.getElementsByTagName("Value").item(10).getTextContent()));
+
 			if(debugConsole){
 			System.out.println("ItemID: " + eElement.getAttribute("ID"));
 			System.out.println("--------");
@@ -274,124 +281,74 @@ public class XmlParser {
 				item.setName(eElement.getElementsByTagName("Value").item(0).getTextContent());
 				item.setPicturePath(eElement.getElementsByTagName("Value").item(1).getTextContent());
 				item.setDescription(eElement.getElementsByTagName("Value").item(2).getTextContent());
-				item.setPurpose(eElement.getElementsByTagName("Value").item(3).getTextContent());
-				item.setPrimaryLocation(eElement.getElementsByTagName("Value").item(4).getTextContent());
-				item.setEffect(eElement.getElementsByTagName("Value").item(5).getTextContent());
-				item.setAssociatedWith(eElement.getElementsByTagName("Value").item(6).getTextContent());
-				item.setCombinesWith(eElement.getElementsByTagName("Value").item(7).getTextContent());
-				item.setCondition(eElement.getElementsByTagName("Value").item(8).getTextContent());
-				item.setFiles2dPath(eElement.getElementsByTagName("Value").item(9).getTextContent());
-				item.setFiles3dPath(eElement.getElementsByTagName("Value").item(10).getTextContent());
+				item.setPrimaryLocation(eElement.getElementsByTagName("Value").item(3).getTextContent());
+				item.setSecondaryLocation(eElement.getElementsByTagName("Value").item(4).getTextContent());
+				item.setAssociatedWith((eElement.getElementsByTagName("Value").item(5).getTextContent()));
+				item.setCombinesWith((eElement.getElementsByTagName("Value").item(6).getTextContent()));
+				item.setContains(eElement.getElementsByTagName("Value").item(7).getTextContent());
+				if(eElement.getElementsByTagName("Value").item(8).getTextContent().equalsIgnoreCase("True")){
+					item.setCollectible(true);
+					}
+					else item.setCollectible(false);
+				if(eElement.getElementsByTagName("Value").item(9).getTextContent().equalsIgnoreCase("True")){
+					item.setUseable(true);
+					}
+					else item.setUseable(false);
+				//item.setId(Integer.parseInt(eElement.getElementsByTagName("Value").item(10).getTextContent()));
 				if(eElement.getElementsByTagName("Value").item(11).getTextContent().equalsIgnoreCase("True")){
-					item.setInInventory(true);
+					item.setRoomObject(true);
+					tmpIsRoomObject = true; 
 					}
-					else item.setInInventory(false);
-				if(eElement.getElementsByTagName("Value").item(12).getTextContent().equalsIgnoreCase("True")){
-					item.setFocussed(true);
-					}
-					else item.setFocussed(false);
+					else item.setRoomObject(false);
+				item.setCondition(eElement.getElementsByTagName("Value").item(12).getTextContent());
+				
+				
+			
+				
+	
+				
+				
 				
 				if(debugConsole){
 				System.out.println("Name : " + 					eElement.getElementsByTagName("Value").item(0).getTextContent());
 				System.out.println("Picture path (?) : " + 		eElement.getElementsByTagName("Value").item(1).getTextContent());
 				System.out.println("Description : " + 			eElement.getElementsByTagName("Value").item(2).getTextContent());
-				System.out.println("Purpose : " +	 			eElement.getElementsByTagName("Value").item(3).getTextContent());
-				System.out.println("Primary Location : " + 		eElement.getElementsByTagName("Value").item(4).getTextContent());
-				System.out.println("Effect: " + 				eElement.getElementsByTagName("Value").item(5).getTextContent());
-				System.out.println("Associated with: " + 		eElement.getElementsByTagName("Value").item(6).getTextContent());
-				System.out.println("Combines with : " + 		eElement.getElementsByTagName("Value").item(7).getTextContent());
-				System.out.println("Condition : " + 			eElement.getElementsByTagName("Value").item(8).getTextContent());
-				System.out.println("Texture Files (2D) : " + 	eElement.getElementsByTagName("Value").item(9).getTextContent()); 
-				System.out.println("Texture Files (3D) : " + 	eElement.getElementsByTagName("Value").item(10).getTextContent()); 
-				System.out.println("inInventory : " + 			eElement.getElementsByTagName("Value").item(11).getTextContent()); 
-				System.out.println("focussed : " + 				eElement.getElementsByTagName("Value").item(12).getTextContent());
-			
+				System.out.println("Primary Location : " +	 			eElement.getElementsByTagName("Value").item(3).getTextContent());
+				System.out.println("Secondary Location : " + 		eElement.getElementsByTagName("Value").item(4).getTextContent());				
+				System.out.println("associated with : " + 		eElement.getElementsByTagName("Value").item(5).getTextContent());
+				System.out.println("combines with : " + 			eElement.getElementsByTagName("Value").item(6).getTextContent());
+				System.out.println("contains  " + 	eElement.getElementsByTagName("Value").item(7).getTextContent()); 
+				System.out.println("Is collectible : " + 	eElement.getElementsByTagName("Value").item(8).getTextContent()); 
+				System.out.println("Is usable : " + 			eElement.getElementsByTagName("Value").item(9).getTextContent()); 
+				System.out.println("Id : " + 				eElement.getElementsByTagName("Value").item(10).getTextContent());
+				System.out.println(" is RoomObject : " + 				eElement.getElementsByTagName("Value").item(11).getTextContent());
+				System.out.println("roomObjectID : " + 				eElement.getElementsByTagName("Value").item(12).getTextContent());
+
+				
 				System.out.println("");
 				}
 			}	
 			
-			listItems.add(item);
-		}
-		
-		
-		
-	}
-	
-	
-	public void getItemById(int id) {
-		Document doc = getXmlFile();
-		NodeList nList = doc.getElementsByTagName("Item");
-	
-		if(id == 0 || id < 0 || id > nList.getLength()){
-			System.out.println("Please enter a valid ItemID !");
-			return;
-		}
-		
-		if(debugConsole){
-		System.out.println("Item with ID "+id+" in XML-File");
-		System.out.println("-------------------");
-		System.out.println("");
-		}
-	
-		Node nNode = nList.item(id-1);
-	
-		Element eElement = (Element) nNode;
-		
-		if(debugConsole){
-		System.out.println("ItemID: " + eElement.getAttribute("ID"));
-		System.out.println("--------");
-		}
-	
-		if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 			
-			if(debugConsole){
-			System.out.println("Name : " + 					eElement.getElementsByTagName("Value").item(0).getTextContent());
-			System.out.println("Picture path (?) : " + 		eElement.getElementsByTagName("Value").item(1).getTextContent());
-			System.out.println("Description : " + 			eElement.getElementsByTagName("Value").item(2).getTextContent());
-			System.out.println("Purpose : " +	 			eElement.getElementsByTagName("Value").item(3).getTextContent());
-			System.out.println("Primary Location : " + 		eElement.getElementsByTagName("Value").item(4).getTextContent());
-			System.out.println("Effect: " + 				eElement.getElementsByTagName("Value").item(5).getTextContent());
-			System.out.println("Associated with: " + 		eElement.getElementsByTagName("Value").item(6).getTextContent());
-			System.out.println("Combines with : " + 		eElement.getElementsByTagName("Value").item(7).getTextContent());
-			System.out.println("Condition : " + 			eElement.getElementsByTagName("Value").item(8).getTextContent());
-			System.out.println("Texture Files (2D) : " + 	eElement.getElementsByTagName("Value").item(9).getTextContent()); 
-			System.out.println("Texture Files (3D) : " + 	eElement.getElementsByTagName("Value").item(10).getTextContent()); 
-			System.out.println("inInventory : " + 			eElement.getElementsByTagName("Value").item(11).getTextContent()); 
-			System.out.println("focussed : " + 				eElement.getElementsByTagName("Value").item(12).getTextContent());
-	
-			System.out.println("");
+			//two lists ! roomObjects &  pickableItems
+			if(tmpIsRoomObject){
+				listRoomItems.add(item);
 			}
-		}	
+			else listPickableItems.add(item);
+			
+		}
+		
+		
+		
 	}
+	
+	
 
 	
-	public void getItemByName(String name){
-		Document doc = getXmlFile();
-		NodeList nList = doc.getElementsByTagName("Item");
-		int searchedID = 0;
-		
-		for (int temp = 0; temp < nList.getLength(); temp++) {
-			
-			Node nNode = nList.item(temp);
-			Element eElement = (Element) nNode;
-			
-			if(name.equalsIgnoreCase(eElement.getElementsByTagName("Value").item(0).getTextContent())) {
-				searchedID = temp+1;
-				
-				if(debugConsole){
-				System.out.println("Item with Name : "+name);
-				System.out.println("-------------------");
-				}
-				
-				getItemById(searchedID);
-			}
-		}
-		
-		
-	}
 	
 	
-	public void getAllRooms(){
+	
+	private void getAllRooms(){
 		Document doc = getXmlFile();
 		NodeList nList = doc.getElementsByTagName("Location");
 		
@@ -406,10 +363,13 @@ public class XmlParser {
 		
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			
-			Room room = new Room(temp);
+			
 			Node nNode = nList.item(temp);
 			
 			Element eElement = (Element) nNode;
+			
+			
+			Room room = new Room(Integer.parseInt(eElement.getElementsByTagName("Value").item(7).getTextContent()));
 			
 			if(debugConsole){
 			System.out.println("Location: " + eElement.getAttribute("ID"));
@@ -425,9 +385,9 @@ public class XmlParser {
 				room.setChapter(eElement.getElementsByTagName("Value").item(4).getTextContent());
 				room.setScene(eElement.getElementsByTagName("Value").item(5).getTextContent());
 				room.setFunction(eElement.getElementsByTagName("Value").item(6).getTextContent());
-				room.setMood(eElement.getElementsByTagName("Value").item(7).getTextContent());
-				room.setLocationId(eElement.getElementsByTagName("Value").item(8).getTextContent());
-				room.setGameObjectsIncluded(eElement.getElementsByTagName("Value").item(9).getTextContent());
+				room.setLocationId(eElement.getElementsByTagName("Value").item(7).getTextContent());
+				room.setGameObjectsIncluded(eElement.getElementsByTagName("Value").item(8).getTextContent());
+				room.setNpcs(eElement.getElementsByTagName("Value").item(9).getTextContent());
 				room.setBuildingFloor(eElement.getElementsByTagName("Value").item(10).getTextContent());
 				
 				
@@ -439,9 +399,9 @@ public class XmlParser {
 				System.out.println("Chapter : " + 					eElement.getElementsByTagName("Value").item(4).getTextContent());
 				System.out.println("Scene : " + 				eElement.getElementsByTagName("Value").item(5).getTextContent());
 				System.out.println("Function : " + 					eElement.getElementsByTagName("Value").item(6).getTextContent());
-				System.out.println("Mood : " + 				eElement.getElementsByTagName("Value").item(7).getTextContent());
-				System.out.println("Location ID : " + 				eElement.getElementsByTagName("Value").item(8).getTextContent());
-				System.out.println("GameObjectsIncluded : " + 				eElement.getElementsByTagName("Value").item(9).getTextContent()); 
+				System.out.println("Location ID : " + 				eElement.getElementsByTagName("Value").item(7).getTextContent());
+				System.out.println("GameObjectsIncluded : " + 				eElement.getElementsByTagName("Value").item(8).getTextContent()); 
+				System.out.println("NPCs : " + 				eElement.getElementsByTagName("Value").item(9).getTextContent()); 
 				System.out.println("Building Floor :" + 				eElement.getElementsByTagName("Value").item(10).getTextContent()); 
 				
 
@@ -453,75 +413,9 @@ public class XmlParser {
 	}
 
 	
-	public void getRoomById(int id){
-		Document doc = getXmlFile();
-		NodeList nList = doc.getElementsByTagName("Location");
-		
-		if(id == 0 || id < 0 || id > nList.getLength()){
-			System.out.println("Please enter a valid LocationID !");
-			return;
-		}
-		
-		if(debugConsole){
-		System.out.println("Location ID "+id+" in XML-File");
-		System.out.println("-------------------");
-		System.out.println("");
-		}
-		
-		Node nNode = nList.item(id-1);
-		
-		Element eElement = (Element) nNode;
-		if(debugConsole){
-		System.out.println("LocationID: " + eElement.getAttribute("ID"));
-		System.out.println("--------");
-		}
-		
-		if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-			
-			if(debugConsole){
-				System.out.println("Name : " + 					eElement.getElementsByTagName("Value").item(0).getTextContent());
-				System.out.println("Picture path (?) : " + 		eElement.getElementsByTagName("Value").item(1).getTextContent());
-				System.out.println("Description : " + 			eElement.getElementsByTagName("Value").item(2).getTextContent());
-				System.out.println("Act : " + 			eElement.getElementsByTagName("Value").item(3).getTextContent());
-				System.out.println("Chapter : " + 					eElement.getElementsByTagName("Value").item(4).getTextContent());
-				System.out.println("Scene : " + 				eElement.getElementsByTagName("Value").item(5).getTextContent());
-				System.out.println("Function : " + 					eElement.getElementsByTagName("Value").item(6).getTextContent());
-				System.out.println("Mood : " + 				eElement.getElementsByTagName("Value").item(7).getTextContent());
-				System.out.println("Location ID : " + 				eElement.getElementsByTagName("Value").item(8).getTextContent());
-				System.out.println("GameObjectsIncluded : " + 				eElement.getElementsByTagName("Value").item(9).getTextContent()); 
-				System.out.println("Building Floor :" + 				eElement.getElementsByTagName("Value").item(10).getTextContent()); 
-				
-
-			System.out.println("");
-			}
-		}	
-	}
 
 	
-	public void getRoomByName(String name){
-		Document doc = getXmlFile();
-		NodeList nList = doc.getElementsByTagName("Location");
-		int searchedID = 0;
-		
-		for (int temp = 0; temp < nList.getLength(); temp++) {
-			
-			Node nNode = nList.item(temp);
-			Element eElement = (Element) nNode;
-			
-			if(name.equalsIgnoreCase(eElement.getElementsByTagName("Value").item(0).getTextContent())) {
-				searchedID = temp+1;
-				
-				if(debugConsole){
-				System.out.println("Location : "+name);
-				System.out.println("-------------------");
-				}
-				getRoomById(searchedID);
-			}
-		}
-		
-	}
-	
-	
+/*	
 	public void getConversationById(int conversationId){
 		Document doc = getXmlFile();
 		NodeList nList = doc.getElementsByTagName("Conversation");
@@ -665,7 +559,7 @@ public class XmlParser {
 	}
 	
 	
-	public void getInformationAboutLinkedDialogs(NodeList lList){
+	private void getInformationAboutLinkedDialogs(NodeList lList){
 		if(debugConsole){
 			System.out.println("");
 			System.out.println("----------");
@@ -690,7 +584,7 @@ public class XmlParser {
 	}
 	
 	
-	
+	*/
 	
 	
 
