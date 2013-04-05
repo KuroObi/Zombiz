@@ -1,25 +1,29 @@
 package com.dhbw.Zombiz.gameEngine.logic;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Room  {
 
 	
 	
-	final int id;
-	String name;
-	String picturePath;
-	String description;
-	String act; 
-	String chapter;
-	String scene;
-	String function;
-	String locationId;
-	String gameObjectsIncluded;
-	String npcs;
-	String buildingFloor;
+	private final int id;
+	private String name;
+	private String picturePath;
+	private String description;
+	private String act; 
+	private String chapter;
+	private String scene;
+	private String function;
+	private String locationId;
+	private String gameObjectsIncluded;
+	private String npcs;
+	private String buildingFloor;
 	
-	
+	private List<Item>	listRoomItems = new ArrayList<Item>();
+	private List<Item>	listPickableItems = new ArrayList<Item>();
 
-	
+
 	public Room(int id) {
 		this.id = id;
 		// TODO Auto-generated constructor stub
@@ -31,8 +35,41 @@ public class Room  {
 	public int getId() {
 		return id;
 	}
+	
+	public void setListRoomItems(List<Item> listRoomItems) {
+		this.listRoomItems = listRoomItems;
+	}
 
+	public void setListPickableItems(List<Item> listPickableItems) {
+		this.listPickableItems = listPickableItems;
+	}
 
+	/*
+	 * Gives back a String Array with [x-Pos,Y-Pos,Pic-Location]
+	 */
+	
+	public String[][] getItemPos(){
+		
+		int RoomItemsLength = listRoomItems.size();
+		int pickableItemsLength = listPickableItems.size(); 
+		
+		String[][] pos = new String[RoomItemsLength+pickableItemsLength][3];
+		
+		for(int i = 1;i <= RoomItemsLength; i++){
+		// 	pos[i][0] = listRoomItems.get(i).getXPos();	//Insert the Paser X-Pos Method
+		// 	pos[i][1] = listRoomItems.get(i).getyPos();	//Insert the Paser y-Pos Method
+		//	pos[i][2] = listRoomItems.get(i).getPicturePath(); // Insert the Paser Pic Path Medthod
+		}	
+
+		for(int j = 1;j <= RoomItemsLength; j++){
+		// 	pos[i+RoomItemsLength][0] = listPickableItems.get(i).getXPos();	//Insert the Paser X-Pos Method
+		// 	pos[i+RoomItemsLength][1] = listPickableItems.get(i).getyPos();	//Insert the Paser y-Pos Method
+		//	pos[i+RoomItemsLength][2] = listPickableItems.get(i).getPicturePath(); // Insert the Paser Pic Path Medthod
+		}
+		
+		return pos;
+	}
+	
 	public String getName() {
 		return name;
 	}
