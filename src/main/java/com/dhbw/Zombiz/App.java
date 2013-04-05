@@ -50,22 +50,11 @@ public class App
         System.out.println("We Are Zombizzzzzzzzzzzzz" );
 
         //Audio Test
-        
-
         Sound testSound = new Sound("test");
+        Sound overSound = new Sound("test2");
         testSound.playSound();
-
-
-       
-       
-
-
-
-        //Audio Test
-        /*
-        Thread t1 =   new Thread( new Audio("test") );
-        t1.  start();
-   		*/
+        overSound.playSound();
+        
         
         System.out.println("and NOT!");
     }
