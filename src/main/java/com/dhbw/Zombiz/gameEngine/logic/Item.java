@@ -33,7 +33,6 @@ package com.dhbw.Zombiz.gameEngine.logic;
 public class Item extends AGameElement {
 
 
-	
 	String name;
 	String picturePath;
 	String description;
@@ -44,15 +43,13 @@ public class Item extends AGameElement {
 	String contains;
 	boolean isCollectible;
 	boolean isUseable;
-	int id;
 	boolean isRoomObject; 
-	String roomObject;
 	String condition;
 	
 	
 
 	public Item(int id) {
-		super(id);
+		super(id); 
 		// TODO Auto-generated constructor stub
 	}
 
@@ -177,19 +174,6 @@ public class Item extends AGameElement {
 	}
 
 
-
-	public int getId() {
-		return id;
-	}
-
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-
-
 	public boolean isRoomObject() {
 		return isRoomObject;
 	}
@@ -199,19 +183,6 @@ public class Item extends AGameElement {
 	public void setRoomObject(boolean isRoomObject) {
 		this.isRoomObject = isRoomObject;
 	}
-
-
-
-	public String getRoomObject() {
-		return roomObject;
-	}
-
-
-
-	public void setRoomObject(String roomObject) {
-		this.roomObject = roomObject;
-	}
-
 
 
 	public String getCondition() {

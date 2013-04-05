@@ -29,28 +29,42 @@ public  class XmlParser {
 	
 	
 	 public Actor getActorById (int actorId){
-		 Actor actor = listActors.get(actorId-1);
+		 Actor actor = listActors.get(actorId);
 		 return actor;
 	 }
 	 
 	 public Room getRoomById (int roomId){
-		 Room room = listRooms.get(roomId-1);
+		 Room room = listRooms.get(roomId);
 		 return room;
 	 }
 	 
-	 public List<String> getAllRoomObjectsByRoomId(int roomId){
+	 
+	 public Item getPickableItemById(int itemId){
+		 Item item = listPickableItems.get(itemId);
+		 return item;
+	 }
+	 
+	 public Item getRoomItemsById(int itemId){
+		 Item item = listRoomItems.get(itemId);
+		 return item;
+	 }
+	 
+	 
+	 public List<Item> getAllRoomItemsByRoomId(int roomId){
 		 Room room = getRoomById(roomId);
 		 String roomObjects = room.getGameObjectsIncluded();
 		 String[] values = roomObjects.split(","); 
-		 List<String> listRoomObjects = new ArrayList<String>();
+		 List<Item> tmpListRoomItems = new ArrayList<Item>();
 		    
 			for(int cntItems=0; cntItems<values.length; cntItems++){
 				if(values[cntItems].contains("RoomObjectID")){
-					String item = values[cntItems].substring(13,16);
-					listRoomObjects.add(item);
+					String itemId = values[cntItems].substring(13,16);
+					itemId = itemId.replace(":","");
+					Item item = getRoomItemsById(Integer.parseInt(itemId));
+					tmpListRoomItems.add(item);
 				}
 			}
-		 return listRoomObjects;
+		 return tmpListRoomItems;
 	 }
 	 
 	 public List<String> getAllItemsInRoomByRoomId(int roomId){
@@ -69,19 +83,6 @@ public  class XmlParser {
 	 }
 	
 	
-	 public void /*List<String>*/ getAllNpcsInRoomByRoomId(int roomId){
-		// ... waiting for new XML-File .... from StoryTeam .... 
-		 
-		 
-		 
-		 
-	 }
-	
-	
-	
-	 
-	 
-	 
 	 
 	 
 	 
@@ -113,8 +114,8 @@ public  class XmlParser {
 	    
 	    
 	    getAllActors();
-	    getAllItems();
-	    getAllRooms();
+	  //  getAllItems();
+	  //  getAllRooms();
 	    
 	}
 	
@@ -177,14 +178,11 @@ public  class XmlParser {
 		System.out.println("");
 		
 		for (int temp = 0; temp < nList.getLength(); temp++) {
-			Actor actor = new Actor(temp);
+		
 			Node nNode = nList.item(temp);
-			
-			
-			
 			Element eElement = (Element) nNode;
-			
-			
+			Actor actor = new Actor(Integer.parseInt(eElement.getElementsByTagName("Value").item(12).getTextContent()));
+
 			if(debugConsole){
 			System.out.println("ActorID: " + eElement.getAttribute("ID"));
 			System.out.println("--------");
@@ -202,14 +200,19 @@ public  class XmlParser {
 					else actor.setPlayer(false);
 				actor.setAge(Integer.parseInt(eElement.getElementsByTagName("Value").item(4).getTextContent()));
 				actor.setGender(eElement.getElementsByTagName("Value").item(5).getTextContent());
-				actor.setRank(eElement.getElementsByTagName("Value").item(6).getTextContent());
-				actor.setFaction(eElement.getElementsByTagName("Value").item(7).getTextContent());
-				actor.setActorClass(eElement.getElementsByTagName("Value").item(8).getTextContent());
-				actor.setActorSubClass(eElement.getElementsByTagName("Value").item(9).getTextContent());
-				actor.setAbility(eElement.getElementsByTagName("Value").item(10).getTextContent());
-				actor.setHometown(eElement.getElementsByTagName("Value").item(11).getTextContent());
-				actor.setFiles2dPath(eElement.getElementsByTagName("Value").item(12).getTextContent());
-				actor.setFiles3dPath(eElement.getElementsByTagName("Value").item(13).getTextContent()); 
+				actor.setOccupation(eElement.getElementsByTagName("Value").item(6).getTextContent());
+				actor.setRank(eElement.getElementsByTagName("Value").item(7).getTextContent());
+				actor.setFaction(eElement.getElementsByTagName("Value").item(8).getTextContent());
+				actor.setAbilities(eElement.getElementsByTagName("Value").item(9).getTextContent());
+				if(eElement.getElementsByTagName("Value").item(10).getTextContent().equalsIgnoreCase("True")){
+					actor.setFixedLocation(true);
+					}
+					else actor.setFixedLocation(false);
+				actor.setLocation(eElement.getElementsByTagName("Value").item(11).getTextContent());
+				actor.setActorClass(eElement.getElementsByTagName("Value").item(13).getTextContent());
+				actor.setActorSubClass(eElement.getElementsByTagName("Value").item(14).getTextContent());
+				actor.setFiles2dPath(eElement.getElementsByTagName("Value").item(15).getTextContent());
+				actor.setFiles3dPath(eElement.getElementsByTagName("Value").item(16).getTextContent()); 
 				
 				
 				
@@ -220,14 +223,17 @@ public  class XmlParser {
 				System.out.println("Is Player : " + 			eElement.getElementsByTagName("Value").item(3).getTextContent());
 				System.out.println("Age : " + 					eElement.getElementsByTagName("Value").item(4).getTextContent());
 				System.out.println("Gender: " + 				eElement.getElementsByTagName("Value").item(5).getTextContent());
-				System.out.println("Rank : " + 					eElement.getElementsByTagName("Value").item(6).getTextContent());
-				System.out.println("Faction : " + 				eElement.getElementsByTagName("Value").item(7).getTextContent());
-				System.out.println("Class : " + 				eElement.getElementsByTagName("Value").item(8).getTextContent());
-				System.out.println("Subclass : " + 				eElement.getElementsByTagName("Value").item(9).getTextContent()); 
-				System.out.println("Ability : " + 				eElement.getElementsByTagName("Value").item(10).getTextContent()); 
-				System.out.println("Hometown : " + 				eElement.getElementsByTagName("Value").item(11).getTextContent());
-				System.out.println("Texture Files (2D) : " + 	eElement.getElementsByTagName("Value").item(12).getTextContent());
-				System.out.println("Texture Files (3D) : " + 	eElement.getElementsByTagName("Value").item(13).getTextContent());
+				System.out.println("Occupation : " + 			eElement.getElementsByTagName("Value").item(6).getTextContent()); 
+				System.out.println("Rank : " + 					eElement.getElementsByTagName("Value").item(7).getTextContent());
+				System.out.println("Faction : " + 				eElement.getElementsByTagName("Value").item(8).getTextContent());
+				System.out.println("Ability : " + 				eElement.getElementsByTagName("Value").item(9).getTextContent()); 
+				System.out.println("Fixed Location : " + 		eElement.getElementsByTagName("Value").item(10).getTextContent()); 
+				System.out.println("Location : " + 				eElement.getElementsByTagName("Value").item(11).getTextContent()); 
+				System.out.println("NPC Id : " + 				eElement.getElementsByTagName("Value").item(12).getTextContent()); 
+				System.out.println("Class : " + 				eElement.getElementsByTagName("Value").item(13).getTextContent());
+				System.out.println("Subclass : " + 				eElement.getElementsByTagName("Value").item(14).getTextContent()); 
+				System.out.println("Texture Files (2D) : " + 	eElement.getElementsByTagName("Value").item(15).getTextContent());
+				System.out.println("Texture Files (3D) : " + 	eElement.getElementsByTagName("Value").item(16).getTextContent());
 
 				System.out.println("");
 				}
@@ -257,13 +263,14 @@ public  class XmlParser {
 		
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			
-			Item item = new Item(temp);
+			
 			Node nNode = nList.item(temp);
 			
 			Element eElement = (Element) nNode;
 			
 			boolean tmpIsRoomObject = false;
-			
+			Item item = new Item(Integer.parseInt(eElement.getElementsByTagName("Value").item(10).getTextContent()));
+
 			if(debugConsole){
 			System.out.println("ItemID: " + eElement.getAttribute("ID"));
 			System.out.println("--------");
@@ -287,14 +294,13 @@ public  class XmlParser {
 					item.setUseable(true);
 					}
 					else item.setUseable(false);
-				item.setId(Integer.parseInt(eElement.getElementsByTagName("Value").item(10).getTextContent()));
+				//item.setId(Integer.parseInt(eElement.getElementsByTagName("Value").item(10).getTextContent()));
 				if(eElement.getElementsByTagName("Value").item(11).getTextContent().equalsIgnoreCase("True")){
 					item.setRoomObject(true);
 					tmpIsRoomObject = true; 
 					}
 					else item.setRoomObject(false);
-				item.setRoomObject(eElement.getElementsByTagName("Value").item(12).getTextContent());
-				item.setCondition(eElement.getElementsByTagName("Value").item(13).getTextContent());
+				item.setCondition(eElement.getElementsByTagName("Value").item(12).getTextContent());
 				
 				
 			
@@ -317,7 +323,6 @@ public  class XmlParser {
 				System.out.println("Id : " + 				eElement.getElementsByTagName("Value").item(10).getTextContent());
 				System.out.println(" is RoomObject : " + 				eElement.getElementsByTagName("Value").item(11).getTextContent());
 				System.out.println("roomObjectID : " + 				eElement.getElementsByTagName("Value").item(12).getTextContent());
-				System.out.println("condition : " + 				eElement.getElementsByTagName("Value").item(13).getTextContent());
 
 				
 				System.out.println("");
@@ -358,10 +363,13 @@ public  class XmlParser {
 		
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			
-			Room room = new Room(temp);
+			
 			Node nNode = nList.item(temp);
 			
 			Element eElement = (Element) nNode;
+			
+			
+			Room room = new Room(Integer.parseInt(eElement.getElementsByTagName("Value").item(7).getTextContent()));
 			
 			if(debugConsole){
 			System.out.println("Location: " + eElement.getAttribute("ID"));
@@ -407,8 +415,8 @@ public  class XmlParser {
 	
 
 	
-	
-	private void getConversationById(int conversationId){
+/*	
+	public void getConversationById(int conversationId){
 		Document doc = getXmlFile();
 		NodeList nList = doc.getElementsByTagName("Conversation");
 		
@@ -447,7 +455,7 @@ public  class XmlParser {
 		
 	}
 
-	private void getAllDialogEntryIdByConversationId(int conversationId){
+	public void getAllDialogEntryIdByConversationId(int conversationId){
 		
 		Document doc = getXmlFile();
 		NodeList nList = doc.getElementsByTagName("DialogEntry");
@@ -471,7 +479,7 @@ public  class XmlParser {
 		}
 	}
 
-	private void getDialogEntryById (int dialogEntryId, int conversationId, char option){
+	public void getDialogEntryById (int dialogEntryId, int conversationId, char option){
 		Document doc = getXmlFile();
 		NodeList nList = doc.getElementsByTagName("DialogEntry");
 		
@@ -576,7 +584,7 @@ public  class XmlParser {
 	}
 	
 	
-	
+	*/
 	
 	
 

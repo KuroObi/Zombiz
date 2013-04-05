@@ -60,7 +60,10 @@ public class App
        //Screen menu = new Screen();
        
         XmlParser p = new XmlParser("src/main/resources/XML/chapter1.xml");
-        List <String> allItemsInRoom = p.getAllItemsInRoomByRoomId(2);
+        System.out.println("Numbers "+p.getListOfActors().size());
+  
+        
+        
         
        
 

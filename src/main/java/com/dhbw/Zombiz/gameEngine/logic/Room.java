@@ -4,7 +4,7 @@ public class Room  {
 
 	
 	
-	int id;
+	final int id;
 	String name;
 	String picturePath;
 	String description;
@@ -31,15 +31,6 @@ public class Room  {
 	public int getId() {
 		return id;
 	}
-
-
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-
 
 
 	public String getName() {

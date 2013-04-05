@@ -24,6 +24,8 @@ package com.dhbw.Zombiz.output.display;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -84,24 +86,18 @@ public class Screen {
 		  
 	  }
 	  
-	  public void drawMenu(JFrame frame){
+	  public void drawMenu(final JFrame frame){
 		 
 		  JLabel contentPane = setBackgroundOnScreen("/Pictures/Menue/background.jpg", frame);
-		  JPanel controls = new JPanel(new GridBagLayout());
+		  final JPanel controls = new JPanel(new GridBagLayout());
 		  controls.setOpaque(false);//JPanel durchsichtig machen
 		  GridBagConstraints c = new GridBagConstraints();
 		  
 		  
 		 
 		  
-		 /* ImageIcon backgroundImageMenuTitle = new ImageIcon(getClass().getResource("/Pictures/Menue/btnMenue.png"));
-		  JLabel menuTitle = new JLabel();
-		  menuTitle.setIcon(backgroundImageMenuTitle);
-		  menuTitle.setPreferredSize(new Dimension(200, 33));
-		  menuTitle.setOpaque(false);
-		  c.gridx = 0;
-	      c.gridy = 0;
-		  controls.add(menuTitle,c );  */
+		
+		 
 		  
 		  
 		  
@@ -115,6 +111,19 @@ public class Screen {
 		  c.gridx = 0;
 	      c.gridy = 1;
 		  controls.add(btnStartNewGame,c ); 
+		  btnStartNewGame.addMouseListener(new MouseAdapter()
+		    {
+		        public void mouseClicked(MouseEvent e)
+		        {
+		            System.out.println("Hello !!!");
+
+		        }
+		    });
+		  
+		  
+		  
+		  
+		  
 	      
 	      
 		  ImageIcon backgroundImageLoadGame = new ImageIcon(getClass().getResource("/Pictures/Menue/btnLoadGame.png"));
@@ -146,12 +155,28 @@ public class Screen {
 		  c.gridx = 0;
 	      c.gridy = 4;
 		  controls.add(btnExit,c ); 
+		  btnExit.addMouseListener(new MouseAdapter()
+		    {
+		        public void mouseClicked(MouseEvent e)
+		        {
+		            Menu.closeGame();
+
+		        }
+		    });
+		  
+		  
+		  
 	      
 	      
 	      controls.setBorder(new EmptyBorder(0,0,100,500));
 	      contentPane.add(controls);
 	      
 	      }
+	  
+	  
+	 
+	  
+	  
 	 }
 
 
