@@ -22,16 +22,18 @@
 
 package com.dhbw.Zombiz;
 
-import com.dhbw.Zombiz.gameEngine.logic.Player;
+import com.dhbw.Zombiz.gameEngine.logic.Actor;
 import com.dhbw.Zombiz.output.audio.Sound;
 import com.dhbw.Zombiz.output.display.Screen;
 import com.dhbw.Zombiz.gameEngine.parser.*;
 
 
 
+import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.dhbw.Zombiz.gameEngine.logic.BuildRoom;
 import com.dhbw.Zombiz.gameEngine.logic.Item;
 import com.dhbw.Zombiz.gameEngine.logic.Actor;
 import com.dhbw.Zombiz.gameEngine.logic.Room;
@@ -58,10 +60,9 @@ public class App
        // testSound.playSound();
 
        //Screen menu = new Screen();
+    
        
-        XmlParser p = new XmlParser("src/main/resources/XML/chapter1.xml");
-        System.out.println("Numbers "+p.getListOfActors().size());
-  
+        Screen frame = new Screen();
         
         
         

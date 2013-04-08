@@ -15,11 +15,23 @@ public class Room  {
 	String locationId;
 	String gameObjectsIncluded;
 	String npcs;
-	String buildingFloor;
-	
+	String mood;
+	String floor;
 	
 
 	
+	public String getMood() {
+		return mood;
+	}
+
+
+
+	public void setMood(String mood) {
+		this.mood = mood;
+	}
+
+
+
 	public Room(int id) {
 		this.id = id;
 		// TODO Auto-generated constructor stub
@@ -172,17 +184,18 @@ public class Room  {
 
 
 
-
-	public String getBuildingFloor() {
-		return buildingFloor;
+	public String getFloor() {
+		return floor;
 	}
 
 
 
-
-	public void setBuildingFloor(String buildingFloor) {
-		this.buildingFloor = buildingFloor;
+	public void setFloor(String floor) {
+		this.floor = floor;
 	}
+
+
+
 	
 	
 	
