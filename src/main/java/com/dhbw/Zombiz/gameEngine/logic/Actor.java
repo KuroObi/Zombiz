@@ -7,7 +7,7 @@ public class Actor {
 	 */
 	
 	
-	int actorId;
+	int id;
 	String name;
 	String picturePath;
 	String description;
@@ -23,16 +23,54 @@ public class Actor {
 	String location; 
 	String actorSubClass;
 	String ability;
-	public int getActorId() {
-		return actorId;
+	
+	float npcLocX;
+	float npcLocY;
+	
+	
+	public float getNpcLocX() {
+		return npcLocX;
 	}
 
 
 
-	public void setActorId(int actorId) {
-		this.actorId = actorId;
+
+
+
+	public void setNpcLocX(float npcLocX) {
+		this.npcLocX = npcLocX;
 	}
 
+
+
+
+
+
+	public float getNpcLocY() {
+		return npcLocY;
+	}
+
+
+
+
+
+
+	public void setNpcLocY(float npcLocY) {
+		this.npcLocY = npcLocY;
+	}
+
+
+
+
+
+
+	public int getId(){
+		return id;
+	}
+
+
+
+	
 
 
 	public String getName() {
@@ -266,7 +304,7 @@ public class Actor {
 	
 
 	public Actor(int id){
-		setActorId(id); 
+		this.id = id; 
 	}
 	
 

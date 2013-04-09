@@ -26,6 +26,18 @@ public  class XmlParser {
 	List<Item>	listPickableItems = new ArrayList<Item>();
 	List<Room>	listRooms = new ArrayList<Room>(); 
 	
+	public  XmlParser(String filePath){
+		setXmlFilePath(filePath);
+	    openXmlFile();
+	    
+	    
+	    getAllActors();
+	    getAllItems();
+	    getAllRooms();
+	    
+	}
+	
+	
 	
 	
 	 public Actor getActorById (int actorId){
@@ -34,7 +46,7 @@ public  class XmlParser {
 	 }
 	 
 	 public Room getRoomById (int roomId){
-		 Room room = listRooms.get(roomId);
+		 Room room = listRooms.get(roomId-1);
 		 return room;
 	 }
 	 
@@ -50,38 +62,99 @@ public  class XmlParser {
 	 }
 	 
 	 
-	 public List<Item> getAllRoomItemsByRoomId(int roomId){
+	 
+	 
+	 public List<Item> getAllItemsByRoomId(int roomId){
+		 Room room = getRoomById(roomId);
+		 String roomObjects = room.getGameObjectsIncluded();
+		 String[] values = roomObjects.split(","); 
+		 List<Item> tmpListRoomItems = new ArrayList<Item>();
+
+			for(int cntItems=0; cntItems<values.length; cntItems++){
+				if(values[cntItems].contains("ItemID")){
+					values[cntItems] = values[cntItems].trim();
+					String itemId = values[cntItems].substring(7,10);
+					String x = values[cntItems].substring(11,17);
+			        String y = values[cntItems].substring(18,24);
+			        
+			        float itemLocX = Float.parseFloat(x);
+			        float itemLocY = Float.parseFloat(y);
+					
+					
+					Item item = getPickableItemById(Integer.parseInt(itemId)-1);
+					item.setItemLocX(itemLocX);
+					item.setItemLocY(itemLocY);
+					
+					tmpListRoomItems.add(item); 
+					
+				}
+			}
+			
+		 return tmpListRoomItems;
+	 }
+	 
+	 public List<Item> getAllRoomObjectsByRoomId(int roomId){
 		 Room room = getRoomById(roomId);
 		 String roomObjects = room.getGameObjectsIncluded();
 		 String[] values = roomObjects.split(","); 
 		 List<Item> tmpListRoomItems = new ArrayList<Item>();
 		    
-			for(int cntItems=0; cntItems<values.length; cntItems++){
+		 for(int cntItems=0; cntItems<values.length; cntItems++){
+				
+				
 				if(values[cntItems].contains("RoomObjectID")){
+					values[cntItems] = values[cntItems].trim();
 					String itemId = values[cntItems].substring(13,16);
-					itemId = itemId.replace(":","");
-					Item item = getRoomItemsById(Integer.parseInt(itemId));
-					tmpListRoomItems.add(item);
+					String x = values[cntItems].substring(17,23);
+				    String y = values[cntItems].substring(24,30);
+				    
+				    float itemLocX = Float.parseFloat(x);
+				    float itemLocY = Float.parseFloat(y);
+				    
+					
+					Item item = getRoomItemsById(Integer.parseInt(itemId)-1);
+					item.setItemLocX(itemLocX);
+					item.setItemLocY(itemLocY);
+					
+					tmpListRoomItems.add(item); 
 				}
 			}
 		 return tmpListRoomItems;
 	 }
+	
 	 
-	 public List<String> getAllItemsInRoomByRoomId(int roomId){
+	 public List<Actor> getAllNpcsByRoomId(int roomId){
 		 Room room = getRoomById(roomId);
-		 String roomObjects = room.getGameObjectsIncluded();
+		 String roomObjects = room.getNpcs();
 		 String[] values = roomObjects.split(","); 
-		 List<String> listItemsInRoom = new ArrayList<String>();
-		    
-			for(int cntItems=0; cntItems<values.length; cntItems++){
-				if(values[cntItems].contains("ItemID")){
-					String item = values[cntItems].substring(7,10);
-					listItemsInRoom.add(item);
+		 List<Actor> tmpListActor = new ArrayList<Actor>();
+		 
+		 for(int cntItems=0; cntItems<values.length; cntItems++){
+				if(values[cntItems].contains("NPCID")){
+					values[cntItems] = values[cntItems].trim();
+					
+					String itemId = values[cntItems].substring(6,9);
+					String x = values[cntItems].substring(10,16);
+			        String y = values[cntItems].substring(17,23);
+			       
+			        float npcLocX = Float.parseFloat(x);
+			        float npcLocY = Float.parseFloat(y);
+					
+					Actor actor = getActorById(Integer.parseInt(itemId));
+					actor.setNpcLocX(npcLocX);
+					actor.setNpcLocY(npcLocY);
+					tmpListActor.add(actor); 
+					
+					
 				}
 			}
-		 return listItemsInRoom;
+		 
+		 
+		 
+		 
+		 return tmpListActor;
+		 
 	 }
-	
 	
 	 
 	 
@@ -108,16 +181,7 @@ public  class XmlParser {
 	
 	
 	
-	public  XmlParser(String filePath){
-		setXmlFilePath(filePath);
-	    openXmlFile();
-	    
-	    
-	    getAllActors();
-	  //  getAllItems();
-	  //  getAllRooms();
-	    
-	}
+	
 	
 	
 	public void setDebugConsole(boolean debug){
@@ -337,6 +401,7 @@ public  class XmlParser {
 			else listPickableItems.add(item);
 			
 		}
+
 		
 		
 		
@@ -369,7 +434,7 @@ public  class XmlParser {
 			Element eElement = (Element) nNode;
 			
 			
-			Room room = new Room(Integer.parseInt(eElement.getElementsByTagName("Value").item(7).getTextContent()));
+			Room room = new Room(Integer.parseInt(eElement.getElementsByTagName("Value").item(9).getTextContent()));
 			
 			if(debugConsole){
 			System.out.println("Location: " + eElement.getAttribute("ID"));
@@ -385,10 +450,12 @@ public  class XmlParser {
 				room.setChapter(eElement.getElementsByTagName("Value").item(4).getTextContent());
 				room.setScene(eElement.getElementsByTagName("Value").item(5).getTextContent());
 				room.setFunction(eElement.getElementsByTagName("Value").item(6).getTextContent());
-				room.setLocationId(eElement.getElementsByTagName("Value").item(7).getTextContent());
-				room.setGameObjectsIncluded(eElement.getElementsByTagName("Value").item(8).getTextContent());
-				room.setNpcs(eElement.getElementsByTagName("Value").item(9).getTextContent());
-				room.setBuildingFloor(eElement.getElementsByTagName("Value").item(10).getTextContent());
+				room.setFloor(eElement.getElementsByTagName("Value").item(7).getTextContent());
+				room.setMood(eElement.getElementsByTagName("Value").item(8).getTextContent());
+				room.setLocationId(eElement.getElementsByTagName("Value").item(9).getTextContent());
+				room.setGameObjectsIncluded(eElement.getElementsByTagName("Value").item(10).getTextContent());
+				room.setNpcs(eElement.getElementsByTagName("Value").item(11).getTextContent());
+
 				
 				
 				if(debugConsole){
@@ -398,11 +465,11 @@ public  class XmlParser {
 				System.out.println("Act : " + 			eElement.getElementsByTagName("Value").item(3).getTextContent());
 				System.out.println("Chapter : " + 					eElement.getElementsByTagName("Value").item(4).getTextContent());
 				System.out.println("Scene : " + 				eElement.getElementsByTagName("Value").item(5).getTextContent());
-				System.out.println("Function : " + 					eElement.getElementsByTagName("Value").item(6).getTextContent());
-				System.out.println("Location ID : " + 				eElement.getElementsByTagName("Value").item(7).getTextContent());
-				System.out.println("GameObjectsIncluded : " + 				eElement.getElementsByTagName("Value").item(8).getTextContent()); 
-				System.out.println("NPCs : " + 				eElement.getElementsByTagName("Value").item(9).getTextContent()); 
-				System.out.println("Building Floor :" + 				eElement.getElementsByTagName("Value").item(10).getTextContent()); 
+				System.out.println("Floor : " + 				eElement.getElementsByTagName("Value").item(6).getTextContent());
+				System.out.println("Function : " + 					eElement.getElementsByTagName("Value").item(7).getTextContent());
+				System.out.println("Location ID : " + 				eElement.getElementsByTagName("Value").item(8).getTextContent());
+				System.out.println("GameObjectsIncluded : " + 				eElement.getElementsByTagName("Value").item(9).getTextContent()); 
+				System.out.println("NPCs : " + 				eElement.getElementsByTagName("Value").item(10).getTextContent()); 
 				
 
 				System.out.println("");

@@ -5,23 +5,29 @@ import java.util.List;
 
 public class Room  {
 
-	
-	
-	private final int id;
-	private String name;
-	private String picturePath;
-	private String description;
-	private String act; 
-	private String chapter;
-	private String scene;
-	private String function;
-	private String locationId;
-	private String gameObjectsIncluded;
-	private String npcs;
-	private String buildingFloor;
-	
-	private List<Item>	listRoomItems = new ArrayList<Item>();
-	private List<Item>	listPickableItems = new ArrayList<Item>();
+	final int id;
+	String name;
+	String picturePath;
+	String description;
+	String act; 
+	String chapter;
+	String scene;
+	String function;
+	String locationId;
+	String gameObjectsIncluded;
+	String npcs;
+	String mood;
+	String floor;
+
+	public String getMood() {
+		return mood;
+	}
+
+
+
+	public void setMood(String mood) {
+		this.mood = mood;
+	}
 
 
 	public Room(int id) {
@@ -35,41 +41,7 @@ public class Room  {
 	public int getId() {
 		return id;
 	}
-	
-	public void setListRoomItems(List<Item> listRoomItems) {
-		this.listRoomItems = listRoomItems;
-	}
-
-	public void setListPickableItems(List<Item> listPickableItems) {
-		this.listPickableItems = listPickableItems;
-	}
-
-	/*
-	 * Gives back a String Array with [x-Pos,Y-Pos,Pic-Location]
-	 */
-	
-	public String[][] getItemPos(){
 		
-		int RoomItemsLength = listRoomItems.size();
-		int pickableItemsLength = listPickableItems.size(); 
-		
-		String[][] pos = new String[RoomItemsLength+pickableItemsLength][3];
-		
-		for(int i = 1;i <= RoomItemsLength; i++){
-		// 	pos[i][0] = listRoomItems.get(i).getXPos();	//Insert the Paser X-Pos Method
-		// 	pos[i][1] = listRoomItems.get(i).getyPos();	//Insert the Paser y-Pos Method
-		//	pos[i][2] = listRoomItems.get(i).getPicturePath(); // Insert the Paser Pic Path Medthod
-		}	
-
-		for(int j = 1;j <= RoomItemsLength; j++){
-		// 	pos[i+RoomItemsLength][0] = listPickableItems.get(i).getXPos();	//Insert the Paser X-Pos Method
-		// 	pos[i+RoomItemsLength][1] = listPickableItems.get(i).getyPos();	//Insert the Paser y-Pos Method
-		//	pos[i+RoomItemsLength][2] = listPickableItems.get(i).getPicturePath(); // Insert the Paser Pic Path Medthod
-		}
-		
-		return pos;
-	}
-	
 	public String getName() {
 		return name;
 	}
@@ -209,17 +181,18 @@ public class Room  {
 
 
 
-
-	public String getBuildingFloor() {
-		return buildingFloor;
+	public String getFloor() {
+		return floor;
 	}
 
 
 
-
-	public void setBuildingFloor(String buildingFloor) {
-		this.buildingFloor = buildingFloor;
+	public void setFloor(String floor) {
+		this.floor = floor;
 	}
+
+
+
 	
 	
 	
