@@ -61,10 +61,13 @@ public class Screen {
 		frame.setSize(800,600);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		
+		
+	   
+		
 		BuildRoom room01 = new BuildRoom(8, frame); 
 		
 	    
-
+	
 		frame.setVisible(true);
 		
 		

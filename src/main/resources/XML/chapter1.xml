@@ -2604,7 +2604,7 @@
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this location.">
             <Title>Pictures</Title>
-            <Value>[src/main/resources/Pictures/Backgrounds/roomid_008.png]</Value>
+            <Value>[src/main/resources/Picture/Backgrounds/roomid_008.png]</Value>
           </Field>
           <Field Type="Text" Hint="A short description of what this location looks like.">
             <Title>Description</Title>

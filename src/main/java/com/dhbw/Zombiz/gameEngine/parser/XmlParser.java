@@ -76,7 +76,7 @@ public  class XmlParser {
 					String itemId = values[cntItems].substring(7,10);
 					String x = values[cntItems].substring(11,17);
 			        String y = values[cntItems].substring(18,24);
-			       
+			        
 			        float itemLocX = Float.parseFloat(x);
 			        float itemLocY = Float.parseFloat(y);
 					
@@ -86,8 +86,10 @@ public  class XmlParser {
 					item.setItemLocY(itemLocY);
 					
 					tmpListRoomItems.add(item); 
+					
 				}
 			}
+			
 		 return tmpListRoomItems;
 	 }
 	 
