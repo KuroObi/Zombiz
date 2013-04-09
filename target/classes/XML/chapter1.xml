@@ -451,11 +451,11 @@
             <Title>Description</Title>
             <Value>A simple key</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
-            <Value>-1</Value>
+            <Value>1</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -466,6 +466,10 @@
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
             <Value>3</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -503,11 +507,11 @@
             <Title>Description</Title>
             <Value>A can that holds the new energydrink "Z"-Energy</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>1</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -517,6 +521,10 @@
           </Field>
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -555,11 +563,11 @@
             <Title>Description</Title>
             <Value>The door to leave the tutorial</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>1</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -570,6 +578,10 @@
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
             <Value>1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -597,7 +609,7 @@
         <Fields>
           <Field Type="Text" Hint="A name to reference this item.">
             <Title>Name</Title>
-            <Value>Note with digit</Value>
+            <Value>Note with digit 9</Value>
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this item.">
             <Title>Pictures</Title>
@@ -607,13 +619,13 @@
             <Title>Description</Title>
             <Value>A small peace of paper showing one digit of a code to the reader</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
-            <Value>7</Value>
+            <Value>9</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
-            <Value>8</Value>
+            <Value>-1</Value>
           </Field>
           <Field Type="Actor" Hint="The actor that is associated with this item.">
             <Title>Associated With</Title>
@@ -621,6 +633,10 @@
           </Field>
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -659,13 +675,13 @@
             <Title>Description</Title>
             <Value>A rope pulled over a spool to lift heavy things</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>7</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
-            <Value>8</Value>
+            <Value>-1</Value>
           </Field>
           <Field Type="Actor" Hint="The actor that is associated with this item.">
             <Title>Associated With</Title>
@@ -673,6 +689,10 @@
           </Field>
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -711,11 +731,11 @@
             <Title>Description</Title>
             <Value>A pad with the digits from 0-9 * and # to enter a PIN code</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>2</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -727,56 +747,8 @@
             <Title>Combines With</Title>
             <Value>4</Value>
           </Field>
-          <Field Type="Boolean" Hint="Can be collected">
-            <Title>isCollectible</Title>
-            <Value>False</Value>
-          </Field>
-          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
-            <Title>isUseable</Title>
-            <Value>False</Value>
-          </Field>
-          <Field Type="Number" Hint="The id to identify the item using the item list">
-            <Title>ID</Title>
-            <Value>004</Value>
-          </Field>
-          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
-            <Title>isRoomObject</Title>
-            <Value>False</Value>
-          </Field>
-          <Field Type="Text" Hint="The condition of an item may change.">
-            <Title>Condition</Title>
-            <Value />
-          </Field>
-        </Fields>
-      </Item>
-      <Item ID="8">
-        <Fields>
-          <Field Type="Text" Hint="A name to reference this item.">
-            <Title>Name</Title>
-            <Value>Fire prevention board</Value>
-          </Field>
-          <Field Type="Files" Hint="A collection of image files that represent this item.">
-            <Title>Pictures</Title>
-            <Value>[]</Value>
-          </Field>
-          <Field Type="Text" Hint="A short description of what this item looks like.">
-            <Title>Description</Title>
-            <Value>A simple locker that holds a crowbar, a tube and an extinguisher</Value>
-          </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
-            <Title>Primary Location</Title>
-            <Value>15</Value>
-          </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
-            <Title>Secondary Location</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Actor" Hint="The actor that is associated with this item.">
-            <Title>Associated With</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
-            <Title>Combines With</Title>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -790,6 +762,62 @@
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
             <Value>003</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="8">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Fire prevention equipment</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A simple locker that holds a crowbar, a tube and an extinguisher</Value>
+          </Field>
+          <Field Type="Location" Hint="The first appearance of the item.">
+            <Title>Primary Location</Title>
+            <Value>15</Value>
+          </Field>
+          <Field Type="Location" Hint="The second appearance of the item.">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>9</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ID</Title>
+            <Value>004</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -815,11 +843,11 @@
             <Title>Description</Title>
             <Value>A crowbar like it can be found in any great zombie adventure</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>15</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -829,6 +857,10 @@
           </Field>
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -841,7 +873,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>005</Value>
+            <Value>004</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -857,7 +889,7 @@
         <Fields>
           <Field Type="Text" Hint="A name to reference this item.">
             <Title>Name</Title>
-            <Value>Sprinklingsystem Plan</Value>
+            <Value>Flyer</Value>
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this item.">
             <Title>Pictures</Title>
@@ -865,15 +897,15 @@
           </Field>
           <Field Type="Text" Hint="A short description of what this item looks like.">
             <Title>Description</Title>
-            <Value>A plan that shows one one side how the sprinkling system works. The other side shows an invitation to a lecturs only cake party on the 3rd floor</Value>
+            <Value>Shows an invitation to a lecturs only cake party on the 3rd floor. The message is hidden</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>13</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
-            <Value>-1</Value>
+            <Value>14</Value>
           </Field>
           <Field Type="Actor" Hint="The actor that is associated with this item.">
             <Title>Associated With</Title>
@@ -881,6 +913,10 @@
           </Field>
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
+            <Value>30</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -893,7 +929,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>006</Value>
+            <Value>005</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -919,11 +955,11 @@
             <Title>Description</Title>
             <Value>A small magazin that tells lecturers how to make the lecture more interesting</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>14</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -933,6 +969,10 @@
           </Field>
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -945,7 +985,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>007</Value>
+            <Value>006</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -971,11 +1011,11 @@
             <Title>Description</Title>
             <Value>Some tools to repair an elevator</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>12</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -987,6 +1027,10 @@
             <Title>Combines With</Title>
             <Value>-1</Value>
           </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>22</Value>
+          </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
             <Value>True</Value>
@@ -997,7 +1041,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>008</Value>
+            <Value>007</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1023,11 +1067,11 @@
             <Title>Description</Title>
             <Value>A booksehlf covering one wall of the room. Filled with books</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
-            <Value>10</Value>
+            <Value>5</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -1037,6 +1081,10 @@
           </Field>
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -1049,11 +1097,11 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>009</Value>
+            <Value>005</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
-            <Value>False</Value>
+            <Value>True</Value>
           </Field>
           <Field Type="Text" Hint="The condition of an item may change.">
             <Title>Condition</Title>
@@ -1075,11 +1123,11 @@
             <Title>Description</Title>
             <Value>A usual printer that is not working. Can be used to get some copies if working or some replacements (Ersatzteile) </Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
-            <Value>10</Value>
+            <Value>5</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -1089,6 +1137,10 @@
           </Field>
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -1101,7 +1153,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>004</Value>
+            <Value>006</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1127,13 +1179,13 @@
             <Title>Description</Title>
             <Value>A glass window. Can be opened and closed. Is clear</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
-            <Value>8</Value>
+            <Value>7</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
-            <Value>10</Value>
+            <Value>5</Value>
           </Field>
           <Field Type="Actor" Hint="The actor that is associated with this item.">
             <Title>Associated With</Title>
@@ -1141,6 +1193,10 @@
           </Field>
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -1153,7 +1209,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>005</Value>
+            <Value>007</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1179,20 +1235,24 @@
             <Title>Description</Title>
             <Value>A simple copper cable</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Actor" Hint="The actor that is associated with this item.">
             <Title>Associated With</Title>
-            <Value>-1</Value>
+            <Value>5</Value>
           </Field>
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
+            <Value>25</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -1205,7 +1265,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>010</Value>
+            <Value>008</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1231,11 +1291,11 @@
             <Title>Description</Title>
             <Value>A sponge that is used to whipe whiteboards</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
-            <Value>-1</Value>
+            <Value>8</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -1247,6 +1307,10 @@
             <Title>Combines With</Title>
             <Value>17</Value>
           </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
+          </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
             <Value>True</Value>
@@ -1257,7 +1321,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>011</Value>
+            <Value>009</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1283,11 +1347,11 @@
             <Title>Description</Title>
             <Value>A beamer used in a lecturing room </Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>8</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -1299,6 +1363,10 @@
             <Title>Combines With</Title>
             <Value>10</Value>
           </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
+          </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
             <Value>False</Value>
@@ -1309,7 +1377,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>006</Value>
+            <Value>008</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1335,11 +1403,11 @@
             <Title>Description</Title>
             <Value>A block where a fuse is broken inside</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>8</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>11</Value>
           </Field>
@@ -1351,6 +1419,10 @@
             <Title>Combines With</Title>
             <Value>19</Value>
           </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
+          </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
             <Value>False</Value>
@@ -1361,7 +1433,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>007</Value>
+            <Value>009</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1387,11 +1459,11 @@
             <Title>Description</Title>
             <Value>A fuse that fits into a fuseblock</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
-            <Value>9</Value>
+            <Value>7</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -1403,6 +1475,10 @@
             <Title>Combines With</Title>
             <Value>18</Value>
           </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
+          </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
             <Value>True</Value>
@@ -1413,7 +1489,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>012</Value>
+            <Value>010</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1439,11 +1515,11 @@
             <Title>Description</Title>
             <Value>Something to store waste</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
-            <Value>7</Value>
+            <Value>9</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -1455,6 +1531,10 @@
             <Title>Combines With</Title>
             <Value>-1</Value>
           </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>21</Value>
+          </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
             <Value>False</Value>
@@ -1465,7 +1545,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>008</Value>
+            <Value>010</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1485,17 +1565,17 @@
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this item.">
             <Title>Pictures</Title>
-            <Value>[]</Value>
+            <Value>[src/main/resources/Picture/Items/itemid_011.png]</Value>
           </Field>
           <Field Type="Text" Hint="A short description of what this item looks like.">
             <Title>Description</Title>
             <Value>A samll metall thing that combines sheets</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
-            <Value>7</Value>
+            <Value>9</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -1505,6 +1585,10 @@
           </Field>
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -1517,7 +1601,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>013</Value>
+            <Value>011</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1543,11 +1627,11 @@
             <Title>Description</Title>
             <Value>A very hugue and important device to detect errors in an elevator system</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -1559,6 +1643,10 @@
             <Title>Combines With</Title>
             <Value>-1</Value>
           </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>23</Value>
+          </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
             <Value>True</Value>
@@ -1569,7 +1657,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>014</Value>
+            <Value>012</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1595,11 +1683,11 @@
             <Title>Description</Title>
             <Value>A very heavy device that helps to unblock elevators</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -1611,6 +1699,10 @@
             <Title>Combines With</Title>
             <Value>-1</Value>
           </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>24</Value>
+          </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
             <Value>True</Value>
@@ -1621,7 +1713,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>015</Value>
+            <Value>013</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1647,11 +1739,11 @@
             <Title>Description</Title>
             <Value>A very tiny and light magnet</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -1661,6 +1753,10 @@
           </Field>
           <Field Type="Item" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
             <Value>-1</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
@@ -1673,7 +1769,7 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>016</Value>
+            <Value>014</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1699,11 +1795,11 @@
             <Title>Description</Title>
             <Value>A little black slot in the elevator where you can open it up to fix it.</Value>
           </Field>
-          <Field Type="Location" Hint="Where is the main home for this item?">
+          <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
             <Value>16</Value>
           </Field>
-          <Field Type="Location" Hint="The item can be located in more than one location">
+          <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
             <Value>-1</Value>
           </Field>
@@ -1715,6 +1811,10 @@
             <Title>Combines With</Title>
             <Value>5</Value>
           </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
+          </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
             <Value>False</Value>
@@ -1725,7 +1825,399 @@
           </Field>
           <Field Type="Number" Hint="The id to identify the item using the item list">
             <Title>ID</Title>
-            <Value>009</Value>
+            <Value>011</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="26">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Note with digit 4</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[src/main/resources/Picture/Items/itemid_015.png]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A small piece of paper showing one digit of a code to the reader</Value>
+          </Field>
+          <Field Type="Location" Hint="The first appearance of the item.">
+            <Title>Primary Location</Title>
+            <Value>9</Value>
+          </Field>
+          <Field Type="Location" Hint="The second appearance of the item.">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ID</Title>
+            <Value>015</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="27">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Note with digit 2</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A small piece of paper showing one digit of a code to the reader</Value>
+          </Field>
+          <Field Type="Location" Hint="The first appearance of the item.">
+            <Title>Primary Location</Title>
+            <Value>7</Value>
+          </Field>
+          <Field Type="Location" Hint="The second appearance of the item.">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>3</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ID</Title>
+            <Value>016</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="28">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Note with Digit 1</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A small piece of paper showing one digit of a code to the reader</Value>
+          </Field>
+          <Field Type="Location" Hint="The first appearance of the item.">
+            <Title>Primary Location</Title>
+            <Value>8</Value>
+          </Field>
+          <Field Type="Location" Hint="The second appearance of the item.">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ID</Title>
+            <Value>017</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="29">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Cartouche</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A small cartouche where fire prevention powder can be inserted</Value>
+          </Field>
+          <Field Type="Location" Hint="The first appearance of the item.">
+            <Title>Primary Location</Title>
+            <Value>13</Value>
+          </Field>
+          <Field Type="Location" Hint="The second appearance of the item.">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ID</Title>
+            <Value>018</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="30">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Lighter</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A simple electric lighter</Value>
+          </Field>
+          <Field Type="Location" Hint="The first appearance of the item.">
+            <Title>Primary Location</Title>
+            <Value>12</Value>
+          </Field>
+          <Field Type="Location" Hint="The second appearance of the item.">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>11</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ID</Title>
+            <Value>019</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="31">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Wire</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A copper wire used as antenna later on</Value>
+          </Field>
+          <Field Type="Location" Hint="The first appearance of the item.">
+            <Title>Primary Location</Title>
+            <Value>12</Value>
+          </Field>
+          <Field Type="Location" Hint="The second appearance of the item.">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ID</Title>
+            <Value>020</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="32">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Cupboard</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>A hugue cupboard</Value>
+          </Field>
+          <Field Type="Location" Hint="The first appearance of the item.">
+            <Title>Primary Location</Title>
+            <Value>12</Value>
+          </Field>
+          <Field Type="Location" Hint="The second appearance of the item.">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>11</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>30</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ID</Title>
+            <Value>012</Value>
           </Field>
           <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
             <Title>isRoomObject</Title>
@@ -1765,6 +2257,10 @@
             <Title>Scene</Title>
             <Value>2</Value>
           </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>1</Value>
+          </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
             <Value>Connects the first four rooms</Value>
@@ -1779,15 +2275,11 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:011(0/0) PIN pad</Value>
+            <Value>RoomObjectID:003(000.00/000.00) PIN pad</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/1</Value>
+            <Value />
           </Field>
         </Fields>
       </Location>
@@ -1817,6 +2309,10 @@
             <Title>Scene</Title>
             <Value>7</Value>
           </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>2</Value>
+          </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
             <Value>Connects rooms and elevator</Value>
@@ -1831,15 +2327,11 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:019(0/0) Crowbar, RoomObjectID:026(0/0) Fireprevention equipment, RoomObjectID:027(0/0) Elevator, ItemID:011(0/0) Cable</Value>
+            <Value>ItemID:004(000.00/000.00) Crowbar, RoomObjectID:004(000.00/000.00) Fireprevention equipment, ItemID:008(000.00/000.00) Cable</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>NPCID:004(0/0)</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/2</Value>
+            <Value>NPCID:004(000.00/000.00)</Value>
           </Field>
         </Fields>
       </Location>
@@ -1869,6 +2361,10 @@
             <Title>Scene</Title>
             <Value>13</Value>
           </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>3</Value>
+          </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
             <Value>Connects rooms but all except of one are locked</Value>
@@ -1888,11 +2384,7 @@
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/3</Value>
+            <Value />
           </Field>
         </Fields>
       </Location>
@@ -1922,6 +2414,10 @@
             <Title>Scene</Title>
             <Value>12</Value>
           </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>2</Value>
+          </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
             <Value>Cable/wire puzzle to get to the 3rd floor</Value>
@@ -1936,15 +2432,11 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:009(0/0)</Value>
+            <Value>RoomObjectID:011(000.00/000.00) Reparation Slot</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/2</Value>
+            <Value />
           </Field>
         </Fields>
       </Location>
@@ -1974,6 +2466,10 @@
             <Title>Scene</Title>
             <Value>1</Value>
           </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>1</Value>
+          </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
             <Value>The player needs to escape from this room. Player learns how the game works</Value>
@@ -1988,15 +2484,11 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:002(0/0) "Z"-Energy can, RoomObjectID:001(0/0) Door, ItemID:001 Key</Value>
+            <Value>ItemID:002(000.00/000.00) "Z"-Energy can, RoomObjectID:001(000.00/000.00) Door, ItemID:001(000.00/000.00) Key</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/1</Value>
+            <Value />
           </Field>
         </Fields>
       </Location>
@@ -2012,7 +2504,7 @@
           </Field>
           <Field Type="Text" Hint="A short description of what this location looks like.">
             <Title>Description</Title>
-            <Value>Another ordenary lecturing room</Value>
+            <Value>The lecturing room you enter first. Contains Prof. Meier.</Value>
           </Field>
           <Field Type="Text" Hint="Top level classification of a story segment.">
             <Title>Act</Title>
@@ -2025,6 +2517,10 @@
           <Field Type="Text" Hint="Third level classification of a story segment.">
             <Title>Scene</Title>
             <Value>3</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>1</Value>
           </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
@@ -2040,15 +2536,11 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:025(0/0) Note with digit, ItemID:020(0/0) Paperclip, RoomObjectID:009(0/0) Wastebasket</Value>
+            <Value>ItemID:016(000.00/000.00) Note with digit 2,  RoomObjectID:002(000.00/000.00) Pulley, RoomObjectID:007(000.00/000.00) Window, ItemID:010(000.00/000.00) Fuse</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/1</Value>
+            <Value>NPCID:002(000.00/000.00)</Value>
           </Field>
         </Fields>
       </Location>
@@ -2064,7 +2556,7 @@
           </Field>
           <Field Type="Text" Hint="A short description of what this location looks like.">
             <Title>Description</Title>
-            <Value>And again a lecturing room</Value>
+            <Value>The Lecturing room where the note is on top of the beamer.</Value>
           </Field>
           <Field Type="Text" Hint="Top level classification of a story segment.">
             <Title>Act</Title>
@@ -2078,13 +2570,17 @@
             <Title>Scene</Title>
             <Value>4</Value>
           </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>1</Value>
+          </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
             <Value>A bit tutorial and code puzzle</Value>
           </Field>
           <Field Type="Text" Hint="How does this location make you feel?">
             <Title>Mood</Title>
-            <Value>bright, nerly empty</Value>
+            <Value>bright, nearly empty</Value>
           </Field>
           <Field Type="Number" Hint="The identification of this location">
             <Title>LocationID</Title>
@@ -2092,15 +2588,11 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:025(0/0) Note with digit, ItemID:013(0/0) Sponge, RoomObjectID:015(0/0) Beamer, RoomObjectID:014(0/0) Fuseblock</Value>
+            <Value>ItemID:017(000.00/000.00) Note with digit 1, ItemID:009(000.00/000.00) Sponge, RoomObjectID:008(000.00/000.00) Beamer, RoomObjectID:009(000.00/000.00) Fuseblock, ItemID:003(000.00/000.00) Note with digit 9</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/1</Value>
+            <Value />
           </Field>
         </Fields>
       </Location>
@@ -2112,11 +2604,11 @@
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this location.">
             <Title>Pictures</Title>
-            <Value>[]</Value>
+            <Value>[src/main/resources/Picture/Backgrounds/roomid_008.png]</Value>
           </Field>
           <Field Type="Text" Hint="A short description of what this location looks like.">
             <Title>Description</Title>
-            <Value>The lecturing room in the middle of the other two</Value>
+            <Value>The lecturing room in which you find the paperclip.</Value>
           </Field>
           <Field Type="Text" Hint="Top level classification of a story segment.">
             <Title>Act</Title>
@@ -2130,9 +2622,13 @@
             <Title>Scene</Title>
             <Value>5</Value>
           </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>1</Value>
+          </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
-            <Value />
+            <Value>Find a part of the code.</Value>
           </Field>
           <Field Type="Text" Hint="How does this location make you feel?">
             <Title>Mood</Title>
@@ -2144,15 +2640,12 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>NPC: RoomObjectID:010 Pulley, RoomObjectID:013 Window, ItemID:016 Fuse</Value>
+            <Value>ItemID:011(000.00/000.00) Paperclip, RoomObjectID:010(000.00/000.00) Wastebasket,
+ItemID:015(000.00/000.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/1</Value>
+            <Value />
           </Field>
         </Fields>
       </Location>
@@ -2168,7 +2661,7 @@
           </Field>
           <Field Type="Text" Hint="A short description of what this location looks like.">
             <Title>Description</Title>
-            <Value>The lecturing room where an NPC is</Value>
+            <Value>The lecturing room where the Janitor is.</Value>
           </Field>
           <Field Type="Text" Hint="Top level classification of a story segment.">
             <Title>Act</Title>
@@ -2182,9 +2675,13 @@
             <Title>Scene</Title>
             <Value>8</Value>
           </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>2</Value>
+          </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
-            <Value>An NPC tells you where to find information about a sprinkling system or some lecturing guidance and methods</Value>
+            <Value>An NPC tells you where to find information about a sprinkling system or some lecturing guidance and methods.</Value>
           </Field>
           <Field Type="Text" Hint="How does this location make you feel?">
             <Title>Mood</Title>
@@ -2196,15 +2693,11 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:, NPC:, RoomObjectID:014 Fuseblock</Value>
+            <Value>RoomObjectID:009(000.00/000.00) Fuseblock</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/2</Value>
+            <Value>NPCID:005(000.00/000.00)</Value>
           </Field>
         </Fields>
       </Location>
@@ -2234,6 +2727,10 @@
             <Title>Scene</Title>
             <Value>9</Value>
           </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>2</Value>
+          </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
             <Value>Some trash items are located here. Fills the floor and gives the player more space to explore</Value>
@@ -2248,15 +2745,11 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:024 Repair-Tools for elevator</Value>
+            <Value>ItemID:007(000.00/000.00) Repair-Tools for elevator, ItemID:019(000.00/000.00) Lighter, ItemID:020(000.00/000.00) Wire, RoomObjectID:012(000.00/000.00) Cupboard</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/2</Value>
+            <Value />
           </Field>
         </Fields>
       </Location>
@@ -2286,6 +2779,10 @@
             <Title>Scene</Title>
             <Value>10</Value>
           </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>2</Value>
+          </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
             <Value>Player can find sprinkling system plan and invitation to lecturer cake party</Value>
@@ -2300,15 +2797,11 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:023 Sprinklingsystem Plan</Value>
+            <Value>ItemID:005(000.00/000.00) Flyer, ItemID:018(000.00/000.00) Cartouche</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/2</Value>
+            <Value />
           </Field>
         </Fields>
       </Location>
@@ -2324,7 +2817,7 @@
           </Field>
           <Field Type="Text" Hint="A short description of what this location looks like.">
             <Title>Description</Title>
-            <Value>The lecturing room where the lecturing guidance can be found</Value>
+            <Value>The lecturing room where the lecturing guidance can be found.</Value>
           </Field>
           <Field Type="Text" Hint="Top level classification of a story segment.">
             <Title>Act</Title>
@@ -2337,6 +2830,10 @@
           <Field Type="Text" Hint="Third level classification of a story segment.">
             <Title>Scene</Title>
             <Value>11</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>2</Value>
           </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
@@ -2352,223 +2849,11 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:027 Instructions  New ways of lecturing, </Value>
+            <Value>ItemID:006(000.00/000.00) Instructions  New ways of lecturing, ItemID:005(000.00/000.00) Flyer</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/2</Value>
-          </Field>
-        </Fields>
-      </Location>
-      <Location ID="6">
-        <Fields>
-          <Field Type="Text" Hint="A name to reference this location.">
-            <Title>Name</Title>
-            <Value>Library</Value>
-          </Field>
-          <Field Type="Files" Hint="A collection of image files that represent this location.">
-            <Title>Pictures</Title>
-            <Value>[]</Value>
-          </Field>
-          <Field Type="Text" Hint="A short description of what this location looks like.">
-            <Title>Description</Title>
-            <Value>A library where survivors hide in a room</Value>
-          </Field>
-          <Field Type="Text" Hint="Top level classification of a story segment.">
-            <Title>Act</Title>
-            <Value>1</Value>
-          </Field>
-          <Field Type="Text" Hint="Second level classification of a story segment.">
-            <Title>Chapter</Title>
-            <Value>3</Value>
-          </Field>
-          <Field Type="Text" Hint="Third level classification of a story segment.">
-            <Title>Scene</Title>
             <Value />
-          </Field>
-          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
-            <Title>Function</Title>
-            <Value>Survivors are located here. Important information to flee can be gathered from books</Value>
-          </Field>
-          <Field Type="Text" Hint="How does this location make you feel?">
-            <Title>Mood</Title>
-            <Value>Dead, wide, calm</Value>
-          </Field>
-          <Field Type="Number" Hint="The identification of this location">
-            <Title>LocationID</Title>
-            <Value>013</Value>
-          </Field>
-          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
-            <Title>GameObjectsIncluded</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Multiline" Hint="The NPCs in the room.">
-            <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value />
-          </Field>
-        </Fields>
-      </Location>
-      <Location ID="4">
-        <Fields>
-          <Field Type="Text" Hint="A name to reference this location.">
-            <Title>Name</Title>
-            <Value>MensaHorizonte</Value>
-          </Field>
-          <Field Type="Files" Hint="A collection of image files that represent this location.">
-            <Title>Pictures</Title>
-            <Value>[]</Value>
-          </Field>
-          <Field Type="Text" Hint="A short description of what this location looks like.">
-            <Title>Description</Title>
-            <Value>A location where students can get food</Value>
-          </Field>
-          <Field Type="Text" Hint="Top level classification of a story segment.">
-            <Title>Act</Title>
-            <Value>1</Value>
-          </Field>
-          <Field Type="Text" Hint="Second level classification of a story segment.">
-            <Title>Chapter</Title>
-            <Value>2</Value>
-          </Field>
-          <Field Type="Text" Hint="Third level classification of a story segment.">
-            <Title>Scene</Title>
-            <Value>1</Value>
-          </Field>
-          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
-            <Title>Function</Title>
-            <Value>End of chapter 1. Saferoom for other survivors</Value>
-          </Field>
-          <Field Type="Text" Hint="How does this location make you feel?">
-            <Title>Mood</Title>
-            <Value>Happy, fierce</Value>
-          </Field>
-          <Field Type="Number" Hint="The identification of this location">
-            <Title>LocationID</Title>
-            <Value>014</Value>
-          </Field>
-          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
-            <Title>GameObjectsIncluded</Title>
-            <Value>Plate of Mensa food, "Z"-Energy drinks, NPC:</Value>
-          </Field>
-          <Field Type="Multiline" Hint="The NPCs in the room.">
-            <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>D/3</Value>
-          </Field>
-        </Fields>
-      </Location>
-      <Location ID="10">
-        <Fields>
-          <Field Type="Text" Hint="A name to reference this location.">
-            <Title>Name</Title>
-            <Value>Printerroom</Value>
-          </Field>
-          <Field Type="Files" Hint="A collection of image files that represent this location.">
-            <Title>Pictures</Title>
-            <Value>[]</Value>
-          </Field>
-          <Field Type="Text" Hint="A short description of what this location looks like.">
-            <Title>Description</Title>
-            <Value>A room with a printer in it and a panorama like glass front</Value>
-          </Field>
-          <Field Type="Text" Hint="Top level classification of a story segment.">
-            <Title>Act</Title>
-            <Value>1</Value>
-          </Field>
-          <Field Type="Text" Hint="Second level classification of a story segment.">
-            <Title>Chapter</Title>
-            <Value>1</Value>
-          </Field>
-          <Field Type="Text" Hint="Third level classification of a story segment.">
-            <Title>Scene</Title>
-            <Value>14</Value>
-          </Field>
-          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
-            <Title>Function</Title>
-            <Value>Nothing in first chapter, except of view. In chap. 2 bookshelf gets important</Value>
-          </Field>
-          <Field Type="Text" Hint="How does this location make you feel?">
-            <Title>Mood</Title>
-            <Value />
-          </Field>
-          <Field Type="Number" Hint="The identification of this location">
-            <Title>LocationID</Title>
-            <Value>015</Value>
-          </Field>
-          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
-            <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:008 Bookshelf, RoomObjectID:012 Printer, RoomObjectID:013</Value>
-          </Field>
-          <Field Type="Multiline" Hint="The NPCs in the room.">
-            <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/3</Value>
-          </Field>
-        </Fields>
-      </Location>
-      <Location ID="5">
-        <Fields>
-          <Field Type="Text" Hint="A name to reference this location.">
-            <Title>Name</Title>
-            <Value>Secretary</Value>
-          </Field>
-          <Field Type="Files" Hint="A collection of image files that represent this location.">
-            <Title>Pictures</Title>
-            <Value>[]</Value>
-          </Field>
-          <Field Type="Text" Hint="A short description of what this location looks like.">
-            <Title>Description</Title>
-            <Value>A secretaries office. On the first view secretary looks dead/ zombie like but if the player wakes her up she is lost in time but gives information</Value>
-          </Field>
-          <Field Type="Text" Hint="Top level classification of a story segment.">
-            <Title>Act</Title>
-            <Value>1</Value>
-          </Field>
-          <Field Type="Text" Hint="Second level classification of a story segment.">
-            <Title>Chapter</Title>
-            <Value>2</Value>
-          </Field>
-          <Field Type="Text" Hint="Third level classification of a story segment.">
-            <Title>Scene</Title>
-            <Value />
-          </Field>
-          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
-            <Title>Function</Title>
-            <Value>Useful information can be gathered</Value>
-          </Field>
-          <Field Type="Text" Hint="How does this location make you feel?">
-            <Title>Mood</Title>
-            <Value>Dusty, time stands still</Value>
-          </Field>
-          <Field Type="Number" Hint="The identification of this location">
-            <Title>LocationID</Title>
-            <Value>016</Value>
-          </Field>
-          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
-            <Title>GameObjectsIncluded</Title>
-            <Value>mug (cup)</Value>
-          </Field>
-          <Field Type="Multiline" Hint="The NPCs in the room.">
-            <Title>NPCs</Title>
-            <Value>-1</Value>
-          </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/3</Value>
           </Field>
         </Fields>
       </Location>
@@ -2584,7 +2869,7 @@
           </Field>
           <Field Type="Text" Hint="A short description of what this location looks like.">
             <Title>Description</Title>
-            <Value>A staircase that connects to the second floor</Value>
+            <Value>The SGNFDNT</Value>
           </Field>
           <Field Type="Text" Hint="Top level classification of a story segment.">
             <Title>Act</Title>
@@ -2598,9 +2883,13 @@
             <Title>Scene</Title>
             <Value>6</Value>
           </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>1</Value>
+          </Field>
           <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
             <Title>Function</Title>
-            <Value>Connection of floors</Value>
+            <Value>Connection of floor 1 and floor 2</Value>
           </Field>
           <Field Type="Text" Hint="How does this location make you feel?">
             <Title>Mood</Title>
@@ -2608,19 +2897,119 @@
           </Field>
           <Field Type="Number" Hint="The identification of this location">
             <Title>LocationID</Title>
-            <Value>017</Value>
+            <Value>013</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>NPC:003</Value>
+            <Value />
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>-1</Value>
+            <Value>NPCID:003(000.00/000.00)</Value>
           </Field>
-          <Field Type="Text" Hint="The floor and the building where the location can be found">
-            <Title>Building/Floor</Title>
-            <Value>C/1</Value>
+        </Fields>
+      </Location>
+      <Location ID="4">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Staircase1</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>The regular staircase from the outside.</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>Demonstrates that the easy approach by using the staircase isn't possible.</Value>
+          </Field>
+          <Field Type="Text" Hint="How does this location make you feel?">
+            <Title>Mood</Title>
+            <Value />
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>014</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value />
+          </Field>
+          <Field Type="Multiline" Hint="The NPCs in the room.">
+            <Title>NPCs</Title>
+            <Value />
+          </Field>
+        </Fields>
+      </Location>
+      <Location ID="5">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this location.">
+            <Title>Name</Title>
+            <Value>Printerroom</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this location.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this location looks like.">
+            <Title>Description</Title>
+            <Value>A Room where the nice panorama can be enjoied</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>14</Value>
+          </Field>
+          <Field Type="Text" Hint="The floor the Room is located in.">
+            <Title>Floor</Title>
+            <Value>3</Value>
+          </Field>
+          <Field Type="Text" Hint="Why does this location exist? And what can be archieved here?">
+            <Title>Function</Title>
+            <Value>The player can enjoy the view</Value>
+          </Field>
+          <Field Type="Text" Hint="How does this location make you feel?">
+            <Title>Mood</Title>
+            <Value />
+          </Field>
+          <Field Type="Number" Hint="The identification of this location">
+            <Title>LocationID</Title>
+            <Value>015</Value>
+          </Field>
+          <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
+            <Title>GameObjectsIncluded</Title>
+            <Value>RoomObjectID:005(000.00/000.00) Bookself, RoomObjectID:006(000.00/000.00) Printer, RoomObjectID:007(000.00/000.00) Window</Value>
+          </Field>
+          <Field Type="Multiline" Hint="The NPCs in the room.">
+            <Title>NPCs</Title>
+            <Value />
           </Field>
         </Fields>
       </Location>
@@ -2630,7 +3019,7 @@
         <Fields>
           <Field Type="Text" Hint="The title of this conversation.">
             <Title>Title</Title>
-            <Value>New Conversation</Value>
+            <Value>Henry Monologue</Value>
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this conversation. The first is used as the background image.">
             <Title>Pictures</Title>
@@ -2638,7 +3027,7 @@
           </Field>
           <Field Type="Text" Hint="A short description of what happens in this conversation.">
             <Title>Description</Title>
-            <Value />
+            <Value>Henry Monologue</Value>
           </Field>
           <Field Type="Actor" Hint="The actor who is doing most of the talking, or initiates this conversation.">
             <Title>Actor</Title>
@@ -2646,7 +3035,175 @@
           </Field>
           <Field Type="Actor" Hint="The actor who is approached or is mostly talked to.">
             <Title>Conversant</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Top level classification of a story segment.">
+            <Title>Act</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Second level classification of a story segment.">
+            <Title>Chapter</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Third level classification of a story segment.">
+            <Title>Scene</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Text" Hint="Fourth level classification of a story segment.">
+            <Title>Level</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="How does this conversation generally make the actor's feel?">
+            <Title>Mood</Title>
+            <Value />
+          </Field>
+          <Field Type="Location" Hint="Location that this conversation takes place.">
+            <Title>Primary Location</Title>
             <Value>2</Value>
+          </Field>
+        </Fields>
+        <DialogEntries>
+          <DialogEntry ID="0" ConversationID="1" IsRoot="true" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>START</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Text" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of animation files that should be played during this dialogue.">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="1" DestinationConvoID="1" OriginDialogID="0" DestinationDialogID="1" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="1" ConversationID="1" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Was zum…? Was geht hier vor? So sieht „die beißen schon nicht“ aber nicht aus! Oder war sich gegenseitig davon ausgenommen…? Woher soll ich sowas denn wissen?
+Okay, Henry, du musst jetzt ganz ruhig bleiben… ganz ruhig und logisch. Was meinte Prof. Dr. Sonnenberg? Im Notfall oder wenn ich Fragen habe soll ich zu ihm kommen. Ich schätze das hier zählt als Beides.
+*holt Visitenkarte raus* 
+Dritter Stock also… Gut, dann auf geht’s.
+Verdammt, die Tür bewegt sich nicht!
+Es muss einen andern Weg geben.
+Am besten schaue ich mich ein wenig um…</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks />
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+        </DialogEntries>
+      </Conversation>
+      <Conversation ID="2" NodeColor="Red">
+        <Fields>
+          <Field Type="Text" Hint="The title of this conversation.">
+            <Title>Title</Title>
+            <Value>First Talk with Meier</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this conversation. The first is used as the background image.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what happens in this conversation.">
+            <Title>Description</Title>
+            <Value>The Meeting of Henry and Meier.</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor who is doing most of the talking, or initiates this conversation.">
+            <Title>Actor</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor who is approached or is mostly talked to.">
+            <Title>Conversant</Title>
+            <Value>3</Value>
           </Field>
           <Field Type="Text" Hint="Top level classification of a story segment.">
             <Title>Act</Title>
@@ -2674,7 +3231,7 @@
           </Field>
         </Fields>
         <DialogEntries>
-          <DialogEntry ID="0" ConversationID="1" IsRoot="true" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+          <DialogEntry ID="0" ConversationID="2" IsRoot="true" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
             <Fields>
               <Field Type="Text" Hint="The title of this dialogue.">
                 <Title>Title</Title>
@@ -2694,13 +3251,13 @@
               </Field>
               <Field Type="Actor" Hint="The actor who is listening.">
                 <Title>Conversant</Title>
-                <Value>2</Value>
+                <Value>3</Value>
               </Field>
               <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
                 <Title>Menu Text</Title>
                 <Value />
               </Field>
-              <Field Type="Text" Hint="The text that is spoken by the actor.">
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
                 <Title>Dialogue Text</Title>
                 <Value />
               </Field>
@@ -2716,9 +3273,1117 @@
                 <Title>Video File</Title>
                 <Value />
               </Field>
-              <Field Type="Files" Hint="A collection of animation files that should be played during this dialogue.">
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
                 <Title>Animation Files</Title>
                 <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="0" DestinationDialogID="1" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="1" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Da ist ja jemand! Eine ältere Frau… sie scheint mich noch nicht bemerkt zu haben. Vielleicht sollte ich sie ansprechen.</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="1" DestinationDialogID="2" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="2" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Hallo? Kann ich ihnen vielleicht irgendwie helfen?</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="2" DestinationDialogID="3" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="3" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Ehm, junger Mann? Was machen sie denn hier? Sollten sie nicht bei sich in der Vorlesung sein?</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="3" DestinationDialogID="4" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="4" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Ich arbeite seit heute hier. Aber irgendwie verhalten meine Studenten sich höchst merkwürdig. Ich wollte eigentlich in den dritten Stock, zu Prof. Dr. Sonnenberg, aber das Treppenhaus ist verschlossen.</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="4" DestinationDialogID="5" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="5" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Ah ja, verschlossen, merkwürdige Studenten… Jetzt fällt es mir wieder ein! Meine Studenten waren unnatürlich fixiert auf mich. Ich kann ihnen sagen, ich lehre schon seit Jahrzehnten BWL und ein solches Interesse ist mir noch nie untergekommen. Doch die Jugend von heute ist wirklich schlimm. Wissen Sie, damals..</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="5" DestinationDialogID="6" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="6" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Entschuldigen Sie die Unterbrechung, aber ich müsste wirklich dringend in den dritten Stock. Haben Sie eine Idee, ob es noch einen Weg gibt, außer dem Treppenhaus?</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="6" DestinationDialogID="7" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="7" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Natürlich. Der Fahrstuhl, aber ich traue dieser ganzen Technik nicht. Außerdem meine ich hat der Hausmeister sich heute erst beschwert dass das Ding wieder mal Defekt ist.
+Also bleibt wohl nur das SGNFDNT.</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="7" DestinationDialogID="8" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="8" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>SGNFDNT?</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="8" DestinationDialogID="9" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="9" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Also wirklich, hat man ihnen davon nichts erzählt? Das Super-geheime-nur-für-Dozenten-Notfall-Treppenhaus. Es ist mit einem Codeschloss gesichert, damit sich keine einfältigen Studenten hineinverirren.</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="9" DestinationDialogID="10" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="10" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Das Codeschloss hab ich gesehen! Aber niemand hat mir den Code verraten.</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="10" DestinationDialogID="11" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="11" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Ich würde ihnen ja gerne weiterhelfen, aber ich weiß nur noch die erste Zahl von den vier.</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="11" DestinationDialogID="12" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="12" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Wieso nur noch die erste? Haben sie sich den Code denn nirgends aufgeschrieben?</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="12" DestinationDialogID="13" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="13" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Oh doch. Mein Gedächtnis ist nicht mehr das Beste. Aber ich habe nur noch den Zettel mit der ersten Nummer. Hier ist er.</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="13" DestinationDialogID="14" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="14" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Aber warum haben Sie denn einzelne Zettel für jede Ziffer? Das ist nicht logisch.</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="14" DestinationDialogID="15" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="15" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Na aber wie das logisch ist. Es dient der Sicherheit! Sie wollen sich gar nicht ausmalen, was die Studenten tun würden, wenn Sie Zugang zum SGNFDNT hätten! Das wäre die Apokalypse!</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="15" DestinationDialogID="16" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="16" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>…
+Okay, vergessen wir das. Wo haben sie denn die anderen Zettel versteckt?</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="16" DestinationDialogID="17" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="17" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Ich meine es wäre noch einer in diesem Schreibtisch, aber das Fach ist verschlossen. Können Sie mir vielleicht etwas besorgen, womit ich es öffnen kann? Ich traue mich nicht aus diesem Raum...</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
+              </Field>
+            </Fields>
+            <OutgoingLinks>
+              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="17" DestinationDialogID="18" IsConnector="false" />
+            </OutgoingLinks>
+            <ConditionsString />
+            <UserScript />
+          </DialogEntry>
+          <DialogEntry ID="18" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
+            <Fields>
+              <Field Type="Text" Hint="The title of this dialogue.">
+                <Title>Title</Title>
+                <Value>New Dialogue</Value>
+              </Field>
+              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
+                <Title>Pictures</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
+                <Title>Description</Title>
+                <Value />
+              </Field>
+              <Field Type="Actor" Hint="The actor who is talking.">
+                <Title>Actor</Title>
+                <Value>1</Value>
+              </Field>
+              <Field Type="Actor" Hint="The actor who is listening.">
+                <Title>Conversant</Title>
+                <Value>3</Value>
+              </Field>
+              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
+                <Title>Menu Text</Title>
+                <Value />
+              </Field>
+              <Field Type="Localization" Hint="The text that is spoken by the actor.">
+                <Title>Dialogue Text</Title>
+                <Value>Aber natürlich. Ich bin so schnell zurück wie möglich.</Value>
+              </Field>
+              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
+                <Title>Parenthetical</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
+                <Title>Audio Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
+                <Title>Video File</Title>
+                <Value />
+              </Field>
+              <Field Type="Files" Hint="Associated files for lip sync">
+                <Title>Lipsync Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Files" Hint="Associated animation files">
+                <Title>Animation Files</Title>
+                <Value>[]</Value>
+              </Field>
+              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
+                <Title>Mood</Title>
+                <Value />
               </Field>
             </Fields>
             <OutgoingLinks />

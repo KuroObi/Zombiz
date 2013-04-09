@@ -46,7 +46,34 @@ public class Item extends AGameElement {
 	boolean isRoomObject; 
 	String condition;
 	
+	float itemLocX;
+	float itemLocY; 
 	
+	
+
+	public float getItemLocX() {
+		return itemLocX;
+	}
+
+
+
+	public void setItemLocX(float itemLocX) {
+		this.itemLocX = itemLocX;
+	}
+
+
+
+	public float getItemLocY() {
+		return itemLocY;
+	}
+
+
+
+	public void setItemLocY(float itemLocY) {
+		this.itemLocY = itemLocY;
+	}
+
+
 
 	public Item(int id) {
 		super(id); 

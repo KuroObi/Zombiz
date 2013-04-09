@@ -39,13 +39,17 @@ public class Sound implements Runnable {
 	private boolean repeate = false;
     AudioInputStream audio = null;
     private String ending = ".wav";
-
+    Clip clip;
+    
     public Sound(String nfilename){
 		try {
 			this.audio = AudioSystem.getAudioInputStream(new File("src\\main\\resources\\audio\\"+nfilename+ending));
+			clip = AudioSystem.getClip();
 		} catch (UnsupportedAudioFileException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (LineUnavailableException e) {
 			e.printStackTrace();
 		}
 	}
@@ -54,6 +58,7 @@ public class Sound implements Runnable {
 		this.repeate = nrep;
 		try {
 			this.audio = AudioSystem.getAudioInputStream(new File("src\\main\\resources\\audio\\"+nfilename+ending));
+
 		} catch (UnsupportedAudioFileException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -69,6 +74,9 @@ public class Sound implements Runnable {
 		playSound();
 	}	
 	
+	public void stop(){
+		
+	}
 	/**
 	 * 
 	 * @param filename the name of the file that is going to be played
@@ -76,12 +84,13 @@ public class Sound implements Runnable {
 	 */
 	public void playSound(){
 		 try {
+			 clip.open(audio);
 			 do{
 				 System.out.println("Yeaaaa!");
-				 Clip clip = AudioSystem.getClip();
-				 clip.open(audio);
+
 				 clip.start();
 			 }while(repeate);
+			 clip.stop();
 	        }
 	        catch(IOException ioe) {
 	            System.out.println(ioe);
@@ -89,5 +98,11 @@ public class Sound implements Runnable {
 	        catch(LineUnavailableException lua) {
 	            System.out.println(lua);
 	        }
+		 
 	}
+	
+	public void stopSound(){
+		clip.stop();
+	}
+	
 }	

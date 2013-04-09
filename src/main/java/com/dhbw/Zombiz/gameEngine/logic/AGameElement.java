@@ -39,7 +39,6 @@ public abstract class AGameElement {
 	
 
 	public AGameElement(int id) {
-		super();
 		this.id = id;
 	}
 

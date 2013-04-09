@@ -1,4 +1,4 @@
-package com.dhbw.Zombiz.gameEngine.logic;
+package com.dhbw.Zombiz.output.display;
 
 import java.awt.Frame;
 
