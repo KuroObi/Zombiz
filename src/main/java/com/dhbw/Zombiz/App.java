@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dhbw.Zombiz.gameEngine.logic.BuildRoom;
+import com.dhbw.Zombiz.gameEngine.logic.Inventory;
 import com.dhbw.Zombiz.gameEngine.logic.Item;
 import com.dhbw.Zombiz.gameEngine.logic.Actor;
 import com.dhbw.Zombiz.gameEngine.logic.Room;
@@ -51,29 +52,11 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println("We Are Zombizzzzzzzzzzzzz" );
-
-        //Audio Test
         
 
-       // Sound testSound = new Sound("test");
-       // testSound.playSound();
-
-       //Screen menu = new Screen();
-    
-       
+    	Inventory inventory = new Inventory();
         Screen frame = new Screen();
         
         
-        
-       
-
-        //Audio Test
-        /*
-        Thread t1 =   new Thread( new Audio("test") );
-        t1.  start();
-   		*/
-        
-        System.out.println("and NOT!");
     }
 }
