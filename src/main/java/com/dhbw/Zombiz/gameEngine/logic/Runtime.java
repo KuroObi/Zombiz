@@ -99,4 +99,31 @@ public class Runtime{
 			exc.printStackTrace();
 		}
 	}
+	
+	public static void addMetAcctor(Actor newmetAcctor){
+		metActors.add(newmetAcctor);
+	}
+	public static boolean metAcctor(Actor metAcctor){
+		return metActors.contains(metAcctor);
+	}
+	public static void addenterdRoom(Room newEnterdRoom){
+		enterdRooms.add(newEnterdRoom);
+		enterdRoomCounter++;
+	}
+	public static boolean enterdRoom(Room enterdRoom){
+		return enterdRooms.contains(enterdRoom);
+	}
+	public static void addEnterableRoom(Room newEnterableRoom){
+		enterableRooms.add(newEnterableRoom);		
+	}
+	public static void removeEnterableRomm(Room oldEntarableRoom){
+		if(enterableRooms.contains(oldEntarableRoom))
+			enterableRooms.remove(oldEntarableRoom);
+	}
+	public static boolean enterableRoom(Room enterableRoom){
+		return enterableRooms.contains(enterableRoom);
+	}
+	public static int getEnterdRoomCounter(){
+		return enterdRoomCounter;
+	}
 }
