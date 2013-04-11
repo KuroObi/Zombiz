@@ -36,73 +36,56 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  */
 public class Sound implements Runnable {
 	
-	private boolean repeate = false;
-    AudioInputStream audio = null;
+	private boolean repeate;
+    AudioInputStream audio;
     private String ending = ".wav";
+    private String path = "src\\main\\resources\\audio\\";
+    AudioInputStream audioInputStream;
     Clip clip;
     
-    public Sound(String nfilename){
+
+    
+    public Sound(String nfilename,boolean nrep){
 		try {
-			this.audio = AudioSystem.getAudioInputStream(new File("src\\main\\resources\\audio\\"+nfilename+ending));
 			clip = AudioSystem.getClip();
-		} catch (UnsupportedAudioFileException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+			audioInputStream = AudioSystem.getAudioInputStream(new File(path+nfilename+ending).getAbsoluteFile( ));
 		} catch (LineUnavailableException e) {
 			e.printStackTrace();
-		}
-	}
-    
-	public Sound(String nfilename,boolean nrep){
-		this.repeate = nrep;
-		try {
-			this.audio = AudioSystem.getAudioInputStream(new File("src\\main\\resources\\audio\\"+nfilename+ending));
-
 		} catch (UnsupportedAudioFileException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		this.repeate = nrep;
 	}
-	
+
 	public void setRepeate(boolean nrepeate){
 		this.repeate = nrepeate;
 	}
 	
 	public void run() {
-		playSound();
-	}	
-	
-	public void stop(){
-		
+		try{
+			Clip clip = AudioSystem.getClip( );
+			clip.open(audioInputStream); 
+			clip.start( );
+		}catch(Exception ex){
+			System.out.println("Error with playing sound.");
+			ex.printStackTrace( );
+		}
+		System.out.println("gooo");
 	}
-	/**
-	 * 
-	 * @param filename the name of the file that is going to be played
-	 *
-	 */
+	
 	public void playSound(){
-		 try {
-			 clip.open(audio);
-			 do{
-				 System.out.println("Yeaaaa!");
-
-				 clip.start();
-			 }while(repeate);
-			 clip.stop();
-	        }
-	        catch(IOException ioe) {
-	            System.out.println(ioe);
-	        }
-	        catch(LineUnavailableException lua) {
-	            System.out.println(lua);
-	        }
-		 
-	}
-	
-	public void stopSound(){
-		clip.stop();
-	}
-	
+		try{
+			Clip clip = AudioSystem.getClip( );
+			clip.open(audioInputStream); 
+			clip.start( );
+		}catch(Exception ex){
+			System.out.println("Error with playing sound.");
+			ex.printStackTrace( );
+		}
+		System.out.println("gooo");
+	}	
 }	

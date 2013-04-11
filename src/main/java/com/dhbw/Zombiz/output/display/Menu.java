@@ -1,9 +1,11 @@
 package com.dhbw.Zombiz.output.display;
 
+import java.applet.AudioClip;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
@@ -16,15 +18,98 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.dhbw.Zombiz.output.audio.Sound;
+
 public class Menu {
-	
-	public static void mainMenu(JFrame frame){
+
+	BufferedImage backgroundImage, startGameImage, LoadGameImage;
+	String path = "src\\main\\resources\\Picture\\Menue\\";
+	Sound sbackgroundSound = new Sound("test",true);
+	Thread tbackgroundSound;
+	public void mainMenu(JFrame frame){
+		tbackgroundSound = new Thread(sbackgroundSound,"backgroundSound");
+	    tbackgroundSound.start();
+		try {
+			backgroundImage = ImageIO.read(new File(path+"background.jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		BufferedImage backgroundImagetmp = backgroundImage;
+		JLabel label = new JLabel(new ImageIcon(backgroundImagetmp));
+		
+		drawButtons(frame);
+		
+		frame.add(label);
 		
 		System.out.println("Yea");
+	}
 		
-		BufferedImage backgroundImage, startGameImage, LoadGameImage;
-		String path = "src\\main\\resources\\Picture\\Menue\\";
+	public void drawButtons(JFrame frame){
+		BufferedImage inventoryBag = null;
+		BufferedImage btnNewGame,btnLoadGame,btnCredits,btnExit;
+		try {
+			btnNewGame = ImageIO.read(new File(path+"btnNewGame.png"));
+			btnLoadGame = ImageIO.read(new File(path+"btnLoadGame.png"));
+			btnCredits = ImageIO.read(new File(path+"btnCredits.png"));
+			btnExit = ImageIO.read(new File(path+"btnExit.png"));
+
+		backgroundImage.getGraphics().drawImage(btnNewGame, 25, 200, 200, 33, null);
+		JLabel labelNewGame = new JLabel();
+		labelNewGame.setBounds(25, 200, 200, 33);
+		labelNewGame.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent nc){
+				//tclick.interrupt();
+			}
+		});
 		
+		backgroundImage.getGraphics().drawImage(btnLoadGame, 25, 250, 200, 33, null);
+		JLabel labelLoadGame = new JLabel();
+		labelLoadGame.setBounds(50, 250, 200, 33);
+		labelLoadGame.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent lc) {
+				}
+					
+			});
+		
+		backgroundImage.getGraphics().drawImage(btnCredits, 25, 300, 200, 33, null);
+		JLabel labelCredits = new JLabel();
+		labelCredits.setBounds(25, 300, 200, 33);
+		labelCredits.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent cc) {
+				}
+					
+			});
+		
+		backgroundImage.getGraphics().drawImage(btnExit, 25, 350, 200, 33, null);
+		JLabel labelExitGame = new JLabel();
+		labelExitGame.setBounds(25, 350, 200, 33);
+		labelExitGame.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent ec) {
+				Toolkit.getDefaultToolkit().beep();
+				System.exit(0);
+				}
+					
+			});
+		
+		frame.add(labelNewGame);
+		frame.add(labelLoadGame);
+		frame.add(labelCredits);
+		frame.add(labelExitGame);
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		// special ItemID 
+	/*	addClickableFunction(700, 50, 80, 80, 999, frame, "inventory");
+	*/
+	}
+		
+	/*	
 		try {
 			backgroundImage = ImageIO.read(new File(path+"background.jpg"));
 			JLabel label = new JLabel(new ImageIcon(backgroundImage));		 
@@ -34,22 +119,41 @@ public class Menu {
 		}
 
 		 frame.setVisible(true);
-		 
-		 final JPanel controls = new JPanel(new GridBagLayout());
-		 controls.setOpaque(false);//JPanel durchsichtig machen
-		 GridBagConstraints c = new GridBagConstraints();
 
+		 final JPanel controls = new JPanel(new GridBagLayout());
+		 controls.setOpaque(true);									//JPanel durchsichtig machen
+		 GridBagConstraints c = new GridBagConstraints();
+		 
+		 JLabel label = new JLabel();
+			label.setBounds(30, 50, 200, 33);
+			label.addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent me) {
+					System.exit(0);						
+					}
+				});
+			frame.add(label);
+		 
+		 /*	BufferedImage foregroundImage = null;
+			try {
+				foregroundImage = ImageIO.read(new File(itemPicPath));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			backgroundImage.getGraphics().drawImage(foregroundImage,xCoord, yCoord, 40, 60, null);
+			
 		 try {
 			 startGameImage = ImageIO.read(new File(path+"btnNewGame.png"));	 
 			 ImageIcon ImageStartGame = new ImageIcon(startGameImage);
 			 JLabel btnStartNewGame = new JLabel();
 			 btnStartNewGame.setIcon(ImageStartGame);
-			 //btnStartNewGame.setPreferredSize(new Dimension(200, 33));
-			 btnStartNewGame.setOpaque(true);
+			 btnStartNewGame.setPreferredSize(new Dimension(200, 33));
+			 btnStartNewGame.setOpaque(false);
 
+			 c.fill = GridBagConstraints.HORIZONTAL;
 			 c.gridx = 0;
-			   c.gridy = 1;
-			 controls.add(btnStartNewGame,c ); 
+			 c.gridy = 0;
+			 controls.add(btnStartNewGame, c);
 			 btnStartNewGame.addMouseListener(new MouseAdapter(){
 				 public void mouseClicked(MouseEvent e){
 					 System.out.println("Starting Game NOW!");
@@ -91,13 +195,6 @@ public class Menu {
 		 -      btnExit.setPreferredSize(new Dimension(200, 33));
 		 -      btnExit.setOpaque(false); 
 		*/
-	
-	
-		 frame.setVisible(true);
-	
-	}
-
-	
 	
 	public static void closeGame(){
 		System.exit(0);
