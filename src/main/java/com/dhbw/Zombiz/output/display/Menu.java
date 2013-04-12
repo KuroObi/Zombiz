@@ -19,6 +19,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.dhbw.Zombiz.output.audio.Sound;
+import com.dhbw.Zombiz.gameEngine.logic.Runtime;
 
 public class Menu {
 
@@ -26,6 +27,8 @@ public class Menu {
 	String path = "src\\main\\resources\\Picture\\Menue\\";
 	Sound sbackgroundSound = new Sound("test",true);
 	Thread tbackgroundSound;
+	static boolean clicked = false;
+	
 	public void mainMenu(JFrame frame){
 		tbackgroundSound = new Thread(sbackgroundSound,"backgroundSound");
 	    tbackgroundSound.start();
@@ -41,8 +44,8 @@ public class Menu {
 		drawButtons(frame);
 		
 		frame.add(label);
-		
-		System.out.println("Yea");
+
+		return;
 	}
 		
 	public void drawButtons(JFrame frame){
@@ -60,6 +63,8 @@ public class Menu {
 		labelNewGame.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent nc){
+				Runtime.setFirstRoom(1);
+				clicked = true;
 				//tclick.interrupt();
 			}
 		});
@@ -70,9 +75,14 @@ public class Menu {
 		labelLoadGame.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent lc) {
+				if(Runtime.loadGame())
+					clicked = true;
+				else{
+					System.out.println("Unabel to load Savegame Window");
+					//TOD
 				}
-					
-			});
+			}			
+		});
 		
 		backgroundImage.getGraphics().drawImage(btnCredits, 25, 300, 200, 33, null);
 		JLabel labelCredits = new JLabel();

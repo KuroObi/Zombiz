@@ -39,7 +39,7 @@ public class Runtime{
 	private static List <Room> enterdRooms = null;
 	private static List <Room> enterableRooms = null;
 	private static int enterdRoomCounter = 0;
-	static int test = 42;
+	private static int firstRoom = 1;
 	
 	/** Construtor for a new Game
 	 * 
@@ -68,6 +68,8 @@ public class Runtime{
 			save.writeObject(enterdRooms);
 			save.writeObject(enterableRooms);
 			save.writeObject(enterdRoomCounter);
+			int getCurrentRoom = firstRoom; 			//Testing
+			save.writeObject(getCurrentRoom); //
 			
 			// Close the file.
 			save.close();
@@ -77,7 +79,7 @@ public class Runtime{
 		}
 	}
 
-	public static void loadGame(){
+	public static boolean loadGame(){
 	
 		try{
 			// Open file to read from, named SavedObj.sav.
@@ -91,13 +93,16 @@ public class Runtime{
 			enterdRooms = (List<Room>) save.readObject();
 			enterableRooms = (List<Room>) save.readObject();
 			enterdRoomCounter = (Integer) save.readObject();
-
+			firstRoom = (Integer) save.readObject();
+			
 			// Close the file.
 			save.close();
 		}catch(Exception exc){
 			System.out.println("Unable to load Savegame");
 			exc.printStackTrace();
+			return false;
 		}
+		return true;
 	}
 	
 	public static void addMetAcctor(Actor newmetAcctor){
@@ -125,5 +130,11 @@ public class Runtime{
 	}
 	public static int getEnterdRoomCounter(){
 		return enterdRoomCounter;
+	}
+	public static int getFirstRoom(){
+		return firstRoom;
+	}
+	public static void setFirstRoom(int nFirstRoom){
+		firstRoom = nFirstRoom; 
 	}
 }
