@@ -1,10 +1,25 @@
+/*******************************************************************************
+ * Copyright (c) 2013 DHBW.
+ * This source is subject to the DHBW Permissive License.
+ * Please see the License.txt file for more information.
+ * All other rights reserved.
+ * 
+ * THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY 
+ * KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+ * PARTICULAR PURPOSE.
+ * 
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ *Project: Zombiz
+ *Package: com.dhbw.zombiz.output.display
+ *
+ *Contributors:
+ * -Christoph Schabert
+ */
 package com.dhbw.Zombiz.output.display;
 
-import java.applet.AudioClip;
-import java.awt.Dimension;
 import java.awt.Frame;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -16,8 +31,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 import com.dhbw.Zombiz.output.audio.Sound;
 import com.dhbw.Zombiz.gameEngine.logic.Runtime;
 
@@ -35,21 +48,72 @@ public class Menu {
 		try {
 			backgroundImage = ImageIO.read(new File(path+"background.jpg"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 		BufferedImage backgroundImagetmp = backgroundImage;
 		JLabel label = new JLabel(new ImageIcon(backgroundImagetmp));
 		
-		drawButtons(frame);
+		drawButtonsMain(frame);
 		
 		frame.add(label);
 
 		return;
 	}
+	
+	public void pauseMenu(JFrame frame){
+		tbackgroundSound = new Thread(sbackgroundSound,"backgroundSound");
+	    tbackgroundSound.start();
+		try {
+			backgroundImage = ImageIO.read(new File(path+"background.jpg"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		BufferedImage backgroundImagetmp = backgroundImage;
+		JLabel label = new JLabel(new ImageIcon(backgroundImagetmp));
 		
-	public void drawButtons(JFrame frame){
-		BufferedImage inventoryBag = null;
+		drawButtonsPause(frame);
+		
+		frame.add(label);
+
+		return;
+	}	
+	
+	public void drawButtonsPause(Frame frame){
+		BufferedImage btnSaveGame,btnExit;
+		try {
+			btnSaveGame = ImageIO.read(new File(path+"btnLoadGame.png"));
+			btnExit = ImageIO.read(new File(path+"btnExit.png"));
+
+		backgroundImage.getGraphics().drawImage(btnSaveGame, 140, 180, 200, 33, null);
+		JLabel labelSaveGame = new JLabel();
+		labelSaveGame.setBounds(140, 180, 200, 33);
+		labelSaveGame.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent lc) {
+				Runtime.saveGame();
+			}			
+		});
+
+		backgroundImage.getGraphics().drawImage(btnExit, 140, 230, 200, 33, null);
+		JLabel labelExitGame = new JLabel();
+		labelExitGame.setBounds(140, 230, 200, 33);
+		labelExitGame.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent ec) {				
+				System.exit(0);
+				}
+					
+			});
+		
+		frame.add(labelSaveGame);
+		frame.add(labelExitGame);
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+	}
+	
+	public void drawButtonsMain(JFrame frame){
 		BufferedImage btnNewGame,btnLoadGame,btnCredits,btnExit;
 		try {
 			btnNewGame = ImageIO.read(new File(path+"btnNewGame.png"));

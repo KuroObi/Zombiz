@@ -16,17 +16,13 @@
  *
  *Contributors:
  * -Christoph Schabert
-
  */
 package com.dhbw.Zombiz.gameEngine.logic;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
 import java.util.List;
 
 public class Runtime{
@@ -88,10 +84,9 @@ public class Runtime{
 			// Create an ObjectInputStream to get objects from save file.
 			ObjectInputStream save = new ObjectInputStream(saveFile);
 		
-			// Load the Objects
 			metActors = (List<Actor>) save.readObject();
 			enterdRooms = (List<Room>) save.readObject();
-			enterableRooms = (List<Room>) save.readObject();
+			enterableRooms = (List<Room>) save.readObject();			
 			enterdRoomCounter = (Integer) save.readObject();
 			firstRoom = (Integer) save.readObject();
 			

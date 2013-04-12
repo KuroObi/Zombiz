@@ -16,41 +16,37 @@
  *
  *Contributors:
  * -Christoph Schabert
-
+ * - Jan Brodhäcker
  */
 package com.dhbw.Zombiz.output.display;
-
 
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import com.dhbw.Zombiz.gameEngine.logic.*;
+import com.dhbw.Zombiz.gameEngine.logic.Runtime;
 
-
-
-/**
- * TODO:
- * 
- */
 public class Screen {
 	final JFrame frame = new JFrame("Nightmare On Coblitzallee");
 	
-	
+	int firstRoom = -1; 
 	
 	public Screen(){
 		
 		frame.setSize(800,600);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		
-		// draw Mainmenue 
-	   
-		
-		BuildRoom room01 = new BuildRoom(8, frame); 
-		
-	    
-	
+		Menu menu = new Menu();
+		menu.pauseMenu(frame);
 		frame.setVisible(true);
-		
-		
+		while(Menu.clicked == false)
+			System.out.println("Wusaaaaa");
+		frame.setVisible(false);
+		frame.removeAll();
+		frame.revalidate();
+		frame.repaint();
+		BuildRoom room01 = new BuildRoom(Runtime.getFirstRoom()  , frame); 
+		frame.setVisible(true);
+		System.out.println("Worked!");
 	}
 	
 	
