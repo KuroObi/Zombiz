@@ -64,8 +64,8 @@ public class Runtime{
 			save.writeObject(enterdRooms);
 			save.writeObject(enterableRooms);
 			save.writeObject(enterdRoomCounter);
-			int getCurrentRoom = firstRoom; 			//Testing
-			save.writeObject(getCurrentRoom); //
+			int getCurrentRoom = firstRoom; 			
+			save.writeObject(getCurrentRoom);
 			
 			// Close the file.
 			save.close();
