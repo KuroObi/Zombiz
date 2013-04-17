@@ -666,7 +666,7 @@ public class BuildRoom {
 		}
 		else {
 			// Do somethin if it not works ...
-			System.out.println("You wanted to combine a "+roomObj.getName()+" with "+itemToCombine.getName());
+			System.out.println("You wanted to combine a "+roomObj.getName()+" what is only combined with "+itemToCombine.getId()+","+itemToCombine.getName());
 		}
 		 
 		
