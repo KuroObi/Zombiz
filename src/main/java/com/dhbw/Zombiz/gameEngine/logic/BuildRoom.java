@@ -455,6 +455,7 @@ public class BuildRoom {
 		JLabel label = setBackgroundImage(frame);
 		drawInventoryBag(frame);
 		drawObjects(frame, true);
+		drawRoomObjects(frame, true);
 		frame.add(label);
 		
 	
