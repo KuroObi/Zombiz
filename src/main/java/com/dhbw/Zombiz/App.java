@@ -92,7 +92,7 @@ public class App
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		
 		
-		Runtime r = new Runtime(frame);
+		Runtime r = new Runtime(true,frame);
 		
 
 		frame.setVisible(true);
