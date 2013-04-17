@@ -138,8 +138,26 @@ public class DialogOutput {
     	int speakerId = Integer.parseInt(de.get(cnt).getActor());
 		String speakerName = actors.get((speakerId)-1).getName();
 		String text = "";
-		text = speakerName+" : "+de.get(cnt).getDialogText();
 		
+		if(de.get(cnt).isGroup()){
+			text = "IST GRUPPE !!!";
+			
+			List<Integer> linkedDe = de.get(cnt).getLinkedDialogEntries();
+			for(int cnt2 = 0; cnt2 < linkedDe.size(); cnt2++){
+				System.out.println("---"+linkedDe.get(cnt2));
+			}
+			
+			
+			
+		}else {
+			List<Integer> linkedDe = de.get(cnt).getLinkedDialogEntries();
+			for(int cnt2 = 0; cnt2 < linkedDe.size(); cnt2++){
+				System.out.println("-+-"+linkedDe.get(cnt2));
+			}	
+			
+		text = speakerName+" : "+de.get(cnt).getDialogText()+" || Is Linked To : ";
+    	}
+    
 		dialog = new JTextArea();
 		
 		int dialogEntrySize = de.size();

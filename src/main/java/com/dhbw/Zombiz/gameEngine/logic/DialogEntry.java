@@ -28,7 +28,7 @@ public class DialogEntry {
 	String lipsyncFiles;
 	String animationFiles;
 	String mood; 
-	
+	int destinationDialogEntry;
 	
 	
 	public DialogEntry(int id){

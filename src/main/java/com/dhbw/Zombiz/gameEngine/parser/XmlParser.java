@@ -657,13 +657,14 @@ public  class XmlParser {
 					System.out.println("Animation Files : " + 			eElement.getElementsByTagName("Value").item(11).getTextContent());
 					System.out.println("Mood : " + 						eElement.getElementsByTagName("Value").item(12).getTextContent()); 
 					System.out.println("----------");
-					
+					}
 					
 					NodeList lList = eElement.getElementsByTagName("Link");
-					dialogEntry.setLinkedDialogEntries(getInformationAboutLinkedDialogs(lList));
+					dialogEntry.setLinkedDialogEntries(getInformationAboutLinkedDialogs(lList, false));
+					
 					
 					return dialogEntry;
-					}
+					
 			}
 			
 			if(Integer.toString(conversationId).equalsIgnoreCase(eElement.getAttribute("ConversationID"))
@@ -690,7 +691,7 @@ public  class XmlParser {
 				System.out.println("Conversant : " + 				eElement.getElementsByTagName("Value").item(4).getTextContent());
 				}
 				NodeList lList = eElement.getElementsByTagName("Link");
-				dialogEntry.setLinkedDialogEntries(getInformationAboutLinkedDialogs(lList));
+				dialogEntry.setLinkedDialogEntries(getInformationAboutLinkedDialogs(lList, true));
 				return dialogEntry;
 			}
 			
@@ -706,7 +707,7 @@ public  class XmlParser {
 	
 	
 	
-	private List<Integer> getInformationAboutLinkedDialogs(NodeList lList){
+	private List<Integer> getInformationAboutLinkedDialogs(NodeList lList, boolean isGroup){
 		List<Integer> listLinkedDialogEntries = new ArrayList<Integer>();
 		if(debugConsole){
 			System.out.println("");
@@ -714,11 +715,20 @@ public  class XmlParser {
 			System.out.println("Linked to the Dialogs :");
 			System.out.println("----------");
 		}
+		
+		
 		for (int linkCnt = 0; linkCnt < lList.getLength(); linkCnt++){
 			Node lNode = lList.item(linkCnt);
 			Element lElement = (Element) lNode;
 			
+			if(isGroup){
 			listLinkedDialogEntries.add(Integer.parseInt(lElement.getAttribute("DestinationDialogID")));
+		
+			}
+			if(!isGroup){
+				listLinkedDialogEntries.add(Integer.parseInt(lElement.getAttribute("DestinationDialogID")));
+
+				}
 			
 		if(debugConsole){
 			System.out.println("");

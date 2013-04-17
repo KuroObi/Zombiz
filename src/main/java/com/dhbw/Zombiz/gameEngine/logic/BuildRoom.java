@@ -368,7 +368,7 @@ public class BuildRoom {
 				}
 				
 				if(type.equalsIgnoreCase("actor")){
-					DialogOutput dout = new DialogOutput(frame, getParser().getConversationById(2), getBackgroundImage(), getParser().getListOfActors(), getRoomId());
+					DialogOutput dout = new DialogOutput(frame, getParser().getConversationById(12), getBackgroundImage(), getParser().getListOfActors(), getRoomId());
 				}
 				
 				if(type.equalsIgnoreCase("inventory:click")){
@@ -775,7 +775,8 @@ public class BuildRoom {
 		}
 		else {
 			// Do somethin if it not works ...
-			System.out.println("You wanted to combine a "+roomObj.getName()+" what is only combined with "+itemToCombine.getId()+","+itemToCombine.getName());
+			System.out.println("RoomObj:  "+roomObj.getName());
+			System.out.println("Item :"+item.getName()+" , "+item.getCombinesWith());
 		}
 		 
 		
