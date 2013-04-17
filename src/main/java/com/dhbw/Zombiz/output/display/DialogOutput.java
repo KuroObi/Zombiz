@@ -31,20 +31,21 @@ public class DialogOutput {
 	public static Conversation c;
 	public static JLabel label;
 	public static int rootRoomId;
-	
+
 	public static JFrame tempFrame;
-	
+
 	static JTextArea dialog;
 	static JLabel next;
 	static BufferedImage nextImage;
-	
-	
+
+
 	public void setDialogEntries(List<DialogEntry> dialogEntries){
 		this.de = dialogEntries;
 	}
 
-	public static List<DialogEntry> getDialogEntries(){
-		return de;
+
+	public List<DialogEntry> getDialogEntries(){
+		return this.de;
 	}
 
 
@@ -76,10 +77,10 @@ public class DialogOutput {
 	public static void setConversation(Conversation c) {
 		DialogOutput.c = c;
 	}
-	
-	
 
-	
+
+
+
 	public static int getRootRoomId() {
 		return rootRoomId;
 	}
@@ -92,24 +93,24 @@ public class DialogOutput {
 
 	//Constructor ! 
 	public DialogOutput(JFrame frame, Conversation c, BufferedImage backgroundImage, List<Actor> actors, int rootRoomId ){
-		
-		
-	
+
+
+
 
 		setRootRoomId(rootRoomId);
 		setConversation(c);
 		setBackgroundImage(backgroundImage);
 		setActors(actors);
 		setDialogEntries(c.getDialogEntries());
-		
-		getDialogText(frame, 0);
-	
-		
-	}
-	
-	
 
-	
+		getDialogText(frame, 0);
+
+
+	}
+
+
+
+
     public static void getDialogText(JFrame frame, int cnt){
     	BufferedImage backgroundImage = null;
     	BufferedImage dialogOverlay = null;
@@ -137,30 +138,14 @@ public class DialogOutput {
     	int speakerId = Integer.parseInt(de.get(cnt).getActor());
 		String speakerName = actors.get((speakerId)-1).getName();
 		String text = "";
-		
-		if(de.get(cnt).isGroup()){
-			text = " Is Group ...";
-			
-			List<Integer> linkedDe = de.get(cnt).getLinkedDialogEntries();
-			for(int cnt2 = 0; cnt2 < linkedDe.size(); cnt2++){
-				// ... do somethin ... if it is group ...
-			}
-			
-			
-			
-		}else {
-			
-			
-			text = speakerName+" : "+de.get(cnt).getDialogText();
-			
-			
-		
-    	}
-    
+		text = speakerName+" : "+de.get(cnt).getDialogText();
+
 		dialog = new JTextArea();
-		
+
 		int dialogEntrySize = de.size();
-		
+		System.out.println(dialogEntrySize);
+
+
 		dialog.setText(text);
 		dialog.setForeground(Color.WHITE);
 		dialog.setLineWrap(true);
@@ -172,7 +157,7 @@ public class DialogOutput {
     	dialog.setBorder(new EmptyBorder(10, 10, 10, 10) );
 		addClickableFunction(frame, 550, 550, 230, 30, dialogEntrySize);
 
-		
+
     	frame.add(dialog);
     	frame.add(nextImage);
     	frame.add(label);
@@ -188,49 +173,36 @@ public class DialogOutput {
 			next.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent me) {
-					
+
 					if(cnt < max-1){
-					
-					
-					int nextId = getDialogEntries().get(0).getLinkedDialogEntries().get(0);
-					
+
 						
-						
-					
-					
+
+
 					frame.getContentPane().removeAll();
+					
 					frame.repaint();
-					
-					getDialogText(frame, nextId);
-					
-					
-					 }
-					
-					
+
+					getDialogText(frame, cnt);
+					cnt = cnt+1;
+					System.out.println(cnt); }
+
+
 					if(cnt == max-1){
 						cnt = 0;
-						
+
 						BuildRoom br = new BuildRoom(getRootRoomId(), frame);
-						
-						
+
+						System.out.println("fertig");
 					}
-					
-					
+
+
 				}});
-			
-			
-			
-			
-			
+
+
+
+
+
 			frame.add(next);
 	    }
-	
-    
- 
-    
-    
-    
-    
-    
-    
 }
