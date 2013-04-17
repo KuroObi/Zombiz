@@ -26,6 +26,9 @@ public  class XmlParser {
 	List<Item>	listPickableItems = new ArrayList<Item>();
 	List<Room>	listRooms = new ArrayList<Room>(); 
 	
+	List<Conversation> listConversations = new ArrayList<Conversation>();
+	
+	
 	public  XmlParser(String filePath){
 		setXmlFilePath(filePath);
 	    openXmlFile();
@@ -34,6 +37,9 @@ public  class XmlParser {
 	    getAllActors();
 	    getAllItems();
 	    getAllRooms();
+	    
+	    getAllConversations();
+	    
 	    
 	}
 	
@@ -61,6 +67,20 @@ public  class XmlParser {
 		 return item;
 	 }
 	 
+	 
+	 public Conversation getConversationById(int conversationId){
+		 Conversation conv = null;
+		 for(int cnt = 0; cnt < this.listConversations.size(); cnt++){
+			 if(this.listConversations.get(cnt).getConversationId() == conversationId){
+				 conv = listConversations.get(cnt);
+			 }
+		 }
+		 return conv;
+	 	}
+	 
+	 public List<Conversation> getListAllConversations(){
+		 return this.listConversations;
+	 }
 	 
 	 
 	 
@@ -122,7 +142,6 @@ public  class XmlParser {
 		 return tmpListRoomItems;
 	 }
 	
-	 
 	 public List<Actor> getAllNpcsByRoomId(int roomId){
 		 Room room = getRoomById(roomId);
 		 String roomObjects = room.getNpcs();
@@ -162,6 +181,13 @@ public  class XmlParser {
 	 
 	 
 	
+	public List<Conversation> getListConversations() {
+		return listConversations;
+	}
+
+
+
+
 	public List<Actor> getListOfActors(){
 		return listActors;
 	}
@@ -365,6 +391,8 @@ public  class XmlParser {
 					}
 					else item.setRoomObject(false);
 				item.setCondition(eElement.getElementsByTagName("Value").item(12).getTextContent());
+				item.setAudioFile(eElement.getElementsByTagName("Value").item(13).getTextContent());
+				item.setLocationPointer(eElement.getElementsByTagName("Value").item(14).getTextContent());
 				
 				
 			
@@ -482,39 +510,60 @@ public  class XmlParser {
 	
 
 	
-/*	
-	public void getConversationById(int conversationId){
+
+	public void getAllConversations(){
 		Document doc = getXmlFile();
 		NodeList nList = doc.getElementsByTagName("Conversation");
 		
-		if(debugConsole){
-		System.out.println("Conversation : "+conversationId);
-		System.out.println("-------------------");
-		}
+		
 		
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			
+			
 			Node nNode = nList.item(temp);
 			Element eElement = (Element) nNode;
+			Conversation conv = new Conversation(Integer.parseInt(eElement.getAttribute("ID")));
 			
+			conv.setTitle(eElement.getElementsByTagName("Value").item(0).getTextContent());
+			conv.setPicPath(eElement.getElementsByTagName("Value").item(1).getTextContent());
+			conv.setDescription(eElement.getElementsByTagName("Value").item(2).getTextContent());
+			conv.setActor(eElement.getElementsByTagName("Value").item(3).getTextContent());
+			conv.setConversant(eElement.getElementsByTagName("Value").item(4).getTextContent());
+			conv.setAct(eElement.getElementsByTagName("Value").item(5).getTextContent());
+			conv.setChapter(eElement.getElementsByTagName("Value").item(6).getTextContent());
+			conv.setScene(eElement.getElementsByTagName("Value").item(7).getTextContent());
+			conv.setLevel(eElement.getElementsByTagName("Value").item(8).getTextContent());
+			conv.setMood(eElement.getElementsByTagName("Value").item(9).getTextContent());
+			conv.setPrimaryLoc(eElement.getElementsByTagName("Value").item(10).getTextContent());
 			
-			
-			if(Integer.toString(conversationId).equalsIgnoreCase(eElement.getAttribute("ID"))) {
+			if(debugConsole){
+				System.out.println("Conversation : "+eElement.getAttribute("ID"));
+				System.out.println("-------------------");
 				
-				if(debugConsole){
 				System.out.println("Title : " + 						eElement.getElementsByTagName("Value").item(0).getTextContent());
 				System.out.println("Pictures : " + 						eElement.getElementsByTagName("Value").item(1).getTextContent());
 				System.out.println("Description : " + 					eElement.getElementsByTagName("Value").item(2).getTextContent());
-				System.out.println("Actor : " + 						eElement.getElementsByTagName("Value").item(4).getTextContent());
-				System.out.println("Conversant : " + 					eElement.getElementsByTagName("Value").item(5).getTextContent());
-				System.out.println("Act : " + 							eElement.getElementsByTagName("Value").item(6).getTextContent());
-				System.out.println("Chapter : " + 						eElement.getElementsByTagName("Value").item(7).getTextContent());
-				System.out.println("Scene : " + 						eElement.getElementsByTagName("Value").item(8).getTextContent());
-				System.out.println("Level : " + 						eElement.getElementsByTagName("Value").item(9).getTextContent());
-				System.out.println("Mood : " + 							eElement.getElementsByTagName("Value").item(10).getTextContent());
-				System.out.println("Primary Location : " + 				eElement.getElementsByTagName("Value").item(11).getTextContent());
-				}
+				System.out.println("Actor : " + 						eElement.getElementsByTagName("Value").item(3).getTextContent());
+				System.out.println("Conversant : " + 					eElement.getElementsByTagName("Value").item(4).getTextContent());
+				System.out.println("Act : " + 							eElement.getElementsByTagName("Value").item(5).getTextContent());
+				System.out.println("Chapter : " + 						eElement.getElementsByTagName("Value").item(6).getTextContent());
+				System.out.println("Scene : " + 						eElement.getElementsByTagName("Value").item(7).getTextContent());
+				System.out.println("Level : " + 						eElement.getElementsByTagName("Value").item(8).getTextContent());
+				System.out.println("Mood : " + 							eElement.getElementsByTagName("Value").item(9).getTextContent());
+				System.out.println("Primary Location : " + 				eElement.getElementsByTagName("Value").item(10).getTextContent());
 			}
+		
+			List<Integer> dialogEntries = getAllDialogEntryIdByConversationId(Integer.parseInt(eElement.getAttribute("ID")));
+			
+			
+
+			for(int cnt = 1; cnt < dialogEntries.size(); cnt++){
+				conv.addDialogEntry(getDialogEntryById(dialogEntries.get(cnt),Integer.parseInt(eElement.getAttribute("ID"))));
+			}
+		
+			
+			listConversations.add(conv);
+		
 		}
 		
 		
@@ -522,8 +571,8 @@ public  class XmlParser {
 		
 	}
 
-	public void getAllDialogEntryIdByConversationId(int conversationId){
-		
+	public List<Integer> getAllDialogEntryIdByConversationId(int conversationId){
+		List<Integer> dialogEntries = new ArrayList<Integer>();
 		Document doc = getXmlFile();
 		NodeList nList = doc.getElementsByTagName("DialogEntry");
 		
@@ -540,17 +589,21 @@ public  class XmlParser {
 			
 			
 			if(Integer.toString(conversationId).equalsIgnoreCase(eElement.getAttribute("ConversationID"))) {
-				System.out.println("DialogEntry :"+eElement.getAttribute("ID"));
+			   dialogEntries.add(Integer.parseInt(eElement.getAttribute("ID")));
 			}
 		
 		}
+		
+		return dialogEntries;
 	}
 
-	public void getDialogEntryById (int dialogEntryId, int conversationId, char option){
+	public DialogEntry getDialogEntryById (int dialogEntryId, int conversationId){
+		
+
 		Document doc = getXmlFile();
 		NodeList nList = doc.getElementsByTagName("DialogEntry");
 		
-		
+		DialogEntry dialogEntry = null;
 		if(debugConsole){
 		System.out.println("DialogEntry : "+dialogEntryId+", in Conversation "+conversationId);
 		System.out.println("-------------------");
@@ -562,13 +615,33 @@ public  class XmlParser {
 			Element eElement = (Element) nNode;
 			
 			
+			
+			
+			
 			if(Integer.toString(conversationId).equalsIgnoreCase(eElement.getAttribute("ConversationID"))
 				&& Integer.toString(dialogEntryId).equalsIgnoreCase(eElement.getAttribute("ID"))
 				&& eElement.getAttribute("IsGroup").equalsIgnoreCase("false")
 				){
 				
 				
-				if(option == 'a' | option =='A'){
+					dialogEntry = new DialogEntry(Integer.parseInt(eElement.getAttribute("ID")));
+					dialogEntry.setGroup(false);	
+					
+					dialogEntry.setTitle(eElement.getElementsByTagName("Value").item(0).getTextContent());
+					dialogEntry.setPictures(eElement.getElementsByTagName("Value").item(1).getTextContent());
+					dialogEntry.setDescription(eElement.getElementsByTagName("Value").item(2).getTextContent());
+					dialogEntry.setActor(eElement.getElementsByTagName("Value").item(3).getTextContent());
+					dialogEntry.setConversant(eElement.getElementsByTagName("Value").item(4).getTextContent());
+					dialogEntry.setMenuTest(eElement.getElementsByTagName("Value").item(5).getTextContent());
+					dialogEntry.setDialogText(eElement.getElementsByTagName("Value").item(6).getTextContent());
+					dialogEntry.setParenthical(eElement.getElementsByTagName("Value").item(7).getTextContent());
+					dialogEntry.setAudioFiles(eElement.getElementsByTagName("Value").item(8).getTextContent());
+					dialogEntry.setVideoFiles(eElement.getElementsByTagName("Value").item(9).getTextContent());
+					dialogEntry.setLipsyncFiles(eElement.getElementsByTagName("Value").item(10).getTextContent());
+					dialogEntry.setAnimationFiles(eElement.getElementsByTagName("Value").item(11).getTextContent());
+					dialogEntry.setMood(eElement.getElementsByTagName("Value").item(12).getTextContent());
+					
+				
 					if(debugConsole){
 					System.out.println("Title : " + 					eElement.getElementsByTagName("Value").item(0).getTextContent());
 					System.out.println("Pictures : " + 					eElement.getElementsByTagName("Value").item(1).getTextContent());
@@ -584,24 +657,12 @@ public  class XmlParser {
 					System.out.println("Animation Files : " + 			eElement.getElementsByTagName("Value").item(11).getTextContent());
 					System.out.println("Mood : " + 						eElement.getElementsByTagName("Value").item(12).getTextContent()); 
 					System.out.println("----------");
-					}
+					
 					
 					NodeList lList = eElement.getElementsByTagName("Link");
-					getInformationAboutLinkedDialogs(lList);
-				}
-				
-				
-				if(option =='d' | option == 'D'){
-					if(debugConsole){
-					System.out.println("Dialog Text : " + 				eElement.getElementsByTagName("Value").item(6).getTextContent());
-					}
-					NodeList lList = eElement.getElementsByTagName("Link");
-					getInformationAboutLinkedDialogs(lList);
-				}
-				
-				if(!(option == 'd' || option == 'a' || option =='A' || option=='D'))
-					if(debugConsole){
-					System.out.println("Please enter a valid option, when you call the function 'getDialogEntryById()' !");
+					dialogEntry.setLinkedDialogEntries(getInformationAboutLinkedDialogs(lList));
+					
+					return dialogEntry;
 					}
 			}
 			
@@ -609,6 +670,17 @@ public  class XmlParser {
 					&& Integer.toString(dialogEntryId).equalsIgnoreCase(eElement.getAttribute("ID"))
 					&& eElement.getAttribute("IsGroup").equalsIgnoreCase("true")
 					){
+				
+				dialogEntry = new DialogEntry(Integer.parseInt(eElement.getAttribute("ID")));
+
+				dialogEntry.setGroup(true);
+				dialogEntry.setTitle(eElement.getElementsByTagName("Value").item(0).getTextContent());
+				dialogEntry.setPictures(eElement.getElementsByTagName("Value").item(1).getTextContent());
+				dialogEntry.setDescription(eElement.getElementsByTagName("Value").item(2).getTextContent());
+				dialogEntry.setActor(eElement.getElementsByTagName("Value").item(3).getTextContent());
+				dialogEntry.setConversant(eElement.getElementsByTagName("Value").item(4).getTextContent());
+				
+				
 				if(debugConsole){
 				System.out.println("IS GROUP !");
 				System.out.println("Title : " + 					eElement.getElementsByTagName("Value").item(0).getTextContent());
@@ -618,15 +690,24 @@ public  class XmlParser {
 				System.out.println("Conversant : " + 				eElement.getElementsByTagName("Value").item(4).getTextContent());
 				}
 				NodeList lList = eElement.getElementsByTagName("Link");
-				getInformationAboutLinkedDialogs(lList);
+				dialogEntry.setLinkedDialogEntries(getInformationAboutLinkedDialogs(lList));
+				return dialogEntry;
 			}
 			
 			
 		}
+		
+		return dialogEntry;
+		
 	}
 	
 	
-	private void getInformationAboutLinkedDialogs(NodeList lList){
+	
+	
+	
+	
+	private List<Integer> getInformationAboutLinkedDialogs(NodeList lList){
+		List<Integer> listLinkedDialogEntries = new ArrayList<Integer>();
 		if(debugConsole){
 			System.out.println("");
 			System.out.println("----------");
@@ -637,6 +718,8 @@ public  class XmlParser {
 			Node lNode = lList.item(linkCnt);
 			Element lElement = (Element) lNode;
 			
+			listLinkedDialogEntries.add(Integer.parseInt(lElement.getAttribute("DestinationDialogID")));
+			
 		if(debugConsole){
 			System.out.println("");
 			System.out.println("OriginConvoID: "+lElement.getAttribute("OriginConvoID"));
@@ -646,12 +729,36 @@ public  class XmlParser {
 			System.out.println("IsConnector: "+lElement.getAttribute("IsConnector"));
 			System.out.println("");
 			System.out.println("----------");
+			
 		}
 		}
+		
+		return listLinkedDialogEntries;
 	}
 	
 	
-	*/
+	public void getAllDialogEntriesByConversationID(int conversationId){
+		Document doc = getXmlFile();
+		NodeList nList = doc.getElementsByTagName("DialogEntry");
+		List<Integer> dialogEntryIds = new ArrayList<Integer>(); 
+		
+		
+		for (int temp = 0; temp < nList.getLength(); temp++) {
+			
+			Node nNode = nList.item(temp);
+			Element eElement = (Element) nNode;
+			
+			if(Integer.toString(conversationId).equalsIgnoreCase(eElement.getAttribute("ConversationID"))){
+				dialogEntryIds.add(Integer.parseInt(eElement.getAttribute("ID")));
+				System.out.println("ID"+eElement.getAttribute("ID"));
+			}
+					
+			
+		}
+		
+	}
+	
+	
 	
 	
 

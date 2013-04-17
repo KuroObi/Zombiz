@@ -5,6 +5,8 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -12,22 +14,32 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import com.dhbw.Zombiz.gameEngine.logic.Runtime;
 
 import com.dhbw.Zombiz.gameEngine.parser.XmlParser;
+import com.dhbw.Zombiz.output.display.DialogOutput;
 
 public class BuildRoom {
 
 	List <Item> items;
 	List <Item> roomObjects;
 	List <Actor> actors; 
-	BufferedImage backgroundImage ; 
+	static BufferedImage backgroundImage ; 
 	String roomImagePath; 
 	Room room; 
 	JFrame frame; 
+	static XmlParser parser;
+	int roomId;
 	
 	
 	
 	
+	public int getRoomId() {
+		return roomId;
+	}
+	public void setRoomId(int roomId) {
+		this.roomId = roomId;
+	}
 	public String getRoomImagePath() {
 		return roomImagePath;
 	}
@@ -53,6 +65,8 @@ public class BuildRoom {
 		this.backgroundImage = backgroundImage;
 	}
 	
+
+	
 	public List<Item> getItems() {
 		return items;
 	}
@@ -71,40 +85,100 @@ public class BuildRoom {
 	public void setActors(List<Actor> actors) {
 		this.actors = actors;
 	}
+	
+	public void setParser(XmlParser p){
+		this.parser = p;
+	}
+	
+	public static XmlParser getParser(){
+		return parser;
+	}
+	
+	
+	
+	
+	
 	public BuildRoom(int roomId, JFrame frame){
 		XmlParser p = new XmlParser("src/main/resources/XML/chapter1.xml");
 		
+		setRoomId(roomId);
+		setParser(p);
 		setRoom(p.getRoomById(roomId));
+		
 		setItems(p.getAllItemsByRoomId(roomId));
 		setRoomObjects(p.getAllRoomObjectsByRoomId(roomId));
+		
+		if(!Runtime.getInventory().isEmpty()){
+		
+			validateItemsInRoom();
+			
+		}
+		
+		
 		setActors(p.getAllNpcsByRoomId(roomId));
 		setRoomImagePath(trimmPicPath(room.getPicturePath()));
 		
+		
+		
+		
+		deleteFrame(frame);
+		frame.repaint();
+		
+		
 		setFrame(frame);
-		
-		
-		
-		
 		// setBackground Image
+		
 		JLabel label = setBackgroundImage(frame);
 		drawInventoryBag(frame);
-		drawObjects(frame); 
-		
+		drawActors(frame);
+		drawObjects(frame, true); 
+		drawRoomObjects(frame, true);
 	
 		frame.add(label);
 	}
 	
+	public void drawActors(JFrame frame){
+		List<Actor> actors = getActors();
+		
+		for(int cnt = 0; cnt < actors.size(); cnt++){
+			Actor actor = actors.get(cnt);
+			addClickableFunction((int)actor.getNpcLocX(), (int)actor.getNpcLocY(), 100, 300, actor.getId(), frame, "actor");
+			
+		}
+		
+		
+	}
 	
-	public void drawObjects(JFrame frame){
+	
+	
+	public void validateItemsInRoom(){
+		List<Item> inventory = Runtime.getInventory();
+		List<Item> items = getItems();
+		
+		for(int cnt = 0; cnt < getItems().size(); cnt++){
+			for(int count = 0; count < inventory.size(); count++){
+				if(getItems().get(cnt).getId() == inventory.get(count).getId()){
+					int id = getItemIDById(items, getItems().get(cnt).getId());
+					items.remove(id);
+					}
+				}
+			}
+			setItems(items);
+		}
+	
+	public void drawObjects(JFrame frame, boolean addClickableFct){
 		List <Item> itemsInDrawFunction = getItems();
 		
 		for(int cntItemPic = 0; cntItemPic < itemsInDrawFunction.size(); cntItemPic++){
-			String itemPicPath = trimmPicPath(itemsInDrawFunction.get(cntItemPic).getPicturePath());
-			float xLoc = itemsInDrawFunction.get(cntItemPic).getItemLocX();
-			float yLoc = itemsInDrawFunction.get(cntItemPic).getItemLocY();
 			
-			int xCoord = myRandom(1,800);
-			int yCoord = myRandom(1,600);
+			
+			
+			String itemPicPath = trimmPicPath(itemsInDrawFunction.get(cntItemPic).getPicturePath());
+			float xLoc = itemsInDrawFunction.get(cntItemPic).getItemLocY();
+			float yLoc = itemsInDrawFunction.get(cntItemPic).getItemLocX();
+			
+			
+			
 			BufferedImage foregroundImage = null;
 			try {
 				foregroundImage = ImageIO.read(new File(itemPicPath));
@@ -112,10 +186,42 @@ public class BuildRoom {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			backgroundImage.getGraphics().drawImage(foregroundImage,xCoord, yCoord, 40, 60, null);
-			addClickableFunction(xCoord, yCoord, 40, 60,itemsInDrawFunction.get(cntItemPic).getId(), frame, "item");
+			backgroundImage.getGraphics().drawImage(foregroundImage,(int)yLoc, (int)xLoc, null);
+			if(addClickableFct){
+			addClickableFunction((int)yLoc, (int)xLoc,foregroundImage.getWidth(), foregroundImage.getHeight(), itemsInDrawFunction.get(cntItemPic).getId(), frame, "item");
+			}
+			
 		}
 	}
+	
+	public void drawRoomObjects(JFrame frame, boolean addClickableFct){
+		List<Item> roomObjectsInDrawFunction = getRoomObjects();
+		
+		for(int cntItemPic = 0; cntItemPic < roomObjectsInDrawFunction.size(); cntItemPic++){
+			String itemPicPath = trimmPicPath(roomObjectsInDrawFunction.get(cntItemPic).getPicturePath());
+			float xLoc = roomObjectsInDrawFunction.get(cntItemPic).getItemLocY();
+			float yLoc = roomObjectsInDrawFunction.get(cntItemPic).getItemLocX();
+			
+		
+
+			
+			BufferedImage foregroundImage = null;
+			try {
+				foregroundImage = ImageIO.read(new File(itemPicPath));
+				
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			backgroundImage.getGraphics().drawImage(foregroundImage,(int)yLoc, (int)xLoc, null);
+			if(addClickableFct){
+			addClickableFunction((int)yLoc, (int)xLoc,foregroundImage.getWidth(), foregroundImage.getHeight(), roomObjectsInDrawFunction.get(cntItemPic).getId(), frame, "roomObjects");
+			}
+		}
+	}
+	
+	
 	
 	
 	
@@ -134,27 +240,84 @@ public class BuildRoom {
 		
 	}	
 
+	
+	
+	
+	
 	public void addClickableFunction(final int xLoc, final int yLoc, int width, int height, final int itemId, final JFrame frame, final String type){
 		JLabel label = new JLabel();
 		label.setBounds(xLoc, yLoc, width, height);
 		label.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent me) {
-				if(type.equalsIgnoreCase("inventory"))
-					//System.out.println("You pressed the Inventory");
+				if(type.equalsIgnoreCase("inventory")){
+					System.out.println("You pressed the Inventory");
+					drawInventory(frame);
+					frame.repaint();
+				}
+				if(type.equalsIgnoreCase("inventory:close")){
+					System.out.println("You closed the inventory !!!");
+					refreshFrame(frame);
+				}
 				if(type.equalsIgnoreCase("item")){
 					System.out.println("You pressed Item "+itemId);
-					//drawItemMenue(frame, xLoc, yLoc, itemId); }
-				if(type.equalsIgnoreCase("roomObject"))
-					//System.out.println("You pressed Item "+itemId);
-				if(type.equalsIgnoreCase("actor"))
-					//System.out.println("You pressed Item "+itemId);
-				if(type.equalsIgnoreCase("pickup:itemmenue")){
-					deleteItem(frame, itemId);
-					
+					drawItemMenue(frame, xLoc, yLoc, itemId, 'i'); }
+				if(type.equalsIgnoreCase("roomObjects")){
+					System.out.println("You pressed RoomObject "+itemId);
+					drawItemMenue(frame, xLoc, yLoc, itemId, 'r'); 
 				}
+				
+				if(type.equalsIgnoreCase("actor"))
+					System.out.println("You pressed Item "+itemId);
+				
+				
+				
+				if(type.equalsIgnoreCase("leaveRoom")){
+					System.out.println("You want to leave ... ? :(");
+					deleteFrame(frame);
 					
-			}}});
+					
+					Runtime.nextRoom(getRoom().getId(), frame);
+			
+					
+					}
+				if(type.equalsIgnoreCase("inGameMenue")){
+					System.out.println("InGameMenue");
+					}
+				
+				
+				//Options for Items
+				if(type.equalsIgnoreCase("pickup:itemmenue")){
+					Runtime.addItemToInventory(getItemById(getItems(), itemId));
+					deleteItem(frame, itemId);
+					}
+				if(type.equalsIgnoreCase("inspect:itemmenue")){
+					System.out.println("inspect item ...");
+					}
+				if(type.equalsIgnoreCase("leave:item")){
+					refreshFrame(frame);
+					}
+				
+				//Options for RoomObjects
+				if(type.equalsIgnoreCase("use:RoomObjMenue")){
+					Item item = getRoomObjectById(itemId);
+					String aimLoc = item.getLocationPointer();
+					aimLoc = aimLoc.substring(11, 14);
+					int aimLocId = Integer.parseInt(aimLoc);
+					System.out.println(aimLocId);
+					
+					BuildRoom br = new BuildRoom(aimLocId, frame);
+					}
+				
+				if(type.equalsIgnoreCase("actor")){
+					DialogOutput dout = new DialogOutput(frame, getParser().getConversationById(2), getBackgroundImage(), getParser().getListOfActors(), getRoomId());
+				}
+				
+				
+				 
+				
+					
+			}});
 		frame.add(label);
 	}
 	
@@ -174,38 +337,76 @@ public class BuildRoom {
 		
 	}
 	
-	public void drawInventoryBag(JFrame frame){
-		BufferedImage inventoryBag = null;
-		try {
-			inventoryBag = ImageIO.read(new File("src/main/resources/Picture/Inventory/inventory.png"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		backgroundImage.getGraphics().drawImage(inventoryBag, 700, 50, 80, 80, null);
-		// special ItemID 
-		addClickableFunction(700, 50, 80, 80, 999, frame, "inventory");
-	}
-	
-	public void drawItemMenue(JFrame frame, int xLoc, int yLoc, int itemId){
+
+	//TO DO :  Validate x,y Coordinates, so ItemMenue wont be drawn out of screen !!! 
+	/*if(yLoc < 40) yLoc = yLoc+40; 
+		else yLoc = yLoc-40; */
+	public void drawItemMenue(JFrame frame, int xLoc, int yLoc, int itemId, char option){
+		
+		
+		if(option == 'i'){
 		BufferedImage btnTakeItem = null;
+		BufferedImage btnLeaveItem = null;
+		BufferedImage btnInspectItem = null;
 		try {
 			btnTakeItem = ImageIO.read(new File("src/main/resources/Picture/Menue/Itemmenue/btnTakeItem.png"));
+			btnLeaveItem = ImageIO.read(new File("src/main/resources/Picture/Menue/Itemmenue/btnLeaveItem.png"));
+			btnInspectItem = ImageIO.read(new File("src/main/resources/Picture/Menue/Itemmenue/btnInspectItem.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 		
-		//TO DO :  Validate x,y Coordinates, so ItemMenue wont be drawn out of screen !!! 
-		/*if(yLoc < 40) yLoc = yLoc+40; 
-			else yLoc = yLoc-40; */
-		backgroundImage.getGraphics().drawImage(btnTakeItem, xLoc-60, yLoc-40, 200, 30, null);
-		addClickableFunction(xLoc-60, yLoc-60, 200, 30, itemId, frame, "pickup:itemmenue");
+		
+		backgroundImage.getGraphics().drawImage(btnTakeItem, xLoc-60, yLoc-40, 180, 30, null);
+		addClickableFunction(xLoc-60, yLoc-40, 180, 30, itemId, frame, "pickup:itemmenue");
+		
+		backgroundImage.getGraphics().drawImage(btnLeaveItem, xLoc-60, yLoc+40, 180, 30, null);
+		addClickableFunction(xLoc-60, yLoc+40, 180, 30, itemId, frame, "leave:item");
+		
+		backgroundImage.getGraphics().drawImage(btnInspectItem, xLoc+80, yLoc, 180, 30, null);
+		//addClickableFunction(xLoc+80, yLoc, 180, 30, itemId, frame, "pickup:itemmenue");
 		frame.repaint();
+		}
+		
+		if(option == 'r'){
+			BufferedImage btnUseRoomObj = null;
+			BufferedImage btnInspectRoomObj = null;
+			BufferedImage btnNothingRoomObj = null;
+			try {
+				btnUseRoomObj = ImageIO.read(new File("src/main/resources/Picture/Menue/Itemmenue/btnUseRoomObj.png"));
+				btnInspectRoomObj = ImageIO.read(new File("src/main/resources/Picture/Menue/Itemmenue/btnInspectRoomObj.png"));
+				btnNothingRoomObj = ImageIO.read(new File("src/main/resources/Picture/Menue/Itemmenue/btnNothingRoomObj.png"));
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			
+			//Liste fŸr RoomObjects, bei denen der MenŸPunkt : Benutzen erscheinen soll !
+			
+			if(!(itemId == 1 || itemId == 2 ||itemId == 3 || (itemId >= 15 && itemId <= 32))){
+				backgroundImage.getGraphics().drawImage(btnInspectRoomObj, xLoc+30, yLoc, 180, 30, null);
+				//addClickableFunction(xLoc+30, yLoc, 180, 30, itemId, frame, "");
+			}
+			
+			backgroundImage.getGraphics().drawImage(btnUseRoomObj, xLoc-60, yLoc-40, 180, 30, null);
+			addClickableFunction(xLoc-60, yLoc-60, 180, 30, itemId, frame, "use:RoomObjMenue");
+			
+
+			
+			backgroundImage.getGraphics().drawImage(btnNothingRoomObj, xLoc+30, yLoc+30, 180, 30, null);
+			addClickableFunction(xLoc+30, yLoc+30, 180, 30, itemId, frame, "leave:item");
+			
+			
+			frame.repaint();
+		}
+		
+		
 	}
 	
 
-	public void deleteFrame(JFrame frame){
+	public static void deleteFrame(JFrame frame){
 		JPanel contentPane = (JPanel) frame.getContentPane();
 		contentPane.removeAll();
 		contentPane.revalidate();
@@ -214,7 +415,7 @@ public class BuildRoom {
 	}
 	
 	
-	public int getItemById(List<Item> items, int id){
+	public int getItemIDById(List<Item> items, int id){
 		int cnt = 0;
 		for(cnt = 0; cnt < items.size(); cnt++){
 			int itemId = items.get(cnt).getId();
@@ -226,26 +427,166 @@ public class BuildRoom {
 		return cnt;
 	}
 	
+	public Item getItemById(List<Item> items, int id){
+		Item item = null;
+		for(int cnt = 0; cnt < items.size(); cnt++){
+			int itemId = items.get(cnt).getId();
+			if(itemId == id){
+				
+				return items.get(cnt);
+			}
+			
+		}
+		return item;
+	}
+	
 	
 	
 	public void deleteItem(JFrame frame, int notToDrawItemId){
 		deleteFrame(frame);
 		List<Item> items = getItems();
 		
-		int removeId = getItemById(items, notToDrawItemId);
+		int removeId = getItemIDById(items, notToDrawItemId);
 		items.remove(removeId);
 		setItems(items);
 		
-		System.out.println("Items size"+items.size());
+
 		
 		JLabel label = setBackgroundImage(frame);
 		drawInventoryBag(frame);
-		drawObjects(frame);
+		drawObjects(frame, true);
 		frame.add(label);
 		
 	
 	}
 	
+	
+	
+	public void drawInventoryBag(JFrame frame){
+		int roomId = this.room.getId(); 
+
+		
+		// if room is floor draw another HUD
+		if(!(roomId == 1 || roomId == 3 || roomId == 14 || roomId == 13 || roomId == 16 )){
+			BufferedImage inventoryBag = null;
+			try {
+				inventoryBag = ImageIO.read(new File("src/main/resources/Picture/hud.png"));
+			} catch (IOException e) {
+			// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	 
+			backgroundImage.getGraphics().drawImage(inventoryBag,0,0, 800, 590, null);
+			// special ItemID 
+			addClickableFunction(670, 0, 130, 115, 999, frame, "inventory");
+			addClickableFunction(710, 510, 90, 90, 999, frame, "leaveRoom");
+			addClickableFunction(0, 0, 100, 90, 999, frame, "inGameMenue");
+		}
+		else {
+			BufferedImage inventoryBag = null;
+			try {
+				inventoryBag = ImageIO.read(new File("src/main/resources/Picture/hudFloor.png"));
+			} catch (IOException e) {
+			// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	 
+			backgroundImage.getGraphics().drawImage(inventoryBag,0,0, 800, 590, null);
+			// special ItemID 
+			addClickableFunction(670, 0, 130, 115, 999, frame, "inventory");
+			addClickableFunction(0, 0, 100, 90, 999, frame, "inGameMenue");
+		}
+
+		
+	}
+	
+	public void drawInventory(JFrame frame){
+		deleteFrame(frame);
+		JLabel label = setBackgroundImage(frame);
+		
+		drawObjects(frame, false);
+		
+
+		
+		
+		BufferedImage inventoryBackground = null;
+		BufferedImage btnCloseInventory = null;
+		try {
+			inventoryBackground = ImageIO.read(new File("src/main/resources/Picture/Inventory/inventoryBackground.png"));
+			btnCloseInventory = ImageIO.read(new File("src/main/resources/Picture/Inventory/btnCloseInventory.png"));
+
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}		
+		
+
+		backgroundImage.getGraphics().drawImage(inventoryBackground , 90, 80 , 600, 400, null);
+		backgroundImage.getGraphics().drawImage(btnCloseInventory , 630, 85 , 50, 50, null);
+		addClickableFunction(630, 85, 50, 50, 999, frame, "inventory:close");
+		List<Item> inventory = Runtime.getInventory();
+			
+		
+		
+		
+		
+			int xLoc = 110;
+			int yLoc = 165;
+		for(int cntItemPic = 0; cntItemPic < inventory.size(); cntItemPic++){
+			
+			String itemPicPath = trimmPicPath(inventory.get(cntItemPic).getPicturePath());
+			itemPicPath = itemPicPath.replace(".png", "");
+			itemPicPath = itemPicPath+"_inventory.png";
+			
+			
+			BufferedImage foregroundImage = null;
+			try {
+				foregroundImage = ImageIO.read(new File(itemPicPath));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			backgroundImage.getGraphics().drawImage(foregroundImage, xLoc , yLoc, null);
+			xLoc = xLoc+120;
+			if(cntItemPic > 6){
+				xLoc = 110;
+				yLoc = yLoc+103;
+			}
+			if(cntItemPic > 11){
+				xLoc = 110;
+				yLoc = yLoc+103;
+			}
+			
+			//addClickableFunction(xCoord, yCoord, 40, 60,itemsInDrawFunction.get(cntItemPic).getId(), frame, "item");
+			
+		}
+		frame.add(label);
+		frame.repaint();
+	}
+	
+	public void refreshFrame(JFrame frame){
+		deleteFrame(frame);
+		JLabel label = setBackgroundImage(frame);
+		drawInventoryBag(frame);
+		drawObjects(frame, true);
+		drawRoomObjects(frame, true);
+		frame.add(label);
+		frame.repaint();
+	}
+	
+	
+	public Item getRoomObjectById(int id){
+		Item item = null; 
+		
+		for(int cnt = 0; cnt < getRoomObjects().size(); cnt++){
+			if(getRoomObjects().get(cnt).getId() == id){
+				item = getRoomObjects().get(cnt);
+			}
+		}
+		
+		
+		return item;
+	}
+	
+
 	
 	
 }

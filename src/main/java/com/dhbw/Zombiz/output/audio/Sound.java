@@ -30,93 +30,79 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 
 
-
-/**
-    The Sound class is a container for sound samples. The sound
-    samples are format-agnostic and are stored as a byte array.
-*/
-public class Sound {
-
-    private byte[] samples;
-
-    /**
-        Create a new Sound object with the specified byte array.
-        The array is not copied.
-    */
-    public Sound(byte[] samples) {
-        this.samples = samples;
-    }
-
-
-    /**
-        Returns this Sound's objects samples as a byte array.
-    */
-    public byte[] getSamples() {
-        return samples;
-    }
-
-}
-
-
-
 /**
  * @author Christoph Schabert
  * @version 1.0
  */
-/*
 public class Sound implements Runnable {
 	
-	private boolean repeate;
-    AudioInputStream audio;
+	private boolean repeate = false;
+    AudioInputStream audio = null;
     private String ending = ".wav";
-    private String path = "src\\main\\resources\\audio\\";
-    AudioInputStream audioInputStream;
     Clip clip;
     
-
-    
-    public Sound(String nfilename,boolean nrep){
+    public Sound(String nfilename){
 		try {
+			this.audio = AudioSystem.getAudioInputStream(new File("src\\main\\resources\\audio\\"+nfilename+ending));
 			clip = AudioSystem.getClip();
-			audioInputStream = AudioSystem.getAudioInputStream(new File(path+nfilename+ending).getAbsoluteFile( ));
-		} catch (LineUnavailableException e) {
-			e.printStackTrace();
 		} catch (UnsupportedAudioFileException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (LineUnavailableException e) {
 			e.printStackTrace();
 		}
-		this.repeate = nrep;
 	}
+    
+	public Sound(String nfilename,boolean nrep){
+		this.repeate = nrep;
+		try {
+			this.audio = AudioSystem.getAudioInputStream(new File("src\\main\\resources\\audio\\"+nfilename+ending));
 
+		} catch (UnsupportedAudioFileException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void setRepeate(boolean nrepeate){
 		this.repeate = nrepeate;
 	}
 	
 	public void run() {
-		try{
-			Clip clip = AudioSystem.getClip( );
-			clip.open(audioInputStream); 
-			clip.start( );
-		}catch(Exception ex){
-			System.out.println("Error with playing sound.");
-			ex.printStackTrace( );
-		}
-		System.out.println("gooo");
+		playSound();
+	}	
+	
+	public void stop(){
+		
+	}
+	/**
+	 * 
+	 * @param filename the name of the file that is going to be played
+	 *
+	 */
+	public void playSound(){
+		 try {
+			 clip.open(audio);
+			 do{
+				 System.out.println("Yeaaaa!");
+
+				 clip.start();
+			 }while(repeate);
+			 clip.stop();
+	        }
+	        catch(IOException ioe) {
+	            System.out.println(ioe);
+	        }
+	        catch(LineUnavailableException lua) {
+	            System.out.println(lua);
+	        }
+		 
 	}
 	
-	public void playSound(){
-		try{
-			Clip clip = AudioSystem.getClip( );
-			clip.open(audioInputStream); 
-			clip.start( );
-		}catch(Exception ex){
-			System.out.println("Error with playing sound.");
-			ex.printStackTrace( );
-		}
-		System.out.println("gooo");
-	}	
+	public void stopSound(){
+		clip.stop();
+	}
+	
 }	
-*/

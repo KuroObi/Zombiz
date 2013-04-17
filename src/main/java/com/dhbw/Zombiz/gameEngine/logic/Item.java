@@ -45,11 +45,39 @@ public class Item extends AGameElement {
 	boolean isUseable;
 	boolean isRoomObject; 
 	String condition;
+	String locationPointer;
+	String audioFile;
 	
 	float itemLocX;
 	float itemLocY; 
 	
 	
+	
+	
+
+	public String getAudioFile() {
+		return audioFile;
+	}
+
+
+
+	public void setAudioFile(String audioFile) {
+		this.audioFile = audioFile;
+	}
+
+
+
+	public String getLocationPointer() {
+		return locationPointer;
+	}
+
+
+
+	public void setLocationPointer(String locationPointer) {
+		this.locationPointer = locationPointer;
+	}
+
+
 
 	public float getItemLocX() {
 		return itemLocX;
