@@ -52,6 +52,8 @@ public class Runtime{
 	private static int enterdRoomCounter = 0;			//Counter of how many Rooms have been entered
 	private static List <Item> inventory = new ArrayList<Item>();	//List of Items the play have
 	
+	public static int currRoomId = 7 ;
+	
 	/** Constructor for a new Game
 	 * 
 	 * @param newGame 1 for a new game; 0 for load game
@@ -93,8 +95,7 @@ public class Runtime{
 	 */
 	public static void saveGame(){
 		
-	//	int currentRoom = getCurrentRoom(); //TODO: finde method
-		int currentRoom = 001; //Dummy
+	
 		
 		try{
 			FileOutputStream saveFile=new FileOutputStream(savegame);
@@ -106,7 +107,7 @@ public class Runtime{
 			save.writeObject(enterableRooms);
 			save.writeObject(enterdRoomCounter);
 			save.writeObject(inventory);
-			save.writeObject(currentRoom);
+			save.writeObject(currRoomId);
 			// Close the file.
 			save.close();
 		}catch(Exception exc){
@@ -257,4 +258,15 @@ public class Runtime{
 	public static void setInventory(List<Item> inventory) {
 		Runtime.inventory = inventory;
 	}
+
+	public static int getCurrRoomId() {
+		return currRoomId;
+	}
+
+	public static void setCurrRoomId(int currRoomId) {
+		Runtime.currRoomId = currRoomId;
+	}
+	
+	
+	
 }

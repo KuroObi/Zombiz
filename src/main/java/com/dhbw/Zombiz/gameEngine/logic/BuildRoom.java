@@ -99,9 +99,13 @@ public class BuildRoom {
 	
 	
 	public BuildRoom(int roomId, JFrame frame){
+		
+		
+		
 		XmlParser p = new XmlParser("src/main/resources/XML/chapter1.xml");
 		
 		setRoomId(roomId);
+		Runtime.setCurrRoomId(roomId);
 		setParser(p);
 		setRoom(p.getRoomById(roomId));
 		
@@ -308,6 +312,11 @@ public class BuildRoom {
 					
 					BuildRoom br = new BuildRoom(aimLocId, frame);
 					}
+				if(type.equalsIgnoreCase("item:RoomObjMenue")){
+				
+				Item roomObj = getRoomObjectById(itemId);
+				itemAndRoomObjInteraction(roomObj);
+				}
 				
 				if(type.equalsIgnoreCase("actor")){
 					DialogOutput dout = new DialogOutput(frame, getParser().getConversationById(2), getBackgroundImage(), getParser().getListOfActors(), getRoomId());
@@ -373,11 +382,13 @@ public class BuildRoom {
 			BufferedImage btnUseRoomObj = null;
 			BufferedImage btnInspectRoomObj = null;
 			BufferedImage btnNothingRoomObj = null;
+			BufferedImage btnUseItemOnRoomObj = null;
 			try {
 				btnUseRoomObj = ImageIO.read(new File("src/main/resources/Picture/Menue/Itemmenue/btnUseRoomObj.png"));
 				btnInspectRoomObj = ImageIO.read(new File("src/main/resources/Picture/Menue/Itemmenue/btnInspectRoomObj.png"));
 				btnNothingRoomObj = ImageIO.read(new File("src/main/resources/Picture/Menue/Itemmenue/btnNothingRoomObj.png"));
-
+				btnUseItemOnRoomObj = ImageIO.read(new File("src/main/resources/Picture/Menue/Itemmenue/btnUseItemOnRoomObj.png"));
+				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -386,17 +397,19 @@ public class BuildRoom {
 			//Liste fŸr RoomObjects, bei denen der MenŸPunkt : Benutzen erscheinen soll !
 			
 			if(!(itemId == 1 || itemId == 2 ||itemId == 3 || (itemId >= 15 && itemId <= 32))){
-				backgroundImage.getGraphics().drawImage(btnInspectRoomObj, xLoc+30, yLoc, 180, 30, null);
-				//addClickableFunction(xLoc+30, yLoc, 180, 30, itemId, frame, "");
+			backgroundImage.getGraphics().drawImage(btnInspectRoomObj, xLoc+30, yLoc, 180, 30, null);
+			//addClickableFunction(xLoc+30, yLoc, 180, 30, itemId, frame, "");
 			}
 			
 			backgroundImage.getGraphics().drawImage(btnUseRoomObj, xLoc-60, yLoc-40, 180, 30, null);
 			addClickableFunction(xLoc-60, yLoc-60, 180, 30, itemId, frame, "use:RoomObjMenue");
 			
-
-			
 			backgroundImage.getGraphics().drawImage(btnNothingRoomObj, xLoc+30, yLoc+30, 180, 30, null);
 			addClickableFunction(xLoc+30, yLoc+30, 180, 30, itemId, frame, "leave:item");
+			
+			backgroundImage.getGraphics().drawImage(btnUseItemOnRoomObj, xLoc-170, yLoc+30, 180, 30, null);
+			addClickableFunction(xLoc-170, yLoc+30, 180, 30, itemId, frame, "item:RoomObjMenue");
+			
 			
 			
 			frame.repaint();
@@ -534,8 +547,8 @@ public class BuildRoom {
 		for(int cntItemPic = 0; cntItemPic < inventory.size(); cntItemPic++){
 			
 			String itemPicPath = trimmPicPath(inventory.get(cntItemPic).getPicturePath());
-			itemPicPath = itemPicPath.replace(".png", "");
-			itemPicPath = itemPicPath+"_inventory.png";
+			//itemPicPath = itemPicPath.replace(".png", "");
+			//itemPicPath = itemPicPath+"_inventory.png";
 			
 			
 			BufferedImage foregroundImage = null;
@@ -587,7 +600,13 @@ public class BuildRoom {
 		return item;
 	}
 	
-
+	public void itemAndRoomObjInteraction(Item roomObj){
+		drawInventory(frame);
+		
+		
+	}
+	
+	
 	
 	
 }
