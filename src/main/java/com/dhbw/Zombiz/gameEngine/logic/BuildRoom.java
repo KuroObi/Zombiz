@@ -31,9 +31,23 @@ public class BuildRoom {
 	static XmlParser parser;
 	int roomId;
 	
+	Item roomObj;
+	boolean wantToCombineRoomObjWithItem;
 	
 	
 	
+	public boolean isWantToCombineRoomObjWithItem() {
+		return wantToCombineRoomObjWithItem;
+	}
+	public void setWantToCombineRoomObjWithItem(boolean wantToCombineRoomObjWithItem) {
+		this.wantToCombineRoomObjWithItem = wantToCombineRoomObjWithItem;
+	}
+	public Item getRoomObj() {
+		return roomObj;
+	}
+	public void setRoomObj(Item roomObj) {
+		this.roomObj = roomObj;
+	}
 	public int getRoomId() {
 		return roomId;
 	}
@@ -315,11 +329,21 @@ public class BuildRoom {
 				if(type.equalsIgnoreCase("item:RoomObjMenue")){
 				
 				Item roomObj = getRoomObjectById(itemId);
-				itemAndRoomObjInteraction(roomObj);
+				setRoomObj(roomObj);
+				drawInventory(frame);
+				setWantToCombineRoomObjWithItem(true);
 				}
 				
 				if(type.equalsIgnoreCase("actor")){
 					DialogOutput dout = new DialogOutput(frame, getParser().getConversationById(2), getBackgroundImage(), getParser().getListOfActors(), getRoomId());
+				}
+				
+				if(type.equalsIgnoreCase("inventory:click")){
+					Item itemInInventory = getItemById(Runtime.getInventory(), itemId);
+					
+					if(isWantToCombineRoomObjWithItem()){
+					itemAndRoomObjInteraction(itemInInventory);
+					}
 				}
 				
 				
@@ -454,6 +478,18 @@ public class BuildRoom {
 	}
 	
 	
+	public Item getItemFromInventoryById(int id){
+		Item item = null;
+		List<Item> inventory = Runtime.getInventory();
+		
+		for(int cnt = 0; cnt < inventory.size() ; cnt++){
+			if(id == inventory.get(cnt).getId()){
+				item = inventory.get(cnt);
+			}
+		}
+		return item;
+	}
+	
 	
 	public void deleteItem(JFrame frame, int notToDrawItemId){
 		deleteFrame(frame);
@@ -517,6 +553,7 @@ public class BuildRoom {
 		JLabel label = setBackgroundImage(frame);
 		
 		drawObjects(frame, false);
+		drawRoomObjects(frame, false);
 		
 
 		
@@ -544,6 +581,10 @@ public class BuildRoom {
 		
 			int xLoc = 110;
 			int yLoc = 165;
+			
+			int xLocClick = 110;
+			int yLocClick = 154;
+			
 		for(int cntItemPic = 0; cntItemPic < inventory.size(); cntItemPic++){
 			
 			String itemPicPath = trimmPicPath(inventory.get(cntItemPic).getPicturePath());
@@ -559,17 +600,27 @@ public class BuildRoom {
 				e.printStackTrace();
 			}
 			backgroundImage.getGraphics().drawImage(foregroundImage, xLoc , yLoc, null);
+			
+			addClickableFunction(xLocClick, yLocClick, 90, 84, inventory.get(cntItemPic).getId(), frame, "inventory:click");
+			
 			xLoc = xLoc+120;
+			xLocClick = xLocClick+120;
 			if(cntItemPic > 6){
 				xLoc = 110;
+				xLocClick = 110;
+				
 				yLoc = yLoc+103;
+				yLocClick = yLocClick+103;
 			}
 			if(cntItemPic > 11){
 				xLoc = 110;
+				xLocClick = 110;
+				
 				yLoc = yLoc+103;
+				yLocClick = yLocClick+103;
 			}
 			
-			//addClickableFunction(xCoord, yCoord, 40, 60,itemsInDrawFunction.get(cntItemPic).getId(), frame, "item");
+			
 			
 		}
 		frame.add(label);
@@ -600,8 +651,24 @@ public class BuildRoom {
 		return item;
 	}
 	
-	public void itemAndRoomObjInteraction(Item roomObj){
-		drawInventory(frame);
+	public void itemAndRoomObjInteraction(Item item){
+		Item roomObj = getRoomObj(); 
+		Item itemToCombine 	= item;
+		
+		System.out.println("Item "+itemToCombine.getName());
+		
+		
+		
+		if(Integer.parseInt(itemToCombine.getCombinesWith()) == roomObj.getId()){
+			
+			// Do somethin if works ... 
+			System.out.println("is ready to combine ...");
+		}
+		else {
+			// Do somethin if it not works ...
+			System.out.println("You wanted to combine a "+roomObj.getName()+" with "+itemToCombine.getName());
+		}
+		 
 		
 		
 	}
