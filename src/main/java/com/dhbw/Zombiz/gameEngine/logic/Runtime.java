@@ -70,27 +70,16 @@ public class Runtime{
 		}
 	}
 	
-	/**	 TODO: what the hell happends here
-	 * 
-	 * @param id
-	 * @param frame the gameFrame
-	 */
-	public static void nextRoom(int id, JFrame frame){
-		
-		if(id == 5 || id == 7){
-			BuildRoom br = new BuildRoom(1, frame);
-		}
-		if(id == 8 || id == 6){
-			BuildRoom br = new BuildRoom(16, frame);
-		}
-		if(id == 9 || id == 10){
-			BuildRoom br = new BuildRoom(2, frame);
-		}
-		if(id == 11 || id == 12){
-			BuildRoom br = new BuildRoom(17, frame);
-		}
-	}
 	
+        /**
+         * @param id    The Id of the room that has to be displayed next
+         * @param frame A frame object so that the room will be displayed
+         * @deprecated 
+         */
+        public static void changeRoom (int id, JFrame frame){
+            BuildRoom br = new BuildRoom(id, frame);
+        }
+        
 	/**saves all Runtime Variables and
 	 * the current Room the player is in into the savefile
 	 * 
