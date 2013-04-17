@@ -2693,7 +2693,7 @@
           </Field>
           <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
-            <Value>2</Value>
+            <Value>6</Value>
           </Field>
           <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
@@ -2737,7 +2737,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value>LocationID:006</Value>
+            <Value>LocationID:008</Value>
           </Field>
         </Fields>
       </Item>
@@ -2821,7 +2821,7 @@
           </Field>
           <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
-            <Value>2</Value>
+            <Value>6</Value>
           </Field>
           <Field Type="Location" Hint="The second appearance of the item.">
             <Title>Secondary Location</Title>
@@ -2865,7 +2865,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value>LocationID:008</Value>
+            <Value>LocationID:006</Value>
           </Field>
         </Fields>
       </Item>
@@ -4187,7 +4187,7 @@
           </Field>
           <Field Type="Text" Hint="A short description of what this location looks like.">
             <Title>Description</Title>
-            <Value>The lecturing room you enter first. Contains Prof. Meier.</Value>
+            <Value>The lecturing room with beamer.</Value>
           </Field>
           <Field Type="Text" Hint="Top level classification of a story segment.">
             <Title>Act</Title>

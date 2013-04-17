@@ -76,10 +76,10 @@ public class Runtime{
 	
 	public static void nextRoom(int id, JFrame frame){
 		
-		if(id == 5 || id == 6){
+		if(id == 5 || id == 7){
 			BuildRoom br = new BuildRoom(1, frame);
 		}
-		if(id == 7 || id == 8){
+		if(id == 8 || id == 6){
 			BuildRoom br = new BuildRoom(16, frame);
 		}
 		if(id == 9 || id == 10){
