@@ -326,11 +326,8 @@ public class BuildRoom {
 				if(type.equalsIgnoreCase("leaveRoom")){
 					System.out.println("You want to leave ... ? :(");
 					deleteFrame(frame);
-					
-					
-					Runtime.nextRoom(getRoom().getId(), frame);
-			
-					
+					//Runtime.changeRoom(getRoom().getLocationPointer(), frame);
+                                        BuildRoom br = new BuildRoom(getRoom().getLocationPointer(), frame);
 					}
 				if(type.equalsIgnoreCase("inGameMenue")){
 					System.out.println("InGameMenue");
@@ -356,7 +353,6 @@ public class BuildRoom {
 					aimLoc = aimLoc.substring(11, 14);
 					int aimLocId = Integer.parseInt(aimLoc);
 					System.out.println(aimLocId);
-					
 					BuildRoom br = new BuildRoom(aimLocId, frame);
 					}
 				if(type.equalsIgnoreCase("item:RoomObjMenue")){
