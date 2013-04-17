@@ -1,5 +1,8 @@
 package com.dhbw.Zombiz.gameEngine.logic;
 
+import java.awt.BasicStroke;
+import java.awt.Graphics2D;
+import java.awt.Stroke;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
@@ -31,11 +34,39 @@ public class BuildRoom {
 	static XmlParser parser;
 	int roomId;
 	
+
+	int itemsFocussedInInventory = 0; 
+	Item firstFocussedItem; 
+	Item secondFocussedItem;
+	
+	
+	
+	static int  cnt = 0;
+	
 	Item roomObj;
 	boolean wantToCombineRoomObjWithItem;
 	
 	
 	
+	
+	public int getItemsFocussedInInventory() {
+		return itemsFocussedInInventory;
+	}
+	public void setItemsFocussedInInventory(int itemsFocussedInInventory) {
+		this.itemsFocussedInInventory = itemsFocussedInInventory;
+	}
+	public Item getFirstFocussedItem() {
+		return firstFocussedItem;
+	}
+	public void setFirstFocussedItem(Item firstFocussedItem) {
+		this.firstFocussedItem = firstFocussedItem;
+	}
+	public Item getSecondFocussedItem() {
+		return secondFocussedItem;
+	}
+	public void setSecondFocussedItem(Item secondFocussedItem) {
+		this.secondFocussedItem = secondFocussedItem;
+	}
 	public boolean isWantToCombineRoomObjWithItem() {
 		return wantToCombineRoomObjWithItem;
 	}
@@ -265,6 +296,7 @@ public class BuildRoom {
 	public void addClickableFunction(final int xLoc, final int yLoc, int width, int height, final int itemId, final JFrame frame, final String type){
 		JLabel label = new JLabel();
 		label.setBounds(xLoc, yLoc, width, height);
+	
 		label.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent me) {
@@ -276,6 +308,7 @@ public class BuildRoom {
 				if(type.equalsIgnoreCase("inventory:close")){
 					System.out.println("You closed the inventory !!!");
 					refreshFrame(frame);
+					setItemsFocussedInInventory(0);
 				}
 				if(type.equalsIgnoreCase("item")){
 					System.out.println("You pressed Item "+itemId);
@@ -339,14 +372,22 @@ public class BuildRoom {
 				}
 				
 				if(type.equalsIgnoreCase("inventory:click")){
-					Item itemInInventory = getItemById(Runtime.getInventory(), itemId);
 					
+					Item itemInInventory = null; 
+					Item nextItem = null;
+					itemInInventory= getItemById(Runtime.getInventory(), itemId);
 					if(isWantToCombineRoomObjWithItem()){
-					itemAndRoomObjInteraction(itemInInventory);
-					}
+							itemAndRoomObjInteraction(itemInInventory);
+						}
+					
+					focusItemInInventory(frame, itemInInventory);
+					
+					
+					
+					
 				}
 				
-				
+			
 				 
 				
 					
@@ -548,6 +589,74 @@ public class BuildRoom {
 		
 	}
 	
+	public void focusItemInInventory(JFrame frame, Item item){
+		
+		
+		itemsFocussedInInventory++;
+		List<Item> inventory = Runtime.getInventory();
+		int itemId = item.getId();
+		int pos = 0;
+		
+		
+		
+		System.out.println("Items focussed = "+itemsFocussedInInventory);
+		
+		
+		for(int cnt = 0; cnt < inventory.size(); cnt++){
+			if(itemId == inventory.get(cnt).getId()){
+				pos = cnt;
+				System.out.println("cnt "+cnt);
+			}
+		}
+		
+		
+		
+
+		System.out.println("Pos "+pos );
+		if(pos == 0){
+		frame.getContentPane().getGraphics().drawRect(110, 154, 90, 84);
+		}
+		if(pos > 0 && pos <= 5) {
+			frame.getContentPane().getGraphics().drawRect(110+(pos*120), 154, 90, 84);
+		}
+		if (pos >= 5 && pos <= 10){
+			frame.getContentPane().getGraphics().drawRect(110+(pos*120), 257, 90, 84);
+		}
+		if (cnt >= 10 && cnt <= 15){
+			frame.getContentPane().getGraphics().drawRect(110+(cnt*120), 257+103, 90, 84);
+		}
+		
+		
+		if(itemsFocussedInInventory == 1){
+			setFirstFocussedItem(item);
+		}
+		if(itemsFocussedInInventory == 2){
+			setSecondFocussedItem(item);
+			checkIfItemsCombineable();
+		}
+		
+		
+		
+	}
+	
+	private void checkIfItemsCombineable() {
+		Item firstItem = getFirstFocussedItem();
+		Item secondItem = getSecondFocussedItem();
+		
+		setFirstFocussedItem(null);
+		setSecondFocussedItem(null);
+		
+		setItemsFocussedInInventory(0);
+		
+		if(Integer.parseInt(firstItem.getCombinesWith()) == secondItem.getId() ||firstItem.getId() == Integer.parseInt(secondItem.getCombinesWith())){
+			System.out.println("fit");
+		}
+		else {
+			System.out.println("doesn+t");
+		}
+		
+		
+	}
 	public void drawInventory(JFrame frame){
 		deleteFrame(frame);
 		JLabel label = setBackgroundImage(frame);
@@ -670,6 +779,16 @@ public class BuildRoom {
 		}
 		 
 		
+		
+	}
+	
+	public void checkIfCombineable(Item item1, Item item2){
+		if(Integer.parseInt(item1.getCombinesWith()) == item2.getId() || Integer.parseInt(item2.getCombinesWith()) == item1.getId()){
+			System.out.println("You can combine !!!");
+		}
+		else {
+			System.out.println("Item 1 :"+item1.getName()+" is not combineable with "+item2.getName());
+		}
 		
 	}
 	

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ChatMapperProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Title="Games" Version="1.3.0.0" Author="" EmphasisColor1="#E7955B" EmphasisStyle1="b--" EmphasisColor1Label="" EmphasisColor2="#44B634" EmphasisStyle2="b--" EmphasisColor2Label="" EmphasisColor3="#4688E6" EmphasisStyle3="b--" EmphasisColor3Label="" EmphasisColor4="#CCCCCC" EmphasisStyle4="b--" EmphasisColor4Label="">
   <Description>Project configured for game development.</Description>
   <Assets>
@@ -4780,7 +4780,7 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:015(548.00/153.00) Door 1, RoomObjectID:017(224.00/199.00) Door 3, RoomObjectID:029(371.00/549.00) Arrow1, RoomObjectID:003(417.00/317.00) Pin Pad</Value>
+            <Value>RoomObjectID:015(584.00/153.00) Door 1, RoomObjectID:017(224.00/199.00) Door 3, RoomObjectID:029(371.00/549.00) Arrow1, RoomObjectID:003(417.00/317.00) Pin Pad</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>

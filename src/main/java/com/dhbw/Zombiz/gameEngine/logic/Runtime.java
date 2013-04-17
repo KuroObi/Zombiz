@@ -22,6 +22,7 @@
 package com.dhbw.Zombiz.gameEngine.logic;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -29,6 +30,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+
+import com.dhbw.Zombiz.output.display.Menu;
 /**This Class contains all Runtime Variables, the Inventory,
  * is responsible for saveing and loading the game and
  * starts a new Game.
@@ -46,8 +50,11 @@ public class Runtime{
 	private static List <Room> enterdRooms = null;		//List of already entered Rooms
 	private static List <Room> enterableRooms = null;	//List of Rooms the player is able to enter
 	private static int enterdRoomCounter = 0;			//Counter of how many Rooms have been entered
+	
+	
 	private static List <Item> inventory = new ArrayList<Item>();	//List of Items the play have
-	private static int currRoomId = 7 ;		//the current Room ID
+	
+	public static int currRoomId = 7 ;
 	
 	/** Constructor for a new Game
 	 * 
@@ -63,9 +70,9 @@ public class Runtime{
 		}
 	}
 	
-	/**	 //TODO
+	/**	 TODO: what the hell happends here
 	 * 
-	 * @param id the Room ID
+	 * @param id
 	 * @param frame the gameFrame
 	 */
 	public static void nextRoom(int id, JFrame frame){
@@ -89,6 +96,9 @@ public class Runtime{
 	 * 
 	 */
 	public static void saveGame(){
+		
+	
+		
 		try{
 			FileOutputStream saveFile=new FileOutputStream(savegame);
 			ObjectOutputStream save = new ObjectOutputStream(saveFile);
@@ -250,18 +260,15 @@ public class Runtime{
 	public static void setInventory(List<Item> inventory) {
 		Runtime.inventory = inventory;
 	}
-	/**Returns the current Room ID
-	 * 
-	 * @return the current Room ID
-	 */
+
 	public static int getCurrRoomId() {
 		return currRoomId;
 	}
-	/**sets the current Room ID
-	 * 
-	 * @param currRoomId the new current Room ID
-	 */
+
 	public static void setCurrRoomId(int currRoomId) {
 		Runtime.currRoomId = currRoomId;
 	}
+	
+	
+	
 }
