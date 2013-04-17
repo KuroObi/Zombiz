@@ -18,10 +18,26 @@ public class Room  {
 	String npcs;
 	String mood;
 	String floor;
+	int locationPointer; 
 
 	public String getMood() {
 		return mood;
 	}
+
+	
+
+
+	public int getLocationPointer() {
+		return locationPointer;
+	}
+
+
+
+
+	public void setLocationPointer(int locationPointer) {
+		this.locationPointer = locationPointer;
+	}
+
 
 
 

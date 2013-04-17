@@ -42,10 +42,9 @@ public class DialogOutput {
 	public void setDialogEntries(List<DialogEntry> dialogEntries){
 		this.de = dialogEntries;
 	}
-	
-	
-	public List<DialogEntry> getDialogEntries(){
-		return this.de;
+
+	public static List<DialogEntry> getDialogEntries(){
+		return de;
 	}
 
 
@@ -140,29 +139,27 @@ public class DialogOutput {
 		String text = "";
 		
 		if(de.get(cnt).isGroup()){
-			text = "IST GRUPPE !!!";
+			text = " Is Group ...";
 			
 			List<Integer> linkedDe = de.get(cnt).getLinkedDialogEntries();
 			for(int cnt2 = 0; cnt2 < linkedDe.size(); cnt2++){
-				System.out.println("---"+linkedDe.get(cnt2));
+				// ... do somethin ... if it is group ...
 			}
 			
 			
 			
 		}else {
-			List<Integer> linkedDe = de.get(cnt).getLinkedDialogEntries();
-			for(int cnt2 = 0; cnt2 < linkedDe.size(); cnt2++){
-				System.out.println("-+-"+linkedDe.get(cnt2));
-			}	
 			
-		text = speakerName+" : "+de.get(cnt).getDialogText()+" || Is Linked To : ";
+			
+			text = speakerName+" : "+de.get(cnt).getDialogText();
+			
+			
+		
     	}
     
 		dialog = new JTextArea();
 		
 		int dialogEntrySize = de.size();
-		System.out.println(dialogEntrySize);
-		
 		
 		dialog.setText(text);
 		dialog.setForeground(Color.WHITE);
@@ -194,14 +191,20 @@ public class DialogOutput {
 					
 					if(cnt < max-1){
 					
-						cnt = cnt+1;
+					
+					int nextId = getDialogEntries().get(0).getLinkedDialogEntries().get(0);
+					
+						
+						
 					
 					
 					frame.getContentPane().removeAll();
 					frame.repaint();
 					
-					getDialogText(frame, cnt);
-					System.out.println(cnt); }
+					getDialogText(frame, nextId);
+					
+					
+					 }
 					
 					
 					if(cnt == max-1){
@@ -209,7 +212,7 @@ public class DialogOutput {
 						
 						BuildRoom br = new BuildRoom(getRootRoomId(), frame);
 						
-						System.out.println("fertig");
+						
 					}
 					
 					

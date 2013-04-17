@@ -483,7 +483,10 @@ public  class XmlParser {
 				room.setLocationId(eElement.getElementsByTagName("Value").item(9).getTextContent());
 				room.setGameObjectsIncluded(eElement.getElementsByTagName("Value").item(10).getTextContent());
 				room.setNpcs(eElement.getElementsByTagName("Value").item(11).getTextContent());
-
+				if(!(eElement.getElementsByTagName("Value").item(12).getTextContent().isEmpty())){
+				room.setLocationPointer(Integer.parseInt(eElement.getElementsByTagName("Value").item(12).getTextContent().substring(11,14)));
+				}
+			
 				
 				
 				if(debugConsole){
