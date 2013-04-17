@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ChatMapperProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Title="Games" Version="1.3.0.0" Author="" EmphasisColor1="#E7955B" EmphasisStyle1="b--" EmphasisColor1Label="" EmphasisColor2="#44B634" EmphasisStyle2="b--" EmphasisColor2Label="" EmphasisColor3="#4688E6" EmphasisStyle3="b--" EmphasisColor3Label="" EmphasisColor4="#CCCCCC" EmphasisStyle4="b--" EmphasisColor4Label="">
   <Description>Project configured for game development.</Description>
   <Assets>
@@ -817,7 +817,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value />
+            <Value>LocationID:013</Value>
           </Field>
         </Fields>
       </Item>
@@ -1493,7 +1493,7 @@
           </Field>
           <Field Type="Item" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value>4</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2689,7 +2689,7 @@
           </Field>
           <Field Type="Text" Hint="A short description of what this item looks like.">
             <Title>Description</Title>
-            <Value>Room to Meier</Value>
+            <Value>Beamer Schwamm Raum</Value>
           </Field>
           <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
@@ -2737,7 +2737,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value>LocationID:007</Value>
+            <Value>LocationID:006</Value>
           </Field>
         </Fields>
       </Item>
@@ -2753,7 +2753,7 @@
           </Field>
           <Field Type="Text" Hint="A short description of what this item looks like.">
             <Title>Description</Title>
-            <Value>Beamer-Schwamm-Raum</Value>
+            <Value>Raum mit Meier</Value>
           </Field>
           <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
@@ -2801,7 +2801,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value>LocationID:006</Value>
+            <Value>LocationID:007</Value>
           </Field>
         </Fields>
       </Item>
@@ -2929,7 +2929,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value>LocationID:013</Value>
+            <Value />
           </Field>
         </Fields>
       </Item>
@@ -3713,7 +3713,7 @@
           </Field>
           <Field Type="Text" Hint="A short description of what this item looks like.">
             <Title>Description</Title>
-            <Value>An arrow on the floor to navigate in the SGNFDNT</Value>
+            <Value>An arrow on the second floor in the corridor where Edward is</Value>
           </Field>
           <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
@@ -3777,7 +3777,7 @@
           </Field>
           <Field Type="Text" Hint="A short description of what this item looks like.">
             <Title>Description</Title>
-            <Value>An arrow on the floor to navigate in the SGNFDNT</Value>
+            <Value>An Arrow in the second part of the corridor on the second floor</Value>
           </Field>
           <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
@@ -3829,6 +3829,70 @@
           </Field>
         </Fields>
       </Item>
+      <Item ID="54">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>Door11</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>The door in the tutorial room!</Value>
+          </Field>
+          <Field Type="Location" Hint="The first appearance of the item.">
+            <Title>Primary Location</Title>
+            <Value>1</Value>
+          </Field>
+          <Field Type="Location" Hint="The second appearance of the item.">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Item" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ID</Title>
+            <Value>033</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="The source of the soundfile that will be used by this item.">
+            <Title>Sounddateipfad</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="">
+            <Title>LocationPointer</Title>
+            <Value>LocationID:001</Value>
+          </Field>
+        </Fields>
+      </Item>
     </Items>
     <Locations>
       <Location ID="2">
@@ -3875,10 +3939,14 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:003(417.00/317.00) PIN pad, RoomObjectID:001(566.00/042.00) Door0, RoomObjectID:016(195.00/131.00) Door2, RoomObjectID:028(372.00/465.00) Arrow0</Value>
+            <Value>RoomObjectID:001(566.00/042.00) Door0, RoomObjectID:016(195.00/131.00) Door2, RoomObjectID:028(372.00/465.00) Arrow0</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
             <Value />
           </Field>
         </Fields>
@@ -3933,6 +4001,10 @@
             <Title>NPCs</Title>
             <Value>NPCID:004(000.00/000.00) Edward</Value>
           </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value />
+          </Field>
         </Fields>
       </Location>
       <Location ID="17">
@@ -3983,6 +4055,10 @@
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
             <Value />
           </Field>
         </Fields>
@@ -4037,6 +4113,10 @@
             <Title>NPCs</Title>
             <Value />
           </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value />
+          </Field>
         </Fields>
       </Location>
       <Location ID="1">
@@ -4083,11 +4163,15 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:002(000.00/000.00) "Z"-Energy can, ItemID:001(000.00/000.00) Key</Value>
+            <Value>ItemID:002(000.00/000.00) "Z"-Energy can, ItemID:001(000.00/000.00) Key, RoomObjectID:033(000.00/000.00) Door 10</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
             <Value />
+          </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value>LocationID:001</Value>
           </Field>
         </Fields>
       </Location>
@@ -4135,11 +4219,15 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:002(475.00/138.00) Pulley, RoomObjectID:007(475.00/138.00) Window0</Value>
+            <Value>ItemID:009(166.00/453.00) Sponge, RoomObjectID:008(010.00/169.00) Beamer, RoomObjectID:009(638.00/305.00) Fuseblock0</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>NPCID:002(038.00/259.00) Meier</Value>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value>LocationID:016</Value>
           </Field>
         </Fields>
       </Location>
@@ -4187,11 +4275,15 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:017(009.00/187.00) Note with digit 1, ItemID:009(166.00/453.00) Sponge, RoomObjectID:008(010.00/169.00) Beamer, RoomObjectID:009(638.00/305.00) Fuseblock0</Value>
+            <Value>RoomObjectID:007(475.00/138.00) Window0</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value />
+            <Value>NPCID:002(038.00/259.00) Meier</Value>
+          </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value>LocationID:001</Value>
           </Field>
         </Fields>
       </Location>
@@ -4246,6 +4338,10 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
             <Title>NPCs</Title>
             <Value />
           </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value>LocationID:016</Value>
+          </Field>
         </Fields>
       </Location>
       <Location ID="11">
@@ -4292,11 +4388,15 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:014(000.00/000.00) Fuseblock1</Value>
+            <Value>ItemID:007(000.00/000.00) Repair-Tools for elevator, ItemID:019(000.00/000.00) Lighter, ItemID:020(000.00/000.00) Wire, RoomObjectID:012(000.00/000.00) Cupboard</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>NPCID:005(000.00/000.00) Janitor</Value>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value>LocationID:002</Value>
           </Field>
         </Fields>
       </Location>
@@ -4344,11 +4444,15 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:007(000.00/000.00) Repair-Tools for elevator, ItemID:019(000.00/000.00) Lighter, ItemID:020(000.00/000.00) Wire, RoomObjectID:012(000.00/000.00) Cupboard</Value>
+            <Value>RoomObjectID:014(000.00/000.00) Fuseblock1</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value />
+            <Value>NPCID:005(000.00/000.00) Janitor</Value>
+          </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value>LocationID:002</Value>
           </Field>
         </Fields>
       </Location>
@@ -4402,6 +4506,10 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
             <Title>NPCs</Title>
             <Value />
           </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value>LocationID:017</Value>
+          </Field>
         </Fields>
       </Location>
       <Location ID="14">
@@ -4453,6 +4561,10 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
             <Value />
+          </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value>LocationID:017</Value>
           </Field>
         </Fields>
       </Location>
@@ -4506,6 +4618,10 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
             <Title>NPCs</Title>
             <Value />
           </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value>LocationID:016</Value>
+          </Field>
         </Fields>
       </Location>
       <Location ID="4">
@@ -4557,6 +4673,10 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
             <Value>NPCID:003(467.00/213.00) Harald</Value>
+          </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value />
           </Field>
         </Fields>
       </Location>
@@ -4610,6 +4730,10 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
             <Title>NPCs</Title>
             <Value />
           </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
+            <Value />
+          </Field>
         </Fields>
       </Location>
       <Location ID="6">
@@ -4656,12 +4780,14 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:015(548.00/153.00) Door 1, RoomObjectID:017(224.00/199.00) Door 3,
-RoomObjectID:018(410.00/262.00) Door 4,
-RoomObjectID:019(326.00/262.00) Door 5, RoomObjectID:029(371.00/549.00) Arrow1</Value>
+            <Value>RoomObjectID:015(548.00/153.00) Door 1, RoomObjectID:017(224.00/199.00) Door 3, RoomObjectID:029(371.00/549.00) Arrow1, RoomObjectID:003(417.00/317.00) Pin Pad</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
             <Value />
           </Field>
         </Fields>
@@ -4710,10 +4836,14 @@ RoomObjectID:019(326.00/262.00) Door 5, RoomObjectID:029(371.00/549.00) Arrow1</
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:021(206.00/237.00) Door7, RoomObjectID:023(569.00/220.00) Door9, RoomObjectID:024(334.00/259.00) ElevatorDoor, RoomObjectID:032(338.00/565.00)</Value>
+            <Value>RoomObjectID:021(206.00/237.00) Door7, RoomObjectID:023(569.00/220.00) Door9, RoomObjectID:024(334.00/259.00) ElevatorDoor, RoomObjectID:032(338.00/565.00), RoomObjectID:003(417.00/317.00) PIN pad,</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
+            <Value />
+          </Field>
+          <Field Type="Text" Hint="The corridor that belongs to the room.">
+            <Title>CorridorPointer</Title>
             <Value />
           </Field>
         </Fields>
