@@ -28,81 +28,28 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-
-
 /**
- * @author Christoph Schabert
- * @version 1.0
- */
-public class Sound implements Runnable {
-	
-	private boolean repeate = false;
-    AudioInputStream audio = null;
-    private String ending = ".wav";
-    Clip clip;
-    
-    public Sound(String nfilename){
-		try {
-			this.audio = AudioSystem.getAudioInputStream(new File("src\\main\\resources\\audio\\"+nfilename+ending));
-			clip = AudioSystem.getClip();
-		} catch (UnsupportedAudioFileException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (LineUnavailableException e) {
-			e.printStackTrace();
-		}
-	}
-    
-	public Sound(String nfilename,boolean nrep){
-		this.repeate = nrep;
-		try {
-			this.audio = AudioSystem.getAudioInputStream(new File("src\\main\\resources\\audio\\"+nfilename+ending));
+    The Sound class is a container for sound samples. The sound
+    samples are format-agnostic and are stored as a byte array.
+*/
+public class Sound {
 
-		} catch (UnsupportedAudioFileException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public void setRepeate(boolean nrepeate){
-		this.repeate = nrepeate;
-	}
-	
-	public void run() {
-		playSound();
-	}	
-	
-	public void stop(){
-		
-	}
-	/**
-	 * 
-	 * @param filename the name of the file that is going to be played
-	 *
-	 */
-	public void playSound(){
-		 try {
-			 clip.open(audio);
-			 do{
-				 System.out.println("Yeaaaa!");
+    private byte[] samples;
 
-				 clip.start();
-			 }while(repeate);
-			 clip.stop();
-	        }
-	        catch(IOException ioe) {
-	            System.out.println(ioe);
-	        }
-	        catch(LineUnavailableException lua) {
-	            System.out.println(lua);
-	        }
-		 
-	}
-	
-	public void stopSound(){
-		clip.stop();
-	}
-	
-}	
+    /**
+        Create a new Sound object with the specified byte array.
+        The array is not copied.
+    */
+    public Sound(byte[] samples) {
+        this.samples = samples;
+    }
+
+
+    /**
+        Returns this Sound's objects samples as a byte array.
+    */
+    public byte[] getSamples() {
+        return samples;
+    }
+
+}
