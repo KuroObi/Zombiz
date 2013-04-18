@@ -64,7 +64,7 @@ public class Runtime{
 	public Runtime(boolean newGame, JFrame frame){	
 		if(newGame){
 			//Hier kommt der Prolog hin ... 
-			BuildRoom br = new BuildRoom(7, frame);
+			BuildRoom br = new BuildRoom(5, frame);
 		}else{
 			int firstRoom = loadGame();
 		}

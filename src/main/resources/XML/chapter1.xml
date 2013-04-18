@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ChatMapperProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Title="Games" Version="1.3.0.0" Author="" EmphasisColor1="#E7955B" EmphasisStyle1="b--" EmphasisColor1Label="" EmphasisColor2="#44B634" EmphasisStyle2="b--" EmphasisColor2Label="" EmphasisColor3="#4688E6" EmphasisStyle3="b--" EmphasisColor3Label="" EmphasisColor4="#CCCCCC" EmphasisStyle4="b--" EmphasisColor4Label="">
   <Description>Project configured for game development.</Description>
   <Assets>
@@ -463,13 +463,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>3</Value>
+            <Value>001</Value>
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -527,13 +527,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -577,7 +577,7 @@
           </Field>
           <Field Type="Text" Hint="A short description of what this item looks like.">
             <Title>Description</Title>
-            <Value>The door to leave the tutorial</Value>
+            <Value>The door to lock in tutorial</Value>
           </Field>
           <Field Type="Location" Hint="The first appearance of the item.">
             <Title>Primary Location</Title>
@@ -591,13 +591,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>1</Value>
+            <Value>001</Value>
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -625,7 +625,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value />
+            <Value>LocationID:005</Value>
           </Field>
         </Fields>
       </Item>
@@ -655,13 +655,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -719,13 +719,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -753,7 +753,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value />
+            <Value>LocationID:010</Value>
           </Field>
         </Fields>
       </Item>
@@ -783,13 +783,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>4</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -847,13 +847,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>9</Value>
+            <Value>004</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -911,13 +911,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -975,13 +975,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>30</Value>
+            <Value>019</Value>
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1039,13 +1039,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1103,13 +1103,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>22</Value>
+            <Value>012</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1167,13 +1167,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1231,13 +1231,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1295,13 +1295,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1329,7 +1329,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value />
+            <Value>LocationID:010</Value>
           </Field>
         </Fields>
       </Item>
@@ -1359,13 +1359,13 @@
             <Title>Associated With</Title>
             <Value>5</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>25</Value>
+            <Value>011</Value>
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1423,13 +1423,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>17</Value>
+            <Value>008</Value>
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1487,13 +1487,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>10</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>4</Value>
+            <Value>009</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1551,13 +1551,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>28</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>28</Value>
+            <Value>017</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1615,13 +1615,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>35</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1679,13 +1679,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>21</Value>
+            <Value>011</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1743,13 +1743,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value>002</Value>
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1807,13 +1807,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>23</Value>
+            <Value>013</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1871,13 +1871,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>24</Value>
+            <Value>014</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1935,13 +1935,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value>034</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -1999,13 +1999,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>5</Value>
+            <Value>008</Value>
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2063,13 +2063,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2127,13 +2127,13 @@
             <Title>Associated With</Title>
             <Value>3</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2191,13 +2191,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2255,13 +2255,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2297,7 +2297,7 @@
         <Fields>
           <Field Type="Text" Hint="A name to reference this item.">
             <Title>Name</Title>
-            <Value>Lighter</Value>
+            <Value>Lighter0</Value>
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this item.">
             <Title>Pictures</Title>
@@ -2319,13 +2319,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>11</Value>
+            <Value>005</Value>
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2383,13 +2383,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2447,13 +2447,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>11</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>30</Value>
+            <Value>019</Value>
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2511,13 +2511,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>30</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2575,13 +2575,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2639,13 +2639,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>19</Value>
+            <Value>010</Value>
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2703,13 +2703,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2767,13 +2767,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2831,13 +2831,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2895,13 +2895,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>7</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -2929,7 +2929,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value />
+            <Value>LocationID:013</Value>
           </Field>
         </Fields>
       </Item>
@@ -2941,7 +2941,7 @@
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this item.">
             <Title>Pictures</Title>
-            <Value>[src/main/resources/Picture/Items/roomobjectid_019.png]</Value>
+            <Value>[src/main/resources/Picture/Items/roomobjectid_.png]</Value>
           </Field>
           <Field Type="Text" Hint="A short description of what this item looks like.">
             <Title>Description</Title>
@@ -2959,13 +2959,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3023,13 +3023,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3057,7 +3057,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value />
+            <Value>LocationID:009</Value>
           </Field>
         </Fields>
       </Item>
@@ -3087,13 +3087,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3121,7 +3121,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value />
+            <Value>LocationID:012</Value>
           </Field>
         </Fields>
       </Item>
@@ -3151,13 +3151,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3185,7 +3185,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value />
+            <Value>LocationID:010</Value>
           </Field>
         </Fields>
       </Item>
@@ -3215,13 +3215,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3249,7 +3249,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value />
+            <Value>LocationID:011</Value>
           </Field>
         </Fields>
       </Item>
@@ -3279,13 +3279,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3313,7 +3313,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value />
+            <Value>LocationID:004</Value>
           </Field>
         </Fields>
       </Item>
@@ -3343,13 +3343,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3377,7 +3377,7 @@
           </Field>
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
-            <Value />
+            <Value>LocationID:015</Value>
           </Field>
         </Fields>
       </Item>
@@ -3407,13 +3407,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3471,13 +3471,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3535,13 +3535,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3599,13 +3599,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3663,13 +3663,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3727,13 +3727,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3791,13 +3791,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3837,7 +3837,7 @@
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this item.">
             <Title>Pictures</Title>
-            <Value>[]</Value>
+            <Value>[src/main/resources/Picture/Items/roomobjectid_033.png]</Value>
           </Field>
           <Field Type="Text" Hint="A short description of what this item looks like.">
             <Title>Description</Title>
@@ -3855,13 +3855,13 @@
             <Title>Associated With</Title>
             <Value>-1</Value>
           </Field>
-          <Field Type="Item" Hint="Another item that this one can combine with.">
+          <Field Type="Text" Hint="Another item that this one can combine with.">
             <Title>Combines With</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
-          <Field Type="Item" Hint="The item contained.">
+          <Field Type="Text" Hint="The item contained.">
             <Title>Contains</Title>
-            <Value>-1</Value>
+            <Value />
           </Field>
           <Field Type="Boolean" Hint="Can be collected">
             <Title>isCollectible</Title>
@@ -3890,6 +3890,70 @@
           <Field Type="Text" Hint="">
             <Title>LocationPointer</Title>
             <Value>LocationID:001</Value>
+          </Field>
+        </Fields>
+      </Item>
+      <Item ID="55">
+        <Fields>
+          <Field Type="Text" Hint="A name to reference this item.">
+            <Title>Name</Title>
+            <Value>ElevatorDoorInside</Value>
+          </Field>
+          <Field Type="Files" Hint="A collection of image files that represent this item.">
+            <Title>Pictures</Title>
+            <Value>[src/main/resources/Picture/Items/roomobjectid_034.png]</Value>
+          </Field>
+          <Field Type="Text" Hint="A short description of what this item looks like.">
+            <Title>Description</Title>
+            <Value>The metallic elevator door inside the elevator</Value>
+          </Field>
+          <Field Type="Location" Hint="The first appearance of the item.">
+            <Title>Primary Location</Title>
+            <Value>16</Value>
+          </Field>
+          <Field Type="Location" Hint="The second appearance of the item.">
+            <Title>Secondary Location</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Actor" Hint="The actor that is associated with this item.">
+            <Title>Associated With</Title>
+            <Value>-1</Value>
+          </Field>
+          <Field Type="Text" Hint="Another item that this one can combine with.">
+            <Title>Combines With</Title>
+            <Value>014</Value>
+          </Field>
+          <Field Type="Text" Hint="The item contained.">
+            <Title>Contains</Title>
+            <Value />
+          </Field>
+          <Field Type="Boolean" Hint="Can be collected">
+            <Title>isCollectible</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Boolean" Hint="Can be used with a RoomObject (RoomObjectID)">
+            <Title>isUseable</Title>
+            <Value>False</Value>
+          </Field>
+          <Field Type="Number" Hint="The id to identify the item using the item list">
+            <Title>ID</Title>
+            <Value>034</Value>
+          </Field>
+          <Field Type="Boolean" Hint="If the item is only a Room Object or an real item">
+            <Title>isRoomObject</Title>
+            <Value>True</Value>
+          </Field>
+          <Field Type="Text" Hint="The condition of an item may change.">
+            <Title>Condition</Title>
+            <Value>open</Value>
+          </Field>
+          <Field Type="Text" Hint="The source of the soundfile that will be used by this item.">
+            <Title>Sounddateipfad</Title>
+            <Value>src/main/resources/Audio/...</Value>
+          </Field>
+          <Field Type="Text" Hint="">
+            <Title>LocationPointer</Title>
+            <Value>LocationID:017</Value>
           </Field>
         </Fields>
       </Item>
@@ -3995,7 +4059,7 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:004(645.00/200.00) Fireprevention equipment, RoomObjectID:020(552.00/107.00) Door06, RoomObjectID:022(058.00/059.00) Door8, RoomObjectID:031(369.00/450.00)</Value>
+            <Value>RoomObjectID:004(645.00/200.00) Fireprevention equipment, RoomObjectID:020(058.00/059.00) Door06, RoomObjectID:022(552.00/107.00) Door8, RoomObjectID:031(369.00/450.00)</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -4107,7 +4171,7 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:011(000.00/000.00) Reparation Slot</Value>
+            <Value>RoomObjectID:011(207.00/081.00) Reparation Slot, RoomObjectID:034(530.00/002.00) ElevatorDoorInside </Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -4115,7 +4179,7 @@
           </Field>
           <Field Type="Text" Hint="The corridor that belongs to the room.">
             <Title>CorridorPointer</Title>
-            <Value />
+            <Value>LocationID:017</Value>
           </Field>
         </Fields>
       </Location>
@@ -4500,7 +4564,7 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:005(000.00/000.00) Flyer0, ItemID:018(000.00/000.00) Cartouche</Value>
+            <Value>ItemID:005(062.00/414.00) Flyer0, ItemID:018(758.00/542.00) Cartouche</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -4556,7 +4620,7 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:006(000.00/000.00) Instructions  New ways of lecturing, ItemID:021(000.00/000.00) Flyer1</Value>
+            <Value>ItemID:006(532.00/421.00) Instructions  New ways of lecturing, ItemID:005(062.00/414.00) Flyer0</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -4836,7 +4900,7 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:021(206.00/237.00) Door7, RoomObjectID:023(569.00/220.00) Door9, RoomObjectID:024(334.00/259.00) ElevatorDoor, RoomObjectID:032(338.00/565.00), RoomObjectID:003(417.00/317.00) PIN pad,</Value>
+            <Value>RoomObjectID:021(206.00/237.00) Door7, RoomObjectID:023(569.00/220.00) Door9, RoomObjectID:024(334.00/259.00) ElevatorDoor, RoomObjectID:032(338.00/565.00)</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>

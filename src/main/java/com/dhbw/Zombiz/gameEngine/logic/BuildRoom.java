@@ -321,13 +321,15 @@ public class BuildRoom {
 				if(type.equalsIgnoreCase("actor"))
 					System.out.println("You pressed Item "+itemId);
 				
-				
-				
 				if(type.equalsIgnoreCase("leaveRoom")){
 					System.out.println("You want to leave ... ? :(");
 					deleteFrame(frame);
 					//Runtime.changeRoom(getRoom().getLocationPointer(), frame);
-                                        BuildRoom br = new BuildRoom(getRoom().getLocationPointer(), frame);
+                                        //TODO: Delete the help variable once the whole game is finished
+                                        //Checking whether there is simply a pointer missing in the XML
+                                        int help = getRoom().getLocationPointer();
+                                        if (help == 0){System.out.println("There is no Locationpointer specified.");}
+                                        else {BuildRoom br = new BuildRoom(getRoom().getLocationPointer(), frame);}
 					}
 				if(type.equalsIgnoreCase("inGameMenue")){
 					System.out.println("InGameMenue");
@@ -346,14 +348,15 @@ public class BuildRoom {
 					refreshFrame(frame);
 					}
 				
-				//Options for RoomObjects
+				 //Options for RoomObjects
 				if(type.equalsIgnoreCase("use:RoomObjMenue")){
 					Item item = getRoomObjectById(itemId);
 					String aimLoc = item.getLocationPointer();
 					aimLoc = aimLoc.substring(11, 14);
 					int aimLocId = Integer.parseInt(aimLoc);
 					System.out.println(aimLocId);
-					BuildRoom br = new BuildRoom(aimLocId, frame);
+                                        if (aimLocId == 0){System.out.println("There is no Locationpointer specified.");}
+                                        else {BuildRoom br = new BuildRoom(aimLocId, frame);}
 					}
 				if(type.equalsIgnoreCase("item:RoomObjMenue")){
 				
