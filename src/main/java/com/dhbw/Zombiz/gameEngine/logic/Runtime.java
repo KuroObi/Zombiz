@@ -128,7 +128,7 @@ public class Runtime{
 			enterableRooms = (List<Room>) save.readObject();
 			enterdRoomCounter = (Integer) save.readObject();
 			inventory = (List<Item>) save.readObject();
-			lastRoom = (Integer) save.readObject();
+			currRoomId = (Integer) save.readObject();
 			// Close the file.
 			save.close();
 		}catch(Exception exc){
@@ -138,9 +138,9 @@ public class Runtime{
 			enterableRooms = null;
 			enterdRoomCounter = 0;
 			inventory = null; 			//TODO: Set start Inventory
-			lastRoom = 7;
+			currRoomId = 7;
 		}
-		return lastRoom;
+		return currRoomId;
 	}
 	
 	/**Adds a item into the Inventory
