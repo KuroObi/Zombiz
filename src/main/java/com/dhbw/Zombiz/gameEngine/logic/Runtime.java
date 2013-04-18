@@ -54,7 +54,7 @@ public class Runtime{
 	
 	private static List <Item> inventory = new ArrayList<Item>();	//List of Items the play have
 	
-	public static int currRoomId = 7 ;
+	public static int currRoomId = 5 ;
 	
 	/** Constructor for a new Game
 	 * 
@@ -64,10 +64,11 @@ public class Runtime{
 	public Runtime(boolean newGame, JFrame frame){	
 		if(newGame){
 			//Hier kommt der Prolog hin ... 
-			BuildRoom br = new BuildRoom(5, frame);
+			setCurrRoomId(5);
 		}else{
-			int firstRoom = loadGame();
+			loadGame();
 		}
+		BuildRoom br = new BuildRoom(currRoomId, frame);
 	}
 	
 	
@@ -117,7 +118,7 @@ public class Runtime{
 	 * @return return the last Room the player was in
 	 */
 	public static int loadGame(){
-		int lastRoom ;
+		int lastRoom,ncurrRoomId ;
 		try{
 			FileInputStream saveFile = new FileInputStream(savegame);
 			ObjectInputStream save = new ObjectInputStream(saveFile);
@@ -128,7 +129,7 @@ public class Runtime{
 			enterableRooms = (List<Room>) save.readObject();
 			enterdRoomCounter = (Integer) save.readObject();
 			inventory = (List<Item>) save.readObject();
-			currRoomId = (Integer) save.readObject();
+			ncurrRoomId = (Integer) save.readObject();
 			// Close the file.
 			save.close();
 		}catch(Exception exc){
@@ -138,9 +139,10 @@ public class Runtime{
 			enterableRooms = null;
 			enterdRoomCounter = 0;
 			inventory = null; 			//TODO: Set start Inventory
-			currRoomId = 7;
+			ncurrRoomId = 5;
 		}
-		return currRoomId;
+		setCurrRoomId(ncurrRoomId);
+		return ncurrRoomId;
 	}
 	
 	/**Adds a item into the Inventory
