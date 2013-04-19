@@ -144,9 +144,7 @@ public class BuildRoom {
 	
 	
 	public BuildRoom(int roomId, JFrame frame){
-		
-		
-		
+				
 		XmlParser p = new XmlParser("src/main/resources/XML/chapter1.xml");
 		
 		setRoomId(roomId);
@@ -167,9 +165,6 @@ public class BuildRoom {
 		setActors(p.getAllNpcsByRoomId(roomId));
 		setRoomImagePath(trimmPicPath(room.getPicturePath()));
 		
-		
-		
-		
 		deleteFrame(frame);
 		frame.repaint();
 		
@@ -181,14 +176,12 @@ public class BuildRoom {
 		drawInventoryBag(frame);
 		drawActors(frame);
 		drawObjects(frame, true); 
-		drawRoomObjects(frame, true);
-	
+		drawRoomObjects(frame, true);	
 		frame.add(label);
 	}
 	
 	public void drawActors(JFrame frame){
-		List<Actor> actors = getActors();
-		
+		List<Actor> actors = getActors();		
 		for(int cnt = 0; cnt < actors.size(); cnt++){
 			Actor actor = actors.get(cnt);
 			addClickableFunction((int)actor.getNpcLocX(), (int)actor.getNpcLocY(), 100, 300, actor.getId(), frame, "actor");
@@ -247,7 +240,8 @@ public class BuildRoom {
 		List<Item> roomObjectsInDrawFunction = getRoomObjects();
 		
 		for(int cntItemPic = 0; cntItemPic < roomObjectsInDrawFunction.size(); cntItemPic++){
-			String itemPicPath = trimmPicPath(roomObjectsInDrawFunction.get(cntItemPic).getPicturePath());
+                    if (Runtime.checkStep(roomObjectsInDrawFunction.get(cntItemPic).getId(), 'o','d')){
+                        String itemPicPath = trimmPicPath(roomObjectsInDrawFunction.get(cntItemPic).getPicturePath());
 			float xLoc = roomObjectsInDrawFunction.get(cntItemPic).getItemLocY();
 			float yLoc = roomObjectsInDrawFunction.get(cntItemPic).getItemLocX();
 			
@@ -265,8 +259,16 @@ public class BuildRoom {
 			}
 			backgroundImage.getGraphics().drawImage(foregroundImage,(int)yLoc, (int)xLoc, null);
 			if(addClickableFct){
-			addClickableFunction((int)yLoc, (int)xLoc,foregroundImage.getWidth(), foregroundImage.getHeight(), roomObjectsInDrawFunction.get(cntItemPic).getId(), frame, "roomObjects");
+                            addClickableFunction((int)yLoc, (int)xLoc,foregroundImage.getWidth(), foregroundImage.getHeight(), roomObjectsInDrawFunction.get(cntItemPic).getId(), frame, "roomObjects");
+                         /*   if(Runtime.checkStep(roomObjectsInDrawFunction.get(cntItemPic).getId(), 'o')){
+
+                            }
+                            else {
+                                System.out.println("You cannot click on item "+roomObjectsInDrawFunction.get(cntItemPic).getId());
+                            }*/
 			}
+                    }
+                    else {System.out.println("You didn't draw item "+ roomObjectsInDrawFunction.get(cntItemPic).getId());}
 		}
 	}
 	
@@ -338,6 +340,10 @@ public class BuildRoom {
 				
 				//Options for Items
 				if(type.equalsIgnoreCase("pickup:itemmenue")){
+                                        //Once the key is picked up, the game will change the state
+                                        if (itemId==1){
+                                            Runtime.setGameState(1);
+                                        }
 					Runtime.addItemToInventory(getItemById(getItems(), itemId));
 					deleteItem(frame, itemId);
 					}
@@ -350,6 +356,8 @@ public class BuildRoom {
 				
 				 //Options for RoomObjects
 				if(type.equalsIgnoreCase("use:RoomObjMenue")){
+                                    //checks whether a roomobject may be used.
+                                    if (Runtime.checkStep(itemId, 'o', 'u')){
 					Item item = getRoomObjectById(itemId);
 					String aimLoc = item.getLocationPointer();
 					aimLoc = aimLoc.substring(11, 14);
@@ -358,8 +366,13 @@ public class BuildRoom {
                                         if (aimLocId == 0){System.out.println("There is no Locationpointer specified.");}
                                         else {BuildRoom br = new BuildRoom(aimLocId, frame);}
 					}
+                                    // in case the roomobject may not be used. 
+                                    /**TODO: Has to be replaced by calling a dialog which states something about better not passing the door/ going that way.
+                                     * 
+                                     */
+                                    else {System.out.println("You shall not pass.");}
+                                    }
 				if(type.equalsIgnoreCase("item:RoomObjMenue")){
-				
 				Item roomObj = getRoomObjectById(itemId);
 				setRoomObj(roomObj);
 				drawInventory(frame);
@@ -376,20 +389,18 @@ public class BuildRoom {
 					Item nextItem = null;
 					itemInInventory= getItemById(Runtime.getInventory(), itemId);
 					if(isWantToCombineRoomObjWithItem()){
-							itemAndRoomObjInteraction(itemInInventory);
+						itemAndRoomObjInteraction(itemInInventory);
+                                                
+                                                // transition from state one to state two by using the key on the door
+                                                if (roomObj.id==1 && itemInInventory.id==1){
+                                                    Runtime.setGameState(2);
+                                                    }
 						}
 					
 					focusItemInInventory(frame, itemInInventory);
 					
-					
-					
-					
 				}
-				
-			
-				 
-				
-					
+									
 			}});
 		frame.add(label);
 	}
@@ -465,14 +476,14 @@ public class BuildRoom {
 			//addClickableFunction(xLoc+30, yLoc, 180, 30, itemId, frame, "");
 			}
 			
-			backgroundImage.getGraphics().drawImage(btnUseRoomObj, xLoc-60, yLoc-40, 180, 30, null);
-			addClickableFunction(xLoc-60, yLoc-60, 180, 30, itemId, frame, "use:RoomObjMenue");
+			backgroundImage.getGraphics().drawImage(btnUseRoomObj, xLoc-125, yLoc+20, 180, 30, null);
+			addClickableFunction(xLoc-125, yLoc+20, 180, 30, itemId, frame, "use:RoomObjMenue");
 			
-			backgroundImage.getGraphics().drawImage(btnNothingRoomObj, xLoc+30, yLoc+30, 180, 30, null);
-			addClickableFunction(xLoc+30, yLoc+30, 180, 30, itemId, frame, "leave:item");
+			backgroundImage.getGraphics().drawImage(btnNothingRoomObj, xLoc-125, yLoc+100, 180, 30, null);
+			addClickableFunction(xLoc-125, yLoc+100, 180, 30, itemId, frame, "leave:item");
 			
-			backgroundImage.getGraphics().drawImage(btnUseItemOnRoomObj, xLoc-170, yLoc+30, 180, 30, null);
-			addClickableFunction(xLoc-170, yLoc+30, 180, 30, itemId, frame, "item:RoomObjMenue");
+			backgroundImage.getGraphics().drawImage(btnUseItemOnRoomObj, xLoc-125, yLoc+180, 180, 30, null);
+			addClickableFunction(xLoc-125, yLoc+180, 180, 30, itemId, frame, "item:RoomObjMenue");
 			
 			
 			
@@ -662,9 +673,6 @@ public class BuildRoom {
 		
 		drawObjects(frame, false);
 		drawRoomObjects(frame, false);
-		
-
-		
 		
 		BufferedImage inventoryBackground = null;
 		BufferedImage btnCloseInventory = null;

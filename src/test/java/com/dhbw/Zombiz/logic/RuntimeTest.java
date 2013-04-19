@@ -2,7 +2,7 @@ package com.dhbw.Zombiz.logic;
 
 import javax.swing.JFrame;
 
-import org.junit.Test;
+//import org.junit.Test;
 
 import com.dhbw.Zombiz.gameEngine.logic.Runtime;
 
@@ -10,7 +10,9 @@ import junit.framework.TestCase;
 
 public class RuntimeTest extends TestCase {
 	
-	@Test
+	/**@Test
+         * 
+         */
 	public void testSaveLoad(){
 		//init a new Runtime and set the current Room to 1
 		JFrame frame =  new JFrame("Nightmare On Coblitzallee");

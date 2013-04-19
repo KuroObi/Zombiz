@@ -49,8 +49,16 @@ public class Runtime{
 	private static List <Actor> metActors = null;		//List of already meet Actors
 	private static List <Room> enterdRooms = null;		//List of already entered Rooms
 	private static List <Room> enterableRooms = null;	//List of Rooms the player is able to enter
-	private static int enterdRoomCounter = 0;			//Counter of how many Rooms have been entered
-	
+	private static int enterdRoomCounter = 0;		//Counter of how many Rooms have been entered
+	private static int gameState = 0;                       //Monitores the flowcontrol
+
+    public static int getGameState() {
+        return gameState;
+    }
+
+    public static void setGameState(int gameState) {
+        Runtime.gameState = gameState;
+    }
 	
 	private static List <Item> inventory = new ArrayList<Item>();	//List of Items the play have
 	
@@ -65,6 +73,7 @@ public class Runtime{
 		if(newGame){
 			//Hier kommt der Prolog hin ... 
 			setCurrRoomId(5);
+                        gameState=0;
 		}else{
 			loadGame();
 		}
@@ -80,14 +89,64 @@ public class Runtime{
         public static void changeRoom (int id, JFrame frame){
             BuildRoom br = new BuildRoom(id, frame);
         }
+ 
+        /**
+         * @param id            The id of the "thing" to be checked. What that thing is, is determined by the type.
+         * @param type          To what does the id belong? If further types will be needed (perhaps Conversation or dialog) they can be easily implemented by assigning a char to them
+         * @values for type     o - RoomObject; 
+         *                      i - item; 
+         *                      a - NPC; 
+         *                      r - Room/Location;
+         * @param origin        From where was the function called. With this variable it is possible to distinguish what sort of step is being checked
+         * @values for origin   u - 'Use' [For example if you still want to make interaction with an object possible, but you're not allowed to use it anymore or use it yet]
+         *                      d - 'Draw' [Determines whether a thing should be drawn or not. Helpful for example in the room with Meier, where the Pulley should only be drawn when you're in one certain state.]
+         * @return              returns whether the step will be granted or denied
+         */
+        
+        public static boolean checkStep (int id, char type, char origin){
+            boolean possible = true;
+            
+            //This is the section where the id of the roomobjects will be checked 
+            if (type=='o'){
+                switch (gameState){
+                    case 0: if(id==33) possible=false; break;
+                    case 1: if (id==28||id==16) possible=false; break;
+                    case 2: if (id==3||id==1||(id==16&&origin=='u')) possible=false; break;
+                    default: possible=true;
+                            
+                            }
+                }
+            
+/* former approach; deprecated because the switch case approach is much more practical, but left for further references
+ * if (gameState==0&&id==33){
+   * possible=false;
+                }
+                if (gameState==1&&(id==28||id==16)){
+                    possible=false;
+                }
+                if(gameState==2&&(id==3||id==1)){
+                    possible=false;
+                }*/
+                                    
+            
+            //This is the section where the id of the items will be checked
+            if (type=='i'){
+            }
+            //This is the section where the id of the actors is checked
+            if (type=='a'){
+            }
+            //This is the section where the id of the rooms will be checked
+            if (type=='r'){
+            }
+            return possible;
+        }
+        
         
 	/**saves all Runtime Variables and
 	 * the current Room the player is in into the savefile
 	 * 
 	 */
 	public static void saveGame(){
-		
-	
 		
 		try{
 			FileOutputStream saveFile=new FileOutputStream(savegame);
