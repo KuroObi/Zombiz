@@ -10,12 +10,14 @@ import java.util.List;
 import java.util.Scanner;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
 import com.dhbw.Zombiz.gameEngine.logic.Actor;
+import com.dhbw.Zombiz.gameEngine.logic.BuildRoom;
 import com.dhbw.Zombiz.gameEngine.logic.Conversation;
 import com.dhbw.Zombiz.gameEngine.logic.DialogEntry;
 
@@ -27,8 +29,88 @@ public class DialogOutput {
 	public int nextDeId;
 	public Conversation conv;
 	public List<Actor> actors;
-
+	public BufferedImage backgroundImage;
 	
+	public static int option;
+	public static int optionOne;
+	public static int optionTwo;
+	public static int optionThree;
+	
+	public int maxDeSize; 
+	public int roomId;
+	
+	
+	
+	
+	public int getRoomId() {
+		return roomId;
+	}
+
+
+	public void setRoomId(int roomId) {
+		this.roomId = roomId;
+	}
+
+
+	public int getMaxDeSize() {
+		return maxDeSize;
+	}
+
+
+	public void setMaxDeSize(int maxDeSize) {
+		this.maxDeSize = maxDeSize;
+	}
+
+
+	public static int getOptionOne() {
+		return optionOne;
+	}
+
+
+	public static void setOptionOne(int optionOne) {
+		DialogOutput.optionOne = optionOne;
+	}
+
+
+	public static int getOptionTwo() {
+		return optionTwo;
+	}
+
+
+	public static void setOptionTwo(int optionTwo) {
+		DialogOutput.optionTwo = optionTwo;
+	}
+
+
+	public static int getOptionThree() {
+		return optionThree;
+	}
+
+
+	public static void setOptionThree(int optionThree) {
+		DialogOutput.optionThree = optionThree;
+	}
+
+
+	public static int getOption() {
+		return option;
+	}
+
+
+	public static void setOption(int option) {
+		DialogOutput.option = option;
+	}
+
+
+	public BufferedImage getBackgroundImage() {
+		return backgroundImage;
+	}
+
+
+	public void setBackgroundImage(BufferedImage backgroundImage) {
+		this.backgroundImage = backgroundImage;
+	}
+
 
 	public List<Actor> getActors() {
 		return actors;
@@ -58,31 +140,36 @@ public class DialogOutput {
 	public void setNextDeId(int nextDeId) {
 		this.nextDeId = nextDeId;
 	}
+	
+	
 
 
 	//Constructor ! 
 	public DialogOutput(JFrame frame, Conversation c, BufferedImage backgroundImage, List<Actor> actors, int rootRoomId ){
 		
+		frame.getContentPane().removeAll();
 		
+		setMaxDeSize(c.getDialogEntries().size());
+		setRoomId(rootRoomId);
 		
 		
 		setActors(actors);
-		
+		setBackgroundImage(backgroundImage);
 		setConv(c);
 		
 		
 		Conversation conversation = c; 
-		JTextArea dialog =  getDialogEntry(conversation, actors, true);
+		JTextArea dialog =  getDialogEntry(frame, conversation, actors, true);
 		
 		frame.add(dialog);
-		setDialogBackground(frame, backgroundImage);
-		frame.repaint(); 
 		
+		frame.repaint(); 
+		setDialogBackground(frame, backgroundImage);
 		
 	}
 	
 	
-	public JTextArea getDialogEntry(Conversation c, List<Actor> actors, boolean firstCall){
+	public JTextArea getDialogEntry(final JFrame frame,Conversation c, final List<Actor> actors, boolean firstCall){
 		String text = null;
 		if(firstCall){
 			DialogEntry deFirst = c.getDialogEntryById(1);
@@ -98,8 +185,8 @@ public class DialogOutput {
 			
 			String actorName = actors.get(Integer.parseInt(de.getActor())).getName();
 			
-			System.out.println("next id"+getNextDeId());
-			text = actorName + " : "+de.getActor()+" : "+de.getDialogText();
+			
+			text = actorName + " : "+de.getDialogText();
 			
 			
 			int nextId = 1;
@@ -111,46 +198,35 @@ public class DialogOutput {
 				nextId = de.getLinkedDialogEntries().get(0);
 			}
 			else {
-				if(de.getLinkedDialogEntries().size() > 0)
+				if(de.getLinkedDialogEntries().size() > 0){
 					optionOne = de.getLinkedDialogEntries().get(0);
-				if(de.getLinkedDialogEntries().size() > 1)
+					setOptionOne(de.getLinkedDialogEntries().get(0));
+				}
+				
+				if(de.getLinkedDialogEntries().size() > 1){
 					optionTwo = de.getLinkedDialogEntries().get(1);
-				if(de.getLinkedDialogEntries().size() > 2)
+					setOptionTwo(de.getLinkedDialogEntries().get(1));
+				}
+				if(de.getLinkedDialogEntries().size() > 2){
 					optionThree = de.getLinkedDialogEntries().get(2);
+					setOptionThree(de.getLinkedDialogEntries().get(2));
+				}
+				
 				
 				if(optionOne != 0){
-					//System.out.println("Option 1 :"+c.getDialogEntryById(optionOne).getDialogText());
+					text = "\n 1: "+c.getDialogEntryById(optionOne).getDialogText()+"\n";
+					addClickableFunction(frame,25, 445, 535, 20, "option:1");
 				}
 				if(optionTwo != 0){
-					//System.out.println("Option 2 :"+c.getDialogEntryById(optionTwo).getDialogText());
+					text = text + "\n 2: "+c.getDialogEntryById(optionTwo).getDialogText()+"\n";
+					addClickableFunction(frame,25, 475, 535, 20, "option:2");
 				}
 				if(optionThree != 0){
-					//System.out.println("Option 3 :"+c.getDialogEntryById(optionThree).getDialogText());
-				}
-				
-				
-				int option = 1;
-				
-				//System.out.println("Option : "+option);
-				
-				switch(option){
-					case 1: 
-						nextId = optionOne;
-						break;
-					case 2: 
-						nextId = optionTwo;
-						break;
-					case 3:
-						nextId = optionThree;
-						break;
-				}
-				
+					text = text + "\n 3: "+c.getDialogEntryById(optionThree).getDialogText();
+					addClickableFunction(frame, 25, 510, 535, 20, "option:3");
+					}
 			}
-			
-			
-	    	
 			setNextDeId(nextId);
-			
 		}
 		
 		JTextArea dialog = new JTextArea();
@@ -165,6 +241,7 @@ public class DialogOutput {
     	dialog.setBorder(new EmptyBorder(10, 10, 10, 10) );
 		
 		
+    	
 		return dialog;
 		
 		
@@ -195,27 +272,74 @@ public class DialogOutput {
 			e.printStackTrace();
 		}
 		
+		JLabel label = new JLabel(new ImageIcon(backgroundImage));
 		backgroundImage.getGraphics().drawImage(dialogBackground, 0, -10, null);
 		backgroundImage.getGraphics().drawImage(dialogNext, 600, 500, 166, 84, null);
 		
-		addClickableFunction(frame, 600, 500, 166, 84);
+		addClickableFunction(frame, 600, 500, 166, 84, "nextDialogEntry");
 		
+		frame.add(label);
 		frame.repaint();
 	}
 
 
-	public void addClickableFunction(final JFrame frame, int xLoc, int yLoc,int width, int height){
+	public void addClickableFunction(final JFrame frame, int xLoc, int yLoc,int width, int height, final String type){
 		JLabel label = new JLabel();
 		label.setBounds(xLoc, yLoc, width, height);
 	
 		label.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent me) {
-				JTextArea dialog = getDialogEntry(getConv(), getActors(), false);
+				
+				
+			if(type.equalsIgnoreCase("nextDialogEntry")){	
+				
+				if(getNextDeId() <=getMaxDeSize()){
+				frame.getContentPane().removeAll();
+				JTextArea dialog =  getDialogEntry(frame, getConv(), actors, false);
 				frame.add(dialog);
-				frame.repaint();
+				frame.repaint(); 
+				setDialogBackground(frame, backgroundImage);
+				}
+				else {
+					BuildRoom r = new BuildRoom(getRoomId(), frame);
+				}
+			}
+			
+			if(type.equalsIgnoreCase("option:1")){
+				setNextDeId(getOptionOne());
+				frame.getContentPane().removeAll();
+				JTextArea dialog =  getDialogEntry(frame, getConv(), actors, false);
+				frame.add(dialog);
+				frame.repaint(); 
+				setDialogBackground(frame, backgroundImage);
+			}
+			
+			if(type.equalsIgnoreCase("option:2")){
+				setNextDeId(getOptionTwo());
+				frame.getContentPane().removeAll();
+				JTextArea dialog =  getDialogEntry(frame, getConv(), actors, false);
+				frame.add(dialog);
+				frame.repaint(); 
+				setDialogBackground(frame, backgroundImage);
+			}
+			
+			if(type.equalsIgnoreCase("option:3")){
+				setNextDeId(getOptionThree());
+				frame.getContentPane().removeAll();
+				JTextArea dialog =  getDialogEntry(frame, getConv(), actors, false);
+				frame.add(dialog);
+				frame.repaint(); 
+				setDialogBackground(frame, backgroundImage);
+			}
+			
+			
+			
+			
 			}});
 				
+		
+		
 		frame.add(label);
 		
 	}

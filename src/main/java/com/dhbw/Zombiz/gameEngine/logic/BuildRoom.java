@@ -33,6 +33,7 @@ public class BuildRoom {
 	JFrame frame; 
 	static XmlParser parser;
 	int roomId;
+        int side=0;
 	
 
 	int itemsFocussedInInventory = 0; 
@@ -313,6 +314,24 @@ public class BuildRoom {
 					refreshFrame(frame);
 					setItemsFocussedInInventory(0);
 				}
+                                if(type.equalsIgnoreCase("inventory:next")){
+					System.out.println("You turned the page!!!");
+					side = 15;
+                                        refreshFrame(frame);
+					setItemsFocussedInInventory(0);
+                                        drawInventory(frame);
+					frame.repaint();
+                                   
+				}
+                                 if(type.equalsIgnoreCase("inventory:back")){
+					System.out.println("You turned the page!!!");
+					side = 0;
+                                        refreshFrame(frame);
+					setItemsFocussedInInventory(0);
+                                        drawInventory(frame);
+					frame.repaint();
+                                   
+				}
 				if(type.equalsIgnoreCase("item")){
 					System.out.println("You pressed Item "+itemId);
 					drawItemMenue(frame, xLoc, yLoc, itemId, 'i'); }
@@ -345,6 +364,7 @@ public class BuildRoom {
                                         }
 					Runtime.addItemToInventory(getItemById(getItems(), itemId));
 					deleteItem(frame, itemId);
+                                        System.out.println("item not deleted");
 					}
 				if(type.equalsIgnoreCase("inspect:itemmenue")){
 					System.out.println("inspect item ...");
@@ -675,9 +695,13 @@ public class BuildRoom {
 		
 		BufferedImage inventoryBackground = null;
 		BufferedImage btnCloseInventory = null;
+                BufferedImage btninventoryNext = null;
+                 BufferedImage btninventoryBack = null;
 		try {
 			inventoryBackground = ImageIO.read(new File("src/main/resources/Picture/Inventory/inventoryBackground.png"));
 			btnCloseInventory = ImageIO.read(new File("src/main/resources/Picture/Inventory/btnCloseInventory.png"));
+                        btninventoryNext = ImageIO.read(new File("src/main/resources/Picture/Inventory/btninventoryNext.png"));
+                        btninventoryBack = ImageIO.read(new File("src/main/resources/Picture/Inventory/btninventoryBack.png"));
 
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
@@ -686,21 +710,27 @@ public class BuildRoom {
 		
 
 		backgroundImage.getGraphics().drawImage(inventoryBackground , 90, 80 , 600, 400, null);
-		backgroundImage.getGraphics().drawImage(btnCloseInventory , 630, 85 , 50, 50, null);
+		backgroundImage.getGraphics().drawImage(btnCloseInventory , 630, 85 , 60, 50, null);
+               if (side==0){
+                backgroundImage.getGraphics().drawImage(btninventoryNext , 560, 450 , 60, 25, null);}
+               else
+               { backgroundImage.getGraphics().drawImage(btninventoryBack , 160, 450 , 25, 25, null);}
 		addClickableFunction(630, 85, 50, 50, 999, frame, "inventory:close");
+                addClickableFunction(560, 450, 60,25, 999, frame, "inventory:next");
+                addClickableFunction(160, 450, 60,25, 999, frame, "inventory:back");
 		List<Item> inventory = Runtime.getInventory();
 			
 		
 		
 		
-		
+                        int rowid = 0;
 			int xLoc = 110;
 			int yLoc = 165;
 			
 			int xLocClick = 110;
 			int yLocClick = 154;
 			
-		for(int cntItemPic = 0; cntItemPic < inventory.size(); cntItemPic++){
+		for(int cntItemPic = 0+side; cntItemPic < inventory.size(); cntItemPic++){
 			
 			String itemPicPath = trimmPicPath(inventory.get(cntItemPic).getPicturePath());
 			//itemPicPath = itemPicPath.replace(".png", "");
@@ -718,9 +748,40 @@ public class BuildRoom {
 			
 			addClickableFunction(xLocClick, yLocClick, 90, 84, inventory.get(cntItemPic).getId(), frame, "inventory:click");
 			
-			xLoc = xLoc+120;
-			xLocClick = xLocClick+120;
-			if(cntItemPic > 6){
+			
+                        
+                        if (rowid==0){
+                            xLocClick = 110;
+                            yLocClick = 154;
+                            xLoc = xLoc+120;
+                            xLocClick = xLocClick+120;
+                            if (cntItemPic >=4+side)
+                            { rowid=1;
+                            xLoc = -10;
+                            xLocClick = -10;
+                            yLoc = 267;
+                            yLocClick = 267;}
+                        }
+                        if (rowid==1){
+                            xLoc = xLoc+120;
+                            xLocClick = xLocClick+120;
+                            if (cntItemPic >=9+side)
+                            {rowid=2;
+                            xLoc = -10;
+                            xLocClick = -10;
+                            yLoc = 380;
+                            yLocClick = 380;
+                            }
+                        }
+                        if (rowid==2){
+                            xLoc = xLoc+120;
+                            xLocClick = xLocClick+120;
+                            if (cntItemPic >=13+side)
+                            { rowid=-1;
+                            }
+                        }
+                        
+			/*if(cntItemPic > 6){
 				xLoc = 110;
 				xLocClick = 110;
 				
@@ -733,8 +794,8 @@ public class BuildRoom {
 				
 				yLoc = yLoc+103;
 				yLocClick = yLocClick+103;
-			}
-			
+			}*/
+			System.out.println(cntItemPic);
 			
 			
 		}

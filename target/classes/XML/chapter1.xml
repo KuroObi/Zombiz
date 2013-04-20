@@ -55,7 +55,7 @@
           </Field>
           <Field Type="Number" Hint="Which ID does the NPC has as a GameObject">
             <Title>NPCID</Title>
-            <Value>000</Value>
+            <Value>001</Value>
           </Field>
           <Field Type="Text" Hint="Classification to which the actor belongs.">
             <Title>Class</Title>
@@ -127,7 +127,7 @@
           </Field>
           <Field Type="Number" Hint="Which ID does the NPC has as a GameObject">
             <Title>NPCID</Title>
-            <Value>001</Value>
+            <Value>002</Value>
           </Field>
           <Field Type="Text" Hint="Classification to which the actor belongs.">
             <Title>Class</Title>
@@ -199,7 +199,7 @@
           </Field>
           <Field Type="Number" Hint="Which ID does the NPC has as a GameObject">
             <Title>NPCID</Title>
-            <Value>002</Value>
+            <Value>003</Value>
           </Field>
           <Field Type="Text" Hint="Classification to which the actor belongs.">
             <Title>Class</Title>
@@ -271,7 +271,7 @@
           </Field>
           <Field Type="Number" Hint="Which ID does the NPC has as a GameObject">
             <Title>NPCID</Title>
-            <Value>003</Value>
+            <Value>004</Value>
           </Field>
           <Field Type="Text" Hint="Classification to which the actor belongs.">
             <Title>Class</Title>
@@ -343,7 +343,7 @@
           </Field>
           <Field Type="Number" Hint="Which ID does the NPC has as a GameObject">
             <Title>NPCID</Title>
-            <Value>004</Value>
+            <Value>005</Value>
           </Field>
           <Field Type="Text" Hint="Classification to which the actor belongs.">
             <Title>Class</Title>
@@ -415,7 +415,7 @@
           </Field>
           <Field Type="Number" Hint="Which ID does the NPC has as a GameObject">
             <Title>NPCID</Title>
-            <Value>005</Value>
+            <Value>006</Value>
           </Field>
           <Field Type="Text" Hint="Classification to which the actor belongs.">
             <Title>Class</Title>
@@ -4063,7 +4063,7 @@
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>NPCID:004(000.00/000.00) Edward</Value>
+            <Value>NPCID:005(191.00/143.00) Edward</Value>
           </Field>
           <Field Type="Text" Hint="The corridor that belongs to the room.">
             <Title>CorridorPointer</Title>
@@ -4343,7 +4343,7 @@
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>NPCID:002(038.00/259.00) Meier</Value>
+            <Value>NPCID:003(038.00/259.00) Meier</Value>
           </Field>
           <Field Type="Text" Hint="The corridor that belongs to the room.">
             <Title>CorridorPointer</Title>
@@ -4512,7 +4512,7 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>NPCID:005(216.00/182.00) Janitor</Value>
+            <Value>NPCID:006(216.00/182.00) Janitor</Value>
           </Field>
           <Field Type="Text" Hint="The corridor that belongs to the room.">
             <Title>CorridorPointer</Title>
@@ -4736,7 +4736,7 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>NPCID:003(467.00/213.00) Harald</Value>
+            <Value>NPCID:004(467.00/213.00) Harald</Value>
           </Field>
           <Field Type="Text" Hint="The corridor that belongs to the room.">
             <Title>CorridorPointer</Title>
