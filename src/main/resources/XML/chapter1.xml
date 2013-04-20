@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ChatMapperProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Title="Games" Version="1.3.0.0" Author="" EmphasisColor1="#E7955B" EmphasisStyle1="b--" EmphasisColor1Label="" EmphasisColor2="#44B634" EmphasisStyle2="b--" EmphasisColor2Label="" EmphasisColor3="#4688E6" EmphasisStyle3="b--" EmphasisColor3Label="" EmphasisColor4="#CCCCCC" EmphasisStyle4="b--" EmphasisColor4Label="">
   <Description>Project configured for game development.</Description>
   <Assets>
@@ -4115,7 +4115,7 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:025(000.00/000.00) ToPrinterroom, RoomObjectID:027(000.00/000.00) MensaDoor</Value>
+            <Value>RoomObjectID:025(304.00/142.00) ToPrinterroom, RoomObjectID:027(539.00/195.00) MensaDoor</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -4227,7 +4227,7 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:001(424.00/379.00) Key, RoomObjectID:033(000.00/000.00) Door 10</Value>
+            <Value>ItemID:001(646.00/350.00) Key, RoomObjectID:033(000.00/000.00) Door 10</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -4452,7 +4452,7 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:007(000.00/000.00) Repair-Tools for elevator, ItemID:019(000.00/000.00) Lighter, ItemID:020(000.00/000.00) Wire, RoomObjectID:012(000.00/000.00) Cupboard</Value>
+            <Value>ItemID:007(631.00/444.00) Repair-Tools for elevator, ItemID:020(669.00/425.00) Wire, RoomObjectID:012(061.00/177.00) Cupboard</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -4508,11 +4508,11 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:014(000.00/000.00) Fuseblock1</Value>
+            <Value>RoomObjectID:014(058.00/171.00) Fuseblock1</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>NPCID:005(000.00/000.00) Janitor</Value>
+            <Value>NPCID:005(216.00/182.00) Janitor</Value>
           </Field>
           <Field Type="Text" Hint="The corridor that belongs to the room.">
             <Title>CorridorPointer</Title>
@@ -4564,7 +4564,7 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:005(062.00/414.00) Flyer0, ItemID:018(758.00/542.00) Cartouche</Value>
+            <Value>ItemID:005(062.00/414.00) Flyer0, ItemID:018(588.00/528.00) Cartouche</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -4788,7 +4788,7 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:005(000.00/000.00) Bookself, RoomObjectID:006(000.00/000.00) Printer, RoomObjectID:013(000.00/000.00) Window1</Value>
+            <Value>RoomObjectID:005(648.00/122.00) Bookself, RoomObjectID:006(411.00/241.00) Printer, RoomObjectID:013(000.00/000.00) Window1</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>

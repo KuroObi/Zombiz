@@ -173,10 +173,11 @@ public class BuildRoom {
 		// setBackground Image
 		
 		JLabel label = setBackgroundImage(frame);
-		drawInventoryBag(frame);
+		
 		drawActors(frame);
 		drawObjects(frame, true); 
-		drawRoomObjects(frame, true);	
+		drawRoomObjects(frame, true);
+		drawInventoryBag(frame);
 		frame.add(label);
 	}
 	
@@ -320,8 +321,6 @@ public class BuildRoom {
 					drawItemMenue(frame, xLoc, yLoc, itemId, 'r'); 
 				}
 				
-				if(type.equalsIgnoreCase("actor"))
-					System.out.println("You pressed Item "+itemId);
 				
 				if(type.equalsIgnoreCase("leaveRoom")){
 					System.out.println("You want to leave ... ? :(");
