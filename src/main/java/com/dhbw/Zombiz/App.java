@@ -90,6 +90,7 @@ public class App
     	
     	frame.setSize(800,600);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                frame.setResizable(false);
 		
 		
 		Runtime r = new Runtime(true,frame);
