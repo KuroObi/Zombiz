@@ -440,13 +440,8 @@ public class BuildRoom {
 		
 	}
 	
-
-	//TO DO :  Validate x,y Coordinates, so ItemMenue wont be drawn out of screen !!! 
-	/*if(yLoc < 40) yLoc = yLoc+40; 
-		else yLoc = yLoc-40; */
 	public void drawItemMenue(JFrame frame, int xLoc, int yLoc, int itemId, char option){
-		
-		
+            
 		if(option == 'i'){
 		BufferedImage btnTakeItem = null;
 		BufferedImage btnLeaveItem = null;
@@ -460,15 +455,22 @@ public class BuildRoom {
 			e.printStackTrace();
 		} 
 		
-		
-		backgroundImage.getGraphics().drawImage(btnTakeItem, xLoc-60, yLoc-40, 180, 30, null);
-		addClickableFunction(xLoc-60, yLoc-40, 180, 30, itemId, frame, "pickup:itemmenue");
+                
+                backgroundImage.getGraphics().drawImage(btnTakeItem, xLoc-60, yLoc-40, 180, 30, null);
+                addClickableFunction(xLoc-60, yLoc-50, 180, 30, itemId, frame, "pickup:itemmenue");
 		
 		backgroundImage.getGraphics().drawImage(btnLeaveItem, xLoc-60, yLoc+40, 180, 30, null);
 		addClickableFunction(xLoc-60, yLoc+40, 180, 30, itemId, frame, "leave:item");
 		
-		backgroundImage.getGraphics().drawImage(btnInspectItem, xLoc+80, yLoc, 180, 30, null);
-		//addClickableFunction(xLoc+80, yLoc, 180, 30, itemId, frame, "pickup:itemmenue");
+                if(xLoc+180 < 800){
+                    backgroundImage.getGraphics().drawImage(btnInspectItem, xLoc+80, yLoc, 180, 30, null);
+                    //addClickableFunction(xLoc+80, yLoc, 180, 30, itemId, frame, "pickup:itemmenue");
+                }
+                else{
+                    backgroundImage.getGraphics().drawImage(btnInspectItem, xLoc-210, yLoc, 180, 30, null);
+                    //addClickableFunction(xLoc+80, yLoc, 180, 30, itemId, frame, "pickup:itemmenue");
+                }
+                
 		frame.repaint();
 		}
 		
@@ -491,20 +493,31 @@ public class BuildRoom {
 			//Liste fŸr RoomObjects, bei denen der MenŸPunkt : Benutzen erscheinen soll !
 			
 			if(!(itemId == 1 || itemId == 2 ||itemId == 3 || (itemId >= 15 && itemId <= 32))){
-			backgroundImage.getGraphics().drawImage(btnInspectRoomObj, xLoc+30, yLoc, 180, 30, null);
+                        backgroundImage.getGraphics().drawImage(btnInspectRoomObj, xLoc, yLoc+90, 180, 30, null);
+			//backgroundImage.getGraphics().drawImage(btnInspectRoomObj, xLoc+30, yLoc, 180, 30, null);
 			//addClickableFunction(xLoc+30, yLoc, 180, 30, itemId, frame, "");
 			}
 			
-			backgroundImage.getGraphics().drawImage(btnUseRoomObj, xLoc-125, yLoc+20, 180, 30, null);
-			addClickableFunction(xLoc-125, yLoc+20, 180, 30, itemId, frame, "use:RoomObjMenue");
-			
-			backgroundImage.getGraphics().drawImage(btnNothingRoomObj, xLoc-125, yLoc+100, 180, 30, null);
-			addClickableFunction(xLoc-125, yLoc+100, 180, 30, itemId, frame, "leave:item");
-			
-			backgroundImage.getGraphics().drawImage(btnUseItemOnRoomObj, xLoc-125, yLoc+180, 180, 30, null);
-			addClickableFunction(xLoc-125, yLoc+180, 180, 30, itemId, frame, "item:RoomObjMenue");
-			
-			
+                        //Sets correction values to ensure that the button is not outside the frame
+                        int upsideCorrection = 0;
+                        int rightsideCorrection = 0;
+                        
+                        if(yLoc+90 > 600){
+                            upsideCorrection = 100;
+                        }
+                        
+                        if(xLoc+180 > 800){
+                            rightsideCorrection = xLoc+180-800;
+                        }
+                        
+                        backgroundImage.getGraphics().drawImage(btnUseRoomObj, xLoc-rightsideCorrection, yLoc-upsideCorrection, 180, 30, null);
+                        addClickableFunction(xLoc-rightsideCorrection, yLoc-15-upsideCorrection, 180, 30, itemId, frame, "use:RoomObjMenue");
+                        
+                        backgroundImage.getGraphics().drawImage(btnNothingRoomObj, xLoc-rightsideCorrection, yLoc+30-upsideCorrection, 180, 30, null);
+                        addClickableFunction(xLoc-rightsideCorrection, yLoc+15-upsideCorrection, 180, 30, itemId, frame, "leave:item");
+                        
+                        backgroundImage.getGraphics().drawImage(btnUseItemOnRoomObj, xLoc-rightsideCorrection, yLoc+60-upsideCorrection, 180, 30, null);
+			addClickableFunction(xLoc-rightsideCorrection, yLoc+50-upsideCorrection, 180, 30, itemId, frame, "item:RoomObjMenue");			
 			
 			frame.repaint();
 		}
