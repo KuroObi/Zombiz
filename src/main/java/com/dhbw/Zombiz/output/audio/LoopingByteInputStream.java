@@ -20,38 +20,35 @@
  ********************************************************************************/
 package com.dhbw.Zombiz.output.audio;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
-/**
-    The LoopingByteInputStream is a ByteArrayInputStream that
-    loops indefinitely. The looping stops when the close() method
-    is called.
-    <p>Possible ideas to extend this class:<ul>
-    <li>Add an option to only loop a certain number of times.
-    </ul>
-*/
+/**The LoopingByteInputStream loops a Sound until the close() function is called.
+ * 
+ * @author Christoph Schabert
+ * @version 1.0
+ */
 public class LoopingByteInputStream extends ByteArrayInputStream {
 
     private boolean closed;
-
-    /**
-        Creates a new LoopingByteInputStream with the specified
-        byte array. The array is not copied.
-    */
+    
+    /**  Creates a new LoopingByteInputStream with the specified
+     *   byte array. The array is not copied. 
+     *   
+     * @param buffer byte array with the Input Stream Buffer
+     */
     public LoopingByteInputStream(byte[] buffer) {
         super(buffer);
         closed = false;
     }
 
-
-    /**
-        Reads <code>length</code> bytes from the array. If the
-        end of the array is reached, the reading starts over from
-        the beginning of the array. Returns -1 if the array has
-        been closed.
-    */
+    
+    /**calculates the length of the sound
+     * 
+     * @param buffer the Sound Byte Array
+     * @param offset the point to Start
+     * @param length the length of the Sound
+     */
     public int read(byte[] buffer, int offset, int length) {
         if (closed) {
             return -1;
@@ -74,10 +71,9 @@ public class LoopingByteInputStream extends ByteArrayInputStream {
     }
 
 
-    /**
-        Closes the stream. Future calls to the read() methods
-        will return 1.
-    */
+    /**closes the input Stream,
+     * the read method will returning a -1.
+     */
     public void close() throws IOException {
         super.close();
         closed = true;
