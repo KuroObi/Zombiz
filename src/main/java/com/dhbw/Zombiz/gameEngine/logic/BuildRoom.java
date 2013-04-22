@@ -40,7 +40,7 @@ public class BuildRoom {
 	Item firstFocussedItem; 
 	Item secondFocussedItem;
 	
-	
+	int menueIsOpenFlag = 0; //Is set to 1 if a RoomObjectMenu or an ItemMenu is currently open.
 	
 	static int  cnt = 0;
 	
@@ -333,11 +333,26 @@ public class BuildRoom {
                                    
 				}
 				if(type.equalsIgnoreCase("item")){
+                                    if(menueIsOpenFlag == 1){
+                                        refreshFrame(frame);
+                                        frame.repaint();
+                                        menueIsOpenFlag = 0;
+                                    }
+                                    else{
 					System.out.println("You pressed Item "+itemId);
-					drawItemMenue(frame, xLoc, yLoc, itemId, 'i'); }
+					drawItemMenue(frame, xLoc, yLoc, itemId, 'i'); 
+                                    }
+                                }
 				if(type.equalsIgnoreCase("roomObjects")){
-					System.out.println("You pressed RoomObject "+itemId);
-					drawItemMenue(frame, xLoc, yLoc, itemId, 'r'); 
+                                        if(menueIsOpenFlag == 1){
+                                            refreshFrame(frame);
+                                            frame.repaint();
+                                            menueIsOpenFlag = 0;
+                                        }
+                                        else{
+                                            System.out.println("You pressed RoomObject "+itemId);
+                                            drawItemMenue(frame, xLoc, yLoc, itemId, 'r');
+                                        }
 				}
 				
 				
@@ -441,7 +456,7 @@ public class BuildRoom {
 	}
 	
 	public void drawItemMenue(JFrame frame, int xLoc, int yLoc, int itemId, char option){
-            
+                menueIsOpenFlag = 1;
 		if(option == 'i'){
 		BufferedImage btnTakeItem = null;
 		BufferedImage btnLeaveItem = null;
@@ -585,11 +600,11 @@ public class BuildRoom {
 
 		
 		JLabel label = setBackgroundImage(frame);
-		drawInventoryBag(frame);
 		drawObjects(frame, true);
 		drawRoomObjects(frame, true);
+                drawInventoryBag(frame);
 		frame.add(label);
-		
+                
 	
 	}
 	
@@ -694,7 +709,7 @@ public class BuildRoom {
 			System.out.println("fit");
 		}
 		else {
-			System.out.println("doesn+t");
+			System.out.println("doesnt");
 		}
 		
 		
@@ -819,9 +834,10 @@ public class BuildRoom {
 	public void refreshFrame(JFrame frame){
 		deleteFrame(frame);
 		JLabel label = setBackgroundImage(frame);
-		drawInventoryBag(frame);
-		drawObjects(frame, true);
+		
+                drawObjects(frame, true);
 		drawRoomObjects(frame, true);
+		drawInventoryBag(frame);
 		frame.add(label);
 		frame.repaint();
 	}
@@ -850,8 +866,15 @@ public class BuildRoom {
 		
 		if(Integer.parseInt(itemToCombine.getCombinesWith()) == roomObj.getId()){
 			
-			// Do somethin if works ... 
+			//Deletes item from Inventory if it works 
 			System.out.println("is ready to combine ...");
+                        List<Item> inventory = Runtime.getInventory();
+                        if(inventory.contains(itemToCombine)){
+                            inventory.remove(itemToCombine);
+                            Runtime.setInventory(inventory);
+                            drawInventory(frame);
+                            frame.repaint();
+                        }
 		}
 		else {
 			// Do somethin if it not works ...

@@ -174,7 +174,9 @@ public class DialogOutput {
 		if(firstCall){
 			DialogEntry deFirst = c.getDialogEntryById(1);
 			
-			String actorName = actors.get(Integer.parseInt(deFirst.getActor())).getName();
+			                    
+			
+			String actorName = actors.get(Integer.parseInt(deFirst.getActor())-1).getName();
 
 			text = actorName +" : "+deFirst.getDialogText();
 			setNextDeId(deFirst.getLinkedDialogEntries().get(0));
@@ -183,7 +185,7 @@ public class DialogOutput {
 		else {
 			DialogEntry de = c.getDialogEntryById(getNextDeId());
 			
-			String actorName = actors.get(Integer.parseInt(de.getActor())).getName();
+			String actorName = actors.get(Integer.parseInt(de.getActor())-1).getName();
 			
 			
 			text = actorName + " : "+de.getDialogText();
