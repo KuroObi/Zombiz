@@ -95,11 +95,13 @@ public class App
 		
 		Runtime r = new Runtime(true,frame);
 		
+		Menu menu = new Menu();
+		menu.mainMenu(frame);
 
 		frame.setVisible(true);
     	
-    	Menu menu = new Menu();
-		menu.mainMenu(frame);
+    	
+		
     	
     
 
