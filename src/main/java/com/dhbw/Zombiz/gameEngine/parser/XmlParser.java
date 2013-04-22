@@ -47,7 +47,7 @@ public  class XmlParser {
 	
 	
 	 public Actor getActorById (int actorId){
-		 Actor actor = listActors.get(actorId);
+		 Actor actor = listActors.get(actorId-1);
 		 return actor;
 	 }
 	 
@@ -153,17 +153,22 @@ public  class XmlParser {
 					values[cntItems] = values[cntItems].trim();
 					
 					String itemId = values[cntItems].substring(6,9);
+					
+					
+					
 					String x = values[cntItems].substring(10,16);
 			        String y = values[cntItems].substring(17,23);
 			       
+			        
 			        float npcLocX = Float.parseFloat(x);
 			        float npcLocY = Float.parseFloat(y);
 					
 					Actor actor = getActorById(Integer.parseInt(itemId));
 					actor.setNpcLocX(npcLocX);
 					actor.setNpcLocY(npcLocY);
-					tmpListActor.add(actor); 
+					tmpListActor.add(actor);
 					
+				
 					
 				}
 			}

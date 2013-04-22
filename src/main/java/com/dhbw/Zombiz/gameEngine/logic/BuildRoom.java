@@ -164,6 +164,9 @@ public class BuildRoom {
 		
 		
 		setActors(p.getAllNpcsByRoomId(roomId));
+		
+		
+		
 		setRoomImagePath(trimmPicPath(room.getPicturePath()));
 		
 		deleteFrame(frame);

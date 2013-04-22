@@ -39,9 +39,20 @@ public class DialogOutput {
 	public int maxDeSize; 
 	public int roomId;
 	
+	public boolean isGroup;
 	
 	
 	
+	public boolean isGroup() {
+		return isGroup;
+	}
+
+
+	public void setGroup(boolean isGroup) {
+		this.isGroup = isGroup;
+	}
+
+
 	public int getRoomId() {
 		return roomId;
 	}
@@ -183,8 +194,9 @@ public class DialogOutput {
 			
 		}
 		else {
-			DialogEntry de = c.getDialogEntryById(getNextDeId());
 			
+			
+			DialogEntry de = c.getDialogEntryById(getNextDeId());
 			String actorName = actors.get(Integer.parseInt(de.getActor())-1).getName();
 			
 			
@@ -200,6 +212,7 @@ public class DialogOutput {
 				nextId = de.getLinkedDialogEntries().get(0);
 			}
 			else {
+				setGroup(true);
 				if(de.getLinkedDialogEntries().size() > 0){
 					optionOne = de.getLinkedDialogEntries().get(0);
 					setOptionOne(de.getLinkedDialogEntries().get(0));
@@ -214,20 +227,52 @@ public class DialogOutput {
 					setOptionThree(de.getLinkedDialogEntries().get(2));
 				}
 				
-				
+				String option1 = null, option2 = null , option3 = null; 
 				if(optionOne != 0){
-					text = "\n 1: "+c.getDialogEntryById(optionOne).getDialogText()+"\n";
-					addClickableFunction(frame,25, 445, 535, 20, "option:1");
+					option1 = "\n 1: "+c.getDialogEntryById(optionOne).getDialogText()+"\n";
 				}
 				if(optionTwo != 0){
-					text = text + "\n 2: "+c.getDialogEntryById(optionTwo).getDialogText()+"\n";
-					addClickableFunction(frame,25, 475, 535, 20, "option:2");
+					option2 = option1 + "\n 2: "+c.getDialogEntryById(optionTwo).getDialogText()+"\n";
 				}
 				if(optionThree != 0){
-					text = text + "\n 3: "+c.getDialogEntryById(optionThree).getDialogText();
-					addClickableFunction(frame, 25, 510, 535, 20, "option:3");
+					option3 = option2 + "\n 3: "+c.getDialogEntryById(optionThree).getDialogText();
 					}
+				
+				
+				if(optionOne !=0 && optionTwo !=0){
+					text = option2;
+					String []lines = option2.split(" ");
+					
+					if(lines.length <= 25){
+						addClickableFunction(frame,25, 445, 535, 20, "option:1");
+						addClickableFunction(frame,25, 475, 535, 20, "option:2");
+					}
+					if(lines.length >= 25){
+						addClickableFunction(frame,25, 445, 535, 30, "option:1");
+						addClickableFunction(frame,25, 495, 535, 30, "option:2");
+					}
+					
+				}
+				
+				
+				if(optionOne !=0 && optionTwo !=0 && optionThree !=0){
+					text = option3;
+					addClickableFunction(frame,25, 445, 535, 20, "option:1");
+					addClickableFunction(frame,25, 475, 535, 20, "option:2");
+					addClickableFunction(frame, 25, 510, 535, 20, "option:3");
+				}
+				
+				
 			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			setNextDeId(nextId);
 		}
 		
@@ -278,7 +323,14 @@ public class DialogOutput {
 		backgroundImage.getGraphics().drawImage(dialogBackground, 0, -10, null);
 		backgroundImage.getGraphics().drawImage(dialogNext, 600, 500, 166, 84, null);
 		
-		addClickableFunction(frame, 600, 500, 166, 84, "nextDialogEntry");
+		
+		if(isGroup()){
+			setGroup(false);
+		}
+		else
+			addClickableFunction(frame, 600, 500, 166, 84, "nextDialogEntry");
+		
+		
 		
 		frame.add(label);
 		frame.repaint();
@@ -296,7 +348,7 @@ public class DialogOutput {
 				
 			if(type.equalsIgnoreCase("nextDialogEntry")){	
 				
-				if(getNextDeId() <=getMaxDeSize()){
+				if(getNextDeId() <=getMaxDeSize()-1){
 				frame.getContentPane().removeAll();
 				JTextArea dialog =  getDialogEntry(frame, getConv(), actors, false);
 				frame.add(dialog);
