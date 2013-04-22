@@ -20,36 +20,31 @@
  ********************************************************************************/
 package com.dhbw.Zombiz.output.audio;
 
-import java.io.File;
-import java.io.IOException;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-
-/**
-    The Sound class is a container for sound samples. The sound
-    samples are format-agnostic and are stored as a byte array.
-*/
+/**the Sound Class contains a sound/musik part
+ * in a Byte Array
+ * 
+ * @author Christoph Schabert
+ * @version 1.0
+ */
 public class Sound {
 
-    private byte[] samples;
+    private byte[] sound;
 
-    /**
-        Create a new Sound object with the specified byte array.
-        The array is not copied.
-    */
-    public Sound(byte[] samples) {
-        this.samples = samples;
+    /**the Constructor creates a new sound Byte Array
+     * 
+     * @param samples the Sound Byte Array
+     */
+    public Sound(byte[] sounds) {
+        this.sound = sounds;
     }
 
 
-    /**
-        Returns this Sound's objects samples as a byte array.
-    */
+    /**Returns the Sound Byte Array
+     * 
+     * @return the sound Byte Array
+     */
     public byte[] getSamples() {
-        return samples;
+        return sound;
     }
 
 }

@@ -45,25 +45,15 @@ public class Runtime{
 	private static String savegame = "src\\main\\resources\\savegame.sav";	//path of the Savegame File
 	
 	//Runtime Variables
-	
+
+	private static List <Item> inventory = new ArrayList<Item>();	//List of Items the play have
 	private static List <Actor> metActors = null;		//List of already meet Actors
 	private static List <Room> enterdRooms = null;		//List of already entered Rooms
 	private static List <Room> enterableRooms = null;	//List of Rooms the player is able to enter
 	private static int enterdRoomCounter = 0;		//Counter of how many Rooms have been entered
 	private static int gameState = 0;                       //Monitores the flowcontrol
+	public static int currRoomId = 5 ;					//Gives the current Room ID, mainuse for save and starting a new Game
 
-    public static int getGameState() {
-        return gameState;
-    }
-
-    public static void setGameState(int gameState) {
-        Runtime.gameState = gameState;
-    }
-	
-	private static List <Item> inventory = new ArrayList<Item>();	//List of Items the play have
-	
-	public static int currRoomId = 5 ;
-	
 	/** Constructor for a new Game
 	 * 
 	 * @param newGame 1 for a new game; 0 for load game
@@ -310,15 +300,34 @@ public class Runtime{
 	public static void setInventory(List<Item> inventory) {
 		Runtime.inventory = inventory;
 	}
-
+	/**Retunrns the current Room ID
+	 * 
+	 * @return current Room ID
+	 */
 	public static int getCurrRoomId() {
 		return currRoomId;
 	}
-
+	/**set a new current Room ID
+	 * 
+	 * @param currRoomId new current Room ID
+	 */
 	public static void setCurrRoomId(int currRoomId) {
 		Runtime.currRoomId = currRoomId;
 	}
-	
+	/**returns the Game State
+	 * 
+	 * @return Game state
+	 */
+    public static int getGameState() {
+        return gameState;
+    }
+    /**set a new Game State
+     * 
+     * @param gameState the new Game State
+     */
+    public static void setGameState(int gameState) {
+        Runtime.gameState = gameState;
+    }
 	
 	
 }
