@@ -764,8 +764,8 @@ public class BuildRoom {
 		for(int cntItemPic = 0+side; cntItemPic < inventory.size(); cntItemPic++){
 			
 			String itemPicPath = trimmPicPath(inventory.get(cntItemPic).getPicturePath());
-			//itemPicPath = itemPicPath.replace(".png", "");
-			//itemPicPath = itemPicPath+"_inventory.png";
+			itemPicPath = itemPicPath.replace(".png", "");
+			itemPicPath = itemPicPath+"_inventory.png";
 			
 			
 			BufferedImage foregroundImage = null;
