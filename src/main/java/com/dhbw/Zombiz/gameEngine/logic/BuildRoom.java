@@ -34,6 +34,8 @@ public class BuildRoom {
 	static XmlParser parser;
 	int roomId;
         int side=0;
+        static char option;
+        static int convStatic;
 	
 
 	int itemsFocussedInInventory = 0; 
@@ -46,10 +48,15 @@ public class BuildRoom {
 	
 	Item roomObj;
 	boolean wantToCombineRoomObjWithItem;
+
+        public int getConvStatic() {
+            return convStatic;
+        }
 	
-	
-	
-	
+        public int getOption() {
+            return option;
+        }
+        
 	public int getItemsFocussedInInventory() {
 		return itemsFocussedInInventory;
 	}
@@ -140,9 +147,23 @@ public class BuildRoom {
 		return parser;
 	}
 	
-	
-	
-	
+	public void automaticTrigger(int convId, int roomId){
+            System.out.println("I was triggered.");
+            if (convId==14) convId=getConvStatic();
+            /*if (option=='c'){
+                DialogOutput dout = new DialogOutput(frame, getParser().getConversationById(convId), getBackgroundImage(), getParser().getListOfActors(), getRoomId());
+            }*/
+            if (option=='r'){
+                 System.out.println("I was called to build a room. I knew Room "+roomId+" and Conversation "+convId);
+                 BuildRoom br = new BuildRoom(roomId, frame);
+            }
+            if (option=='b'){
+                System.out.println("I was called to build a dialog. I knew Room "+roomId+" and Conversation "+convId);
+                //BuildRoom br = new BuildRoom(roomId, frame);
+                DialogOutput dout = new DialogOutput(frame, getParser().getConversationById(convId), getBackgroundImage(), getParser().getListOfActors(), roomId);
+            }
+        }
+        
 	
 	public BuildRoom(int roomId, JFrame frame){
 				
@@ -189,6 +210,7 @@ public class BuildRoom {
 		List<Actor> actors = getActors();		
 		for(int cnt = 0; cnt < actors.size(); cnt++){
 			Actor actor = actors.get(cnt);
+                        System.out.println("You drew NPC "+actor.getId());
 			addClickableFunction((int)actor.getNpcLocX(), (int)actor.getNpcLocY(), 100, 300, actor.getId(), frame, "actor");
 			
 		}
@@ -245,7 +267,7 @@ public class BuildRoom {
 		List<Item> roomObjectsInDrawFunction = getRoomObjects();
 		
 		for(int cntItemPic = 0; cntItemPic < roomObjectsInDrawFunction.size(); cntItemPic++){
-                    if (Runtime.checkStep(roomObjectsInDrawFunction.get(cntItemPic).getId(), 'o','d')){
+                    if (Runtime.checkStep(roomObjectsInDrawFunction.get(cntItemPic).getId(), 'o','d', frame)){
                         String itemPicPath = trimmPicPath(roomObjectsInDrawFunction.get(cntItemPic).getPicturePath());
 			float xLoc = roomObjectsInDrawFunction.get(cntItemPic).getItemLocY();
 			float yLoc = roomObjectsInDrawFunction.get(cntItemPic).getItemLocX();
@@ -367,8 +389,17 @@ public class BuildRoom {
                                         //Checking whether there is simply a pointer missing in the XML
                                         int help = getRoom().getLocationPointer();
                                         if (help == 0){System.out.println("There is no Locationpointer specified.");}
-                                        else {BuildRoom br = new BuildRoom(getRoom().getLocationPointer(), frame);}
-					}
+                                        else {
+
+                                                if (Runtime.checkStep(getRoom().getLocationPointer(), 'r', 'd', frame)){
+                                                    BuildRoom br = new BuildRoom(getRoom().getLocationPointer(), frame); 
+                                                    if (Runtime.checkTrigger(help)){
+                                                        automaticTrigger(14,getRoom().getLocationPointer());
+                                                    }
+                                                }
+                                        }
+                                }
+                   
 				if(type.equalsIgnoreCase("inGameMenue")){
 					System.out.println("InGameMenue");
 					}
@@ -394,21 +425,28 @@ public class BuildRoom {
 				 //Options for RoomObjects
 				if(type.equalsIgnoreCase("use:RoomObjMenue")){
                                     //checks whether a roomobject may be used.
-                                    if (Runtime.checkStep(itemId, 'o', 'u')){
-					Item item = getRoomObjectById(itemId);
-					String aimLoc = item.getLocationPointer();
-					aimLoc = aimLoc.substring(11, 14);
-					int aimLocId = Integer.parseInt(aimLoc);
-					System.out.println(aimLocId);
-                                        if (aimLocId == 0){System.out.println("There is no Locationpointer specified.");}
-                                        else {BuildRoom br = new BuildRoom(aimLocId, frame);}
+                                    Item item = getRoomObjectById(itemId);
+                                    String aimLoc = item.getLocationPointer();
+                                    aimLoc = aimLoc.substring(11, 14);
+                                    int aimLocId = Integer.parseInt(aimLoc);
+                                    System.out.println(aimLocId);
+                                    
+                                        if (Runtime.checkStep(itemId, 'o', 'u', frame)){
+                                            if (aimLocId == 0){System.out.println("There is no Locationpointer specified.");}
+                                            else {BuildRoom br = new BuildRoom(aimLocId, frame); 
+                                                if (Runtime.checkTrigger(aimLocId)){
+                                                    automaticTrigger(14, aimLocId);
+                                                }
+                                            }
 					}
+                                        else {System.out.println("You shall not pass.");}
+                                     
+                                }
                                     // in case the roomobject may not be used. 
                                     /**TODO: Has to be replaced by calling a dialog which states something about better not passing the door/ going that way.
                                      * 
                                      */
-                                    else {System.out.println("You shall not pass.");}
-                                    }
+
 				if(type.equalsIgnoreCase("item:RoomObjMenue")){
 				Item roomObj = getRoomObjectById(itemId);
 				setRoomObj(roomObj);
@@ -417,7 +455,9 @@ public class BuildRoom {
 				}
 				
 				if(type.equalsIgnoreCase("actor")){
-					DialogOutput dout = new DialogOutput(frame, getParser().getConversationById(12), getBackgroundImage(), getParser().getListOfActors(), getRoomId());
+                                        int conv = Runtime.chooseConv(actors.get(cnt).getId(), roomId);                                         
+                                        System.out.println("You NPC: " + actors.get(cnt).getId() + " Your Room: " + roomId + " Your Conversation: "+conv + " Your State: " + Runtime.getGameState());
+					DialogOutput dout = new DialogOutput(frame, getParser().getConversationById(conv), getBackgroundImage(), getParser().getListOfActors(), getRoomId());
 				}
 				
 				if(type.equalsIgnoreCase("inventory:click")){
@@ -437,7 +477,7 @@ public class BuildRoom {
 					focusItemInInventory(frame, itemInInventory);
 					
 				}
-									
+                                					
 			}});
 		frame.add(label);
 	}
@@ -618,7 +658,7 @@ public class BuildRoom {
 
 		
 		// if room is floor draw another HUD
-		if(!(roomId == 1 || roomId == 3 || roomId == 14 || roomId == 13 || roomId == 16 )){
+		if(!(roomId == 1 || roomId == 2 || roomId == 3 || roomId == 14 || roomId == 13 || roomId == 16 || roomId == 17 )){
 			BufferedImage inventoryBag = null;
 			try {
 				inventoryBag = ImageIO.read(new File("src/main/resources/Picture/hud.png"));
@@ -764,8 +804,8 @@ public class BuildRoom {
 		for(int cntItemPic = 0+side; cntItemPic < inventory.size(); cntItemPic++){
 			
 			String itemPicPath = trimmPicPath(inventory.get(cntItemPic).getPicturePath());
-			itemPicPath = itemPicPath.replace(".png", "");
-			itemPicPath = itemPicPath+"_inventory.png";
+			//itemPicPath = itemPicPath.replace(".png", "");
+			//itemPicPath = itemPicPath+"_inventory.png";
 			
 			
 			BufferedImage foregroundImage = null;

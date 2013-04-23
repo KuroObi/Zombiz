@@ -21,6 +21,7 @@
 
 package com.dhbw.Zombiz.gameEngine.logic;
 
+import com.dhbw.Zombiz.output.display.DialogOutput;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -53,7 +54,7 @@ public class Runtime{
 	private static int enterdRoomCounter = 0;		//Counter of how many Rooms have been entered
 	private static int gameState = 0;                       //Monitores the flowcontrol
 	public static int currRoomId = 5 ;					//Gives the current Room ID, mainuse for save and starting a new Game
-
+        private static boolean firstConv = true;
 	/** Constructor for a new Game
 	 * 
 	 * @param newGame 1 for a new game; 0 for load game
@@ -62,8 +63,8 @@ public class Runtime{
 	public Runtime(boolean newGame, JFrame frame){	
 		if(newGame){
 			//Hier kommt der Prolog hin ... 
-			setCurrRoomId(5);
-                        gameState=0;
+			setCurrRoomId(7);
+                        gameState=3;
 		}else{
 			loadGame();
 		}
@@ -93,7 +94,7 @@ public class Runtime{
          * @return              returns whether the step will be granted or denied
          */
         
-        public static boolean checkStep (int id, char type, char origin){
+        public static boolean checkStep (int id, char type, char origin, JFrame frame){
             boolean possible = true;
             
             //This is the section where the id of the roomobjects will be checked 
@@ -101,7 +102,8 @@ public class Runtime{
                 switch (gameState){
                     case 0: if(id==33) possible=false; break;
                     case 1: if (id==28||id==16) possible=false; break;
-                    case 2: if (id==3||id==1||(id==16&&origin=='u')) possible=false; break;
+                    case 2: if (id==3||id==1) possible=false; break;
+                    case 3: if (id==3||id==1) possible=false; break;
                     default: possible=true;
                             
                             }
@@ -127,10 +129,36 @@ public class Runtime{
             }
             //This is the section where the id of the rooms will be checked
             if (type=='r'){
+                switch (gameState){
+                    case 3: possible=true; break; 
+                    //if (id==1){gameState=4; DialogOutput dout = new DialogOutput(frame, BuildRoom.getParser().getConversationById(4), BuildRoom.backgroundImage, BuildRoom.getParser().getListOfActors(), 1); possible=false;}; break;
+                    default: possible = true;
+                }
             }
             return possible;
         }
         
+        public static boolean checkTrigger(int id){
+            boolean triggerSet= false;
+            switch (gameState){
+                case 3: if (id==1&&firstConv){System.out.println("I changed the trigger. ");BuildRoom.convStatic=4; BuildRoom.option='b'; triggerSet=true; firstConv=false;} break;
+                default: triggerSet=false;
+            }
+            System.out.println("I was called and I want to trigger "+triggerSet+ " I have this state " + gameState + " and I am the firstConv "+firstConv);
+            return triggerSet;
+        }
+        
+        
+        public static int chooseConv (int actorId, int roomId){
+            int conv=14;
+            switch (roomId){
+                case 7: if(gameState==2){conv=2; gameState=3;}
+                        else if(gameState==3||gameState==4) conv=3;
+                        else if(gameState==5) conv=5;
+                        else if(gameState==6) {conv=7; gameState=7;}; break;
+            }
+            return conv;
+        }
         
 	/**saves all Runtime Variables and
 	 * the current Room the player is in into the savefile
@@ -329,5 +357,12 @@ public class Runtime{
         Runtime.gameState = gameState;
     }
 	
+       public static boolean isFirstConv() {
+        return firstConv;
+    }
+
+    public static void setFirstConv(boolean firstConv) {
+        Runtime.firstConv = firstConv;
+    }
 	
 }

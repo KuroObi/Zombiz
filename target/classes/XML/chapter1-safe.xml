@@ -4227,7 +4227,7 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:001(646.00/350.00) Key, RoomObjectID:033(000.00/126.00) Door 10</Value>
+            <Value>ItemID:001(646.00/350.00) Key, RoomObjectID:033(000.00/000.00) Door 10</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -4788,7 +4788,7 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:005(648.00/122.00) Bookself, RoomObjectID:006(411.00/241.00) Printer, RoomObjectID:013(000.00/118.00) Window1</Value>
+            <Value>RoomObjectID:005(648.00/122.00) Bookself, RoomObjectID:006(411.00/241.00) Printer, RoomObjectID:013(000.00/000.00) Window1</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -5052,68 +5052,6 @@ Verdammt, die Tür bewegt sich nicht!
 Es muss einen andern Weg geben.
 Am besten schaue ich mich ein wenig um…
 [Location change]</Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="1" DestinationConvoID="1" OriginDialogID="1" DestinationDialogID="2" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="2" ConversationID="1" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
               </Field>
               <Field Type="Text" Hint="A description of what is going on during this dialogue.">
                 <Title>Parenthetical</Title>
@@ -6349,68 +6287,6 @@ Okay, vergessen wir das. Wo haben sie denn die anderen Zettel versteckt?</Value>
                 <Value />
               </Field>
             </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="2" DestinationConvoID="2" OriginDialogID="18" DestinationDialogID="19" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="19" ConversationID="2" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>3</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
             <OutgoingLinks />
             <ConditionsString />
             <UserScript />
@@ -6542,7 +6418,7 @@ Okay, vergessen wir das. Wo haben sie denn die anderen Zettel versteckt?</Value>
               </Field>
               <Field Type="Actor" Hint="The actor who is talking.">
                 <Title>Actor</Title>
-                <Value>3</Value>
+                <Value>1</Value>
               </Field>
               <Field Type="Actor" Hint="The actor who is listening.">
                 <Title>Conversant</Title>
@@ -6555,68 +6431,6 @@ Okay, vergessen wir das. Wo haben sie denn die anderen Zettel versteckt?</Value>
               <Field Type="Localization" Hint="The text that is spoken by the actor.">
                 <Title>Dialogue Text</Title>
                 <Value>Na los, worauf warten Sie? Die Schublade wird sich sicherlich nicht von selbst öffnen.</Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="3" DestinationConvoID="3" OriginDialogID="1" DestinationDialogID="2" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="2" ConversationID="3" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
               </Field>
               <Field Type="Text" Hint="A description of what is going on during this dialogue.">
                 <Title>Parenthetical</Title>
@@ -6787,68 +6601,6 @@ Okay, vergessen wir das. Wo haben sie denn die anderen Zettel versteckt?</Value>
               <Field Type="Localization" Hint="The text that is spoken by the actor.">
                 <Title>Dialogue Text</Title>
                 <Value>Ein Gegenstand mit dem sich ein Schloss knacken lässt… Eine Schande, dass mein Haar inzwischen kurz geschnitten ist. Sonst hätte ich bestimmt eine Haarnadel dabeigehabt. Aber so muss ich mich wohl die Räume durchsuchen.</Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="4" DestinationConvoID="4" OriginDialogID="1" DestinationDialogID="2" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="2" ConversationID="4" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
               </Field>
               <Field Type="Text" Hint="A description of what is going on during this dialogue.">
                 <Title>Parenthetical</Title>
@@ -7568,7 +7320,8 @@ Okay, vergessen wir das. Wo haben sie denn die anderen Zettel versteckt?</Value>
               <Field Type="Localization" Hint="The text that is spoken by the actor.">
                 <Title>Dialogue Text</Title>
                 <Value>Ach papperlappapp, meine Augen sind noch super! Aber warten Sie mal… diese Sicherung… Jetzt fällt es mir wieder ein! Der Sicherungskasten! In Raum 008 ist ein Sicherungskasten. Ich habe diese Sicherung gegen einen meiner Zettel getauscht.
-Hier, nimm sie doch gleich mit, ich kann damit nichts anfangen.</Value>
+Hier, nimm sie doch gleich mit, ich kann damit nichts anfangen.
+$§ItemID:010</Value>
               </Field>
               <Field Type="Text" Hint="A description of what is going on during this dialogue.">
                 <Title>Parenthetical</Title>
@@ -7630,68 +7383,6 @@ Hier, nimm sie doch gleich mit, ich kann damit nichts anfangen.</Value>
               <Field Type="Localization" Hint="The text that is spoken by the actor.">
                 <Title>Dialogue Text</Title>
                 <Value>Ehm, danke?</Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="5" DestinationConvoID="5" OriginDialogID="11" DestinationDialogID="12" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="12" ConversationID="5" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>3</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
               </Field>
               <Field Type="Text" Hint="A description of what is going on during this dialogue.">
                 <Title>Parenthetical</Title>
@@ -8069,9 +7760,7 @@ Hier, nimm sie doch gleich mit, ich kann damit nichts anfangen.</Value>
                 <Value />
               </Field>
             </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="6" DestinationConvoID="6" OriginDialogID="5" DestinationDialogID="8" IsConnector="false" />
-            </OutgoingLinks>
+            <OutgoingLinks />
             <ConditionsString />
             <UserScript />
           </DialogEntry>
@@ -8224,66 +7913,6 @@ Hier, nimm sie doch gleich mit, ich kann damit nichts anfangen.</Value>
               <Link OriginConvoID="6" DestinationConvoID="6" OriginDialogID="7" DestinationDialogID="6" IsConnector="false" />
               <Link OriginConvoID="6" DestinationConvoID="6" OriginDialogID="7" DestinationDialogID="2" IsConnector="false" />
             </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="8" ConversationID="6" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>3</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks />
             <ConditionsString />
             <UserScript />
           </DialogEntry>
@@ -8793,68 +8422,6 @@ Hier, nimm sie doch gleich mit, ich kann damit nichts anfangen.</Value>
               <Field Type="Localization" Hint="The text that is spoken by the actor.">
                 <Title>Dialogue Text</Title>
                 <Value>Alles klar. Dann vielen Dank nochmal und viel Erfolg.</Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="7" DestinationConvoID="7" OriginDialogID="7" DestinationDialogID="8" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="8" ConversationID="7" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>3</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
               </Field>
               <Field Type="Text" Hint="A description of what is going on during this dialogue.">
                 <Title>Parenthetical</Title>
@@ -9478,68 +9045,6 @@ Hier, nimm sie doch gleich mit, ich kann damit nichts anfangen.</Value>
                 <Value />
               </Field>
             </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="8" DestinationConvoID="8" OriginDialogID="8" DestinationDialogID="9" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="9" ConversationID="8" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>4</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
             <OutgoingLinks />
             <ConditionsString />
             <UserScript />
@@ -9550,7 +9055,7 @@ Hier, nimm sie doch gleich mit, ich kann damit nichts anfangen.</Value>
         <Fields>
           <Field Type="Text" Hint="The title of this conversation.">
             <Title>Title</Title>
-            <Value>Janitor Conversation - Window</Value>
+            <Value>Janitor Conversation - Door</Value>
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this conversation. The first is used as the background image.">
             <Title>Pictures</Title>
@@ -10138,7 +9643,8 @@ Hier, nimm sie doch gleich mit, ich kann damit nichts anfangen.</Value>
               </Field>
             </Fields>
             <OutgoingLinks>
-              <Link OriginConvoID="9" DestinationConvoID="9" OriginDialogID="8" DestinationDialogID="19" IsConnector="false" />
+              <Link OriginConvoID="9" DestinationConvoID="9" OriginDialogID="8" DestinationDialogID="9" IsConnector="false" />
+              <Link OriginConvoID="9" DestinationConvoID="9" OriginDialogID="8" DestinationDialogID="10" IsConnector="false" />
             </OutgoingLinks>
             <ConditionsString />
             <UserScript />
@@ -10565,9 +10071,7 @@ Schauen Sie doch mal in Raum X nach. Ich meine dort einen Flyer gesehen zu haben
                 <Value />
               </Field>
             </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="9" DestinationConvoID="9" OriginDialogID="15" DestinationDialogID="20" IsConnector="false" />
-            </OutgoingLinks>
+            <OutgoingLinks />
             <ConditionsString />
             <UserScript />
           </DialogEntry>
@@ -10754,103 +10258,13 @@ Schauen Sie doch mal in Raum X nach. Ich meine dort einen Flyer gesehen zu haben
             <ConditionsString />
             <UserScript />
           </DialogEntry>
-          <DialogEntry ID="19" ConversationID="9" IsRoot="false" IsGroup="true" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>Decision</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>6</Value>
-              </Field>
-            </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="9" DestinationConvoID="9" OriginDialogID="19" DestinationDialogID="10" IsConnector="false" />
-              <Link OriginConvoID="9" DestinationConvoID="9" OriginDialogID="19" DestinationDialogID="9" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="20" ConversationID="9" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>6</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks />
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
         </DialogEntries>
       </Conversation>
       <Conversation ID="10" NodeColor="Red">
         <Fields>
           <Field Type="Text" Hint="The title of this conversation.">
             <Title>Title</Title>
-            <Value>Janitor Conversation - Door</Value>
+            <Value>Janitor Conversation - Window</Value>
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this conversation. The first is used as the background image.">
             <Title>Pictures</Title>
@@ -11438,7 +10852,8 @@ Schauen Sie doch mal in Raum X nach. Ich meine dort einen Flyer gesehen zu haben
               </Field>
             </Fields>
             <OutgoingLinks>
-              <Link OriginConvoID="10" DestinationConvoID="10" OriginDialogID="8" DestinationDialogID="17" IsConnector="false" />
+              <Link OriginConvoID="10" DestinationConvoID="10" OriginDialogID="8" DestinationDialogID="9" IsConnector="false" />
+              <Link OriginConvoID="10" DestinationConvoID="10" OriginDialogID="8" DestinationDialogID="10" IsConnector="false" />
             </OutgoingLinks>
             <ConditionsString />
             <UserScript />
@@ -11865,9 +11280,7 @@ Schauen Sie doch mal in Raum X nach. Ich meine dort einen Flyer gesehen zu haben
                 <Value />
               </Field>
             </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="10" DestinationConvoID="10" OriginDialogID="15" DestinationDialogID="18" IsConnector="false" />
-            </OutgoingLinks>
+            <OutgoingLinks />
             <ConditionsString />
             <UserScript />
           </DialogEntry>
@@ -11929,96 +11342,6 @@ Schauen Sie doch mal in Raum X nach. Ich meine dort einen Flyer gesehen zu haben
             <OutgoingLinks>
               <Link OriginConvoID="10" DestinationConvoID="10" OriginDialogID="16" DestinationDialogID="12" IsConnector="true" />
             </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="17" ConversationID="10" IsRoot="false" IsGroup="true" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>Decision</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>6</Value>
-              </Field>
-            </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="10" DestinationConvoID="10" OriginDialogID="17" DestinationDialogID="9" IsConnector="false" />
-              <Link OriginConvoID="10" DestinationConvoID="10" OriginDialogID="17" DestinationDialogID="10" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="18" ConversationID="10" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>6</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks />
             <ConditionsString />
             <UserScript />
           </DialogEntry>
@@ -12162,68 +11485,6 @@ Schauen Sie doch mal in Raum X nach. Ich meine dort einen Flyer gesehen zu haben
               <Field Type="Localization" Hint="The text that is spoken by the actor.">
                 <Title>Dialogue Text</Title>
                 <Value>Stören Sie nicht meinen genialen, kreativen Schub!</Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="11" DestinationConvoID="11" OriginDialogID="1" DestinationDialogID="2" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="2" ConversationID="11" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>6</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
               </Field>
               <Field Type="Text" Hint="A description of what is going on during this dialogue.">
                 <Title>Parenthetical</Title>
@@ -15807,68 +15068,6 @@ $§ItemID:008</Value>
                 <Value />
               </Field>
             </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="12" DestinationConvoID="12" OriginDialogID="59" DestinationDialogID="60" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="60" ConversationID="12" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>5</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
             <OutgoingLinks />
             <ConditionsString />
             <UserScript />
@@ -16013,300 +15212,6 @@ $§ItemID:008</Value>
               <Field Type="Localization" Hint="The text that is spoken by the actor.">
                 <Title>Dialogue Text</Title>
                 <Value>Mami hat mir früher immer Mutorangen mit in die Schule gegeben, wenn mir die anderen Kinder Angst gemacht haben…</Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="13" DestinationConvoID="13" OriginDialogID="1" DestinationDialogID="2" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="2" ConversationID="13" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>5</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks />
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-        </DialogEntries>
-      </Conversation>
-      <Conversation ID="14" NodeColor="Red">
-        <Fields>
-          <Field Type="Text" Hint="The title of this conversation.">
-            <Title>Title</Title>
-            <Value>Default Conversation</Value>
-          </Field>
-          <Field Type="Files" Hint="A collection of image files that represent this conversation. The first is used as the background image.">
-            <Title>Pictures</Title>
-            <Value>[]</Value>
-          </Field>
-          <Field Type="Text" Hint="A short description of what happens in this conversation.">
-            <Title>Description</Title>
-            <Value>A default Conversation</Value>
-          </Field>
-          <Field Type="Actor" Hint="The actor who is doing most of the talking, or initiates this conversation.">
-            <Title>Actor</Title>
-            <Value>1</Value>
-          </Field>
-          <Field Type="Actor" Hint="The actor who is approached or is mostly talked to.">
-            <Title>Conversant</Title>
-            <Value>1</Value>
-          </Field>
-          <Field Type="Text" Hint="Top level classification of a story segment.">
-            <Title>Act</Title>
-            <Value />
-          </Field>
-          <Field Type="Text" Hint="Second level classification of a story segment.">
-            <Title>Chapter</Title>
-            <Value />
-          </Field>
-          <Field Type="Text" Hint="Third level classification of a story segment.">
-            <Title>Scene</Title>
-            <Value />
-          </Field>
-          <Field Type="Text" Hint="Fourth level classification of a story segment.">
-            <Title>Level</Title>
-            <Value />
-          </Field>
-          <Field Type="Text" Hint="How does this conversation generally make the actor's feel?">
-            <Title>Mood</Title>
-            <Value />
-          </Field>
-          <Field Type="Location" Hint="Location that this conversation takes place.">
-            <Title>Primary Location</Title>
-            <Value>-1</Value>
-          </Field>
-        </Fields>
-        <DialogEntries>
-          <DialogEntry ID="0" ConversationID="14" IsRoot="true" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>START</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="14" DestinationConvoID="14" OriginDialogID="0" DestinationDialogID="1" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="1" ConversationID="14" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>Ich glaube ich habe jetzt keine Zeit mich zu unterhalten...</Value>
-              </Field>
-              <Field Type="Text" Hint="A description of what is going on during this dialogue.">
-                <Title>Parenthetical</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="A collection of audio files that should be played during this dialogue.">
-                <Title>Audio Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A WMV video file to be played for this dialogue.">
-                <Title>Video File</Title>
-                <Value />
-              </Field>
-              <Field Type="Files" Hint="Associated files for lip sync">
-                <Title>Lipsync Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Files" Hint="Associated animation files">
-                <Title>Animation Files</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="How does this line of dialogue make the actors feel?">
-                <Title>Mood</Title>
-                <Value />
-              </Field>
-            </Fields>
-            <OutgoingLinks>
-              <Link OriginConvoID="14" DestinationConvoID="14" OriginDialogID="1" DestinationDialogID="2" IsConnector="false" />
-            </OutgoingLinks>
-            <ConditionsString />
-            <UserScript />
-          </DialogEntry>
-          <DialogEntry ID="2" ConversationID="14" IsRoot="false" IsGroup="false" NodeColor="White" DelaySimStatus="false" FalseCondtionAction="Block" ConditionPriority="Normal">
-            <Fields>
-              <Field Type="Text" Hint="The title of this dialogue.">
-                <Title>Title</Title>
-                <Value>New Dialogue</Value>
-              </Field>
-              <Field Type="Files" Hint="A collection of image files that represent this dialogue.">
-                <Title>Pictures</Title>
-                <Value>[]</Value>
-              </Field>
-              <Field Type="Text" Hint="A short description of what happens in this dialogue.">
-                <Title>Description</Title>
-                <Value />
-              </Field>
-              <Field Type="Actor" Hint="The actor who is talking.">
-                <Title>Actor</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Actor" Hint="The actor who is listening.">
-                <Title>Conversant</Title>
-                <Value>1</Value>
-              </Field>
-              <Field Type="Text" Hint="The text that is displayd to the player in a list as a dialogue option.">
-                <Title>Menu Text</Title>
-                <Value />
-              </Field>
-              <Field Type="Localization" Hint="The text that is spoken by the actor.">
-                <Title>Dialogue Text</Title>
-                <Value>
-                </Value>
               </Field>
               <Field Type="Text" Hint="A description of what is going on during this dialogue.">
                 <Title>Parenthetical</Title>
