@@ -198,11 +198,12 @@ public class BuildRoom {
 		// setBackground Image
 		
 		JLabel label = setBackgroundImage(frame);
-		
-		drawActors(frame);
-		drawObjects(frame, true); 
 		drawRoomObjects(frame, true);
+		
+		drawObjects(frame, true); 
+		
 		drawInventoryBag(frame);
+		drawActors(frame);
 		frame.add(label);
 	}
 	
@@ -210,7 +211,17 @@ public class BuildRoom {
 		List<Actor> actors = getActors();		
 		for(int cnt = 0; cnt < actors.size(); cnt++){
 			Actor actor = actors.get(cnt);
-                        System.out.println("You drew NPC "+actor.getId());
+			String actorPicPath = trimmPicPath(actor.getPicturePath());
+			
+			BufferedImage foregroundImage = null;
+			try {
+				foregroundImage = ImageIO.read(new File(actorPicPath));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			backgroundImage.getGraphics().drawImage(foregroundImage,(int)actor.getNpcLocX(),(int)actor.getNpcLocY(), null);
+			System.out.println("You draw NPC "+actor.getId());
 			addClickableFunction((int)actor.getNpcLocX(), (int)actor.getNpcLocY(), 100, 300, actor.getId(), frame, "actor");
 			
 		}
@@ -239,10 +250,9 @@ public class BuildRoom {
 		List <Item> itemsInDrawFunction = getItems();
 		
 		for(int cntItemPic = 0; cntItemPic < itemsInDrawFunction.size(); cntItemPic++){
-			
-			
-			
-			String itemPicPath = trimmPicPath(itemsInDrawFunction.get(cntItemPic).getPicturePath());
+                    System.out.println("I want to draw item" + itemsInDrawFunction.get(cntItemPic).getId());
+                    if (Runtime.checkStep(itemsInDrawFunction.get(cntItemPic).getId(),'i', 'd')){
+                        String itemPicPath = trimmPicPath(itemsInDrawFunction.get(cntItemPic).getPicturePath());
 			float xLoc = itemsInDrawFunction.get(cntItemPic).getItemLocY();
 			float yLoc = itemsInDrawFunction.get(cntItemPic).getItemLocX();
 			
@@ -260,14 +270,15 @@ public class BuildRoom {
 			addClickableFunction((int)yLoc, (int)xLoc,foregroundImage.getWidth(), foregroundImage.getHeight(), itemsInDrawFunction.get(cntItemPic).getId(), frame, "item");
 			}
 			
-		}
+                    }
+                }
 	}
 	
 	public void drawRoomObjects(JFrame frame, boolean addClickableFct){
 		List<Item> roomObjectsInDrawFunction = getRoomObjects();
 		
 		for(int cntItemPic = 0; cntItemPic < roomObjectsInDrawFunction.size(); cntItemPic++){
-                    if (Runtime.checkStep(roomObjectsInDrawFunction.get(cntItemPic).getId(), 'o','d', frame)){
+                    if (Runtime.checkStep(roomObjectsInDrawFunction.get(cntItemPic).getId(), 'o','d')){
                         String itemPicPath = trimmPicPath(roomObjectsInDrawFunction.get(cntItemPic).getPicturePath());
 			float xLoc = roomObjectsInDrawFunction.get(cntItemPic).getItemLocY();
 			float yLoc = roomObjectsInDrawFunction.get(cntItemPic).getItemLocX();
@@ -323,7 +334,7 @@ public class BuildRoom {
 	
 	
 	public void addClickableFunction(final int xLoc, final int yLoc, int width, int height, final int itemId, final JFrame frame, final String type){
-		JLabel label = new JLabel();
+                JLabel label = new JLabel();
 		label.setBounds(xLoc, yLoc, width, height);
 	
 		label.addMouseListener(new MouseAdapter() {
@@ -390,8 +401,7 @@ public class BuildRoom {
                                         int help = getRoom().getLocationPointer();
                                         if (help == 0){System.out.println("There is no Locationpointer specified.");}
                                         else {
-
-                                                if (Runtime.checkStep(getRoom().getLocationPointer(), 'r', 'd', frame)){
+                                                if (Runtime.checkStep(getRoom().getLocationPointer(), 'r', 'd')){
                                                     BuildRoom br = new BuildRoom(getRoom().getLocationPointer(), frame); 
                                                     if (Runtime.checkTrigger(help)){
                                                         automaticTrigger(14,getRoom().getLocationPointer());
@@ -408,10 +418,8 @@ public class BuildRoom {
 				//Options for Items
 				if(type.equalsIgnoreCase("pickup:itemmenue")){
                                         //Once the key is picked up, the game will change the state
-                                        if (itemId==1){
-                                            Runtime.setGameState(1);
-                                        }
-					Runtime.addItemToInventory(getItemById(getItems(), itemId));
+                                        Runtime.checkStep(itemId, 'i', 'p');
+                                        Runtime.addItemToInventory(getItemById(getItems(), itemId));
 					deleteItem(frame, itemId);
                                         System.out.println("item not deleted");
 					}
@@ -431,7 +439,7 @@ public class BuildRoom {
                                     int aimLocId = Integer.parseInt(aimLoc);
                                     System.out.println(aimLocId);
                                     
-                                        if (Runtime.checkStep(itemId, 'o', 'u', frame)){
+                                        if (Runtime.checkStep(itemId, 'o', 'u')){
                                             if (aimLocId == 0){System.out.println("There is no Locationpointer specified.");}
                                             else {BuildRoom br = new BuildRoom(aimLocId, frame); 
                                                 if (Runtime.checkTrigger(aimLocId)){
@@ -457,7 +465,16 @@ public class BuildRoom {
 				if(type.equalsIgnoreCase("actor")){
                                         int conv = Runtime.chooseConv(actors.get(cnt).getId(), roomId);                                         
                                         System.out.println("You NPC: " + actors.get(cnt).getId() + " Your Room: " + roomId + " Your Conversation: "+conv + " Your State: " + Runtime.getGameState());
+                                        int autoItem = Runtime.checkAutoItem(conv);
+                                        System.out.println("List Size "+getItems().size());
 					DialogOutput dout = new DialogOutput(frame, getParser().getConversationById(conv), getBackgroundImage(), getParser().getListOfActors(), getRoomId());
+                                        if (autoItem!=0){
+                                            System.out.println("I want to add "+autoItem); 
+                                            Item autoIt = getItemById(getItems(), autoItem);
+                                            System.out.println("List Size "+getItems().size());
+                                            System.out.println("I got item " + autoIt.getName());
+                                           Runtime.addItemToInventory(getItemById(getItems(), autoItem));
+                                        }
 				}
 				
 				if(type.equalsIgnoreCase("inventory:click")){
@@ -617,7 +634,6 @@ public class BuildRoom {
 		}
 		return item;
 	}
-	
 	
 	public Item getItemFromInventoryById(int id){
 		Item item = null;
@@ -804,8 +820,8 @@ public class BuildRoom {
 		for(int cntItemPic = 0+side; cntItemPic < inventory.size(); cntItemPic++){
 			
 			String itemPicPath = trimmPicPath(inventory.get(cntItemPic).getPicturePath());
-			//itemPicPath = itemPicPath.replace(".png", "");
-			//itemPicPath = itemPicPath+"_inventory.png";
+			itemPicPath = itemPicPath.replace(".png", "");
+			itemPicPath = itemPicPath+"_inventory.png";
 			
 			
 			BufferedImage foregroundImage = null;

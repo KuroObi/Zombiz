@@ -21,7 +21,7 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 public class Menu {
 
-    public static void mainMenu(final JFrame frame) {
+    public  Menu(final JFrame frame) {
 
 
 

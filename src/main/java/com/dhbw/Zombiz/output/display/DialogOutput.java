@@ -210,6 +210,7 @@ public class DialogOutput {
 			
 			if(!(de.isGroup())){
 				nextId = de.getLinkedDialogEntries().get(0);
+                                System.out.println("You want to display dialog entry " + nextId+ " next.");
 			}
 			else {
 				setGroup(true);
@@ -265,14 +266,8 @@ public class DialogOutput {
 				
 			}
 			
-			
-			
-			
-			
-			
-			
-			
-			
+			//to keep tab of which dialog entry is displayed
+			com.dhbw.Zombiz.gameEngine.logic.Runtime.checkDialog(nextId, conv.getConversationId());
 			setNextDeId(nextId);
 		}
 		
@@ -357,6 +352,7 @@ public class DialogOutput {
 				}
 				else {
 					BuildRoom r = new BuildRoom(getRoomId(), frame);
+                                        System.out.println("I built room "+getRoomId());
 				}
 			}
 			

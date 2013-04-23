@@ -63,8 +63,8 @@ public class Runtime{
 	public Runtime(boolean newGame, JFrame frame){	
 		if(newGame){
 			//Hier kommt der Prolog hin ... 
-			setCurrRoomId(7);
-                        gameState=3;
+			setCurrRoomId(5);
+                        gameState=2;
 		}else{
 			loadGame();
 		}
@@ -94,7 +94,14 @@ public class Runtime{
          * @return              returns whether the step will be granted or denied
          */
         
-        public static boolean checkStep (int id, char type, char origin, JFrame frame){
+        public static void checkDialog(int dialogId, int convId){
+            switch (convId){
+                case 2: if (dialogId==13) break;
+                default: break;
+            }
+        }        
+       
+        public static boolean checkStep (int id, char type, char origin){
             boolean possible = true;
             
             //This is the section where the id of the roomobjects will be checked 
@@ -108,24 +115,16 @@ public class Runtime{
                             
                             }
                 }
-            
-/* former approach; deprecated because the switch case approach is much more practical, but left for further references
- * if (gameState==0&&id==33){
-   * possible=false;
-                }
-                if (gameState==1&&(id==28||id==16)){
-                    possible=false;
-                }
-                if(gameState==2&&(id==3||id==1)){
-                    possible=false;
-                }*/
-                                    
-            
+                                                           
             //This is the section where the id of the items will be checked
-            if (type=='i'){
+            else if (type=='i'){
+                if (id==1&&origin=='p'){gameState=1;}
+                if (id==16&&origin=='d') possible=false;
+                if (id==2&&origin=='d') possible=false;
+                if (id==8&&origin=='d') possible=false;
             }
             //This is the section where the id of the actors is checked
-            if (type=='a'){
+            else if (type=='a'){
             }
             //This is the section where the id of the rooms will be checked
             if (type=='r'){
@@ -141,6 +140,7 @@ public class Runtime{
         public static boolean checkTrigger(int id){
             boolean triggerSet= false;
             switch (gameState){
+                case 2: if (id==1&&firstConv){System.out.println("Yout want to automatically display a conv."); BuildRoom.convStatic=1; BuildRoom.option='b'; triggerSet=true; firstConv=false;}; break;
                 case 3: if (id==1&&firstConv){System.out.println("I changed the trigger. ");BuildRoom.convStatic=4; BuildRoom.option='b'; triggerSet=true; firstConv=false;} break;
                 default: triggerSet=false;
             }
@@ -158,6 +158,14 @@ public class Runtime{
                         else if(gameState==6) {conv=7; gameState=7;}; break;
             }
             return conv;
+        }
+        
+        public static int checkAutoItem(int convId){
+            int itemId=0;
+            switch (convId){
+                case 2: itemId=16; 
+            }
+            return itemId;
         }
         
 	/**saves all Runtime Variables and
@@ -227,6 +235,7 @@ public class Runtime{
 	 * @param item the item to add into the Inventory
 	 */
 	public static void addItemToInventory(Item item){
+                System.out.println("I want to add item " + item);
 		Runtime.inventory.add(item);
 		System.out.println("Added Item "+item.getName());
 	}
@@ -274,15 +283,15 @@ public class Runtime{
 		enterdRooms.add(newEnterdRoom);
 		enterdRoomCounter++;
 	}
-	/**checks if the Room was allrady enterd
+	/**checks if the Room was already entered
 	 * 
 	 * @param enterdRoom the Room to check
-	 * @return true if allready enterd
+	 * @return true if already entered
 	 */
 	public static boolean enterdRoom(Room enterdRoom){
 		return enterdRooms.contains(enterdRoom);
 	}
-	/**addes a Room to the EnterableRoom List,
+	/**adds a Room to the EnterableRoom List,
 	 * if the Room is already in the list nothing happens
 	 * 
 	 * @param newEnterableRoom the new enterable Room
@@ -328,7 +337,7 @@ public class Runtime{
 	public static void setInventory(List<Item> inventory) {
 		Runtime.inventory = inventory;
 	}
-	/**Retunrns the current Room ID
+	/**Returns the current Room ID
 	 * 
 	 * @return current Room ID
 	 */

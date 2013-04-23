@@ -11,7 +11,7 @@
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this actor.">
             <Title>Pictures</Title>
-            <Value>[]</Value>
+            <Value>[src/main/resources/Picture/NPCs/npcid_001.png]</Value>
           </Field>
           <Field Type="Text" Hint="A short description of what makes this actor unique.">
             <Title>Description</Title>
@@ -83,7 +83,7 @@
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this actor.">
             <Title>Pictures</Title>
-            <Value>[]</Value>
+            <Value>[src/main/resources/Picture/NPCs/npcid_002.png]</Value>
           </Field>
           <Field Type="Text" Hint="A short description of what makes this actor unique.">
             <Title>Description</Title>
@@ -155,7 +155,7 @@
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this actor.">
             <Title>Pictures</Title>
-            <Value>[]</Value>
+            <Value>[src/main/resources/Picture/NPCs/npcid_003.png]</Value>
           </Field>
           <Field Type="Text" Hint="A short description of what makes this actor unique.">
             <Title>Description</Title>
@@ -227,7 +227,7 @@
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this actor.">
             <Title>Pictures</Title>
-            <Value>[]</Value>
+            <Value>[src/main/resources/Picture/NPCs/npcid_004.png]</Value>
           </Field>
           <Field Type="Text" Hint="A short description of what makes this actor unique.">
             <Title>Description</Title>
@@ -299,7 +299,7 @@
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this actor.">
             <Title>Pictures</Title>
-            <Value>[]</Value>
+            <Value>[src/main/resources/Picture/NPCs/npcid_005.png]</Value>
           </Field>
           <Field Type="Text" Hint="A short description of what makes this actor unique.">
             <Title>Description</Title>
@@ -371,7 +371,7 @@
           </Field>
           <Field Type="Files" Hint="A collection of image files that represent this actor.">
             <Title>Pictures</Title>
-            <Value>[]</Value>
+            <Value>[src/main/resources/Picture/NPCs/npcid_006.png]</Value>
           </Field>
           <Field Type="Text" Hint="A short description of what makes this actor unique.">
             <Title>Description</Title>
@@ -4059,7 +4059,7 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:004(645.00/200.00) Fireprevention equipment, RoomObjectID:020(058.00/059.00) Door06, RoomObjectID:022(552.00/107.00) Door8, RoomObjectID:031(369.00/450.00)</Value>
+            <Value>RoomObjectID:004(645.00/200.00) Fireprevention equipment, RoomObjectID:020(058.00/059.00) Door06, RoomObjectID:022(552.00/107.00) Door8, RoomObjectID:031(369.00/450.00), ItemID:008(000.00/000.00) Cable</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -4227,7 +4227,7 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>ItemID:001(646.00/350.00) Key, RoomObjectID:033(000.00/126.00) Door 10</Value>
+            <Value>ItemID:001(646.00/350.00) Key, RoomObjectID:033(000.00/126.00) Door 10, ItemID:002(000.00/000.00) Z-Energy</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -4339,7 +4339,7 @@
           </Field>
           <Field Type="Multiline" Hint="Which objects are in here? (ItemID: / RoomObjectID:)">
             <Title>GameObjectsIncluded</Title>
-            <Value>RoomObjectID:007(475.00/138.00) Window0</Value>
+            <Value>RoomObjectID:007(475.00/138.00) Window0, ItemID:016(000.00/000.00) Note with Digit</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
@@ -4736,7 +4736,7 @@ ItemID:015(637.00/447.00) Note with digit 4</Value>
           </Field>
           <Field Type="Multiline" Hint="The NPCs in the room.">
             <Title>NPCs</Title>
-            <Value>NPCID:004(467.00/213.00) Harald</Value>
+            <Value>NPCID:004(497.00/213.00) Harald</Value>
           </Field>
           <Field Type="Text" Hint="The corridor that belongs to the room.">
             <Title>CorridorPointer</Title>
@@ -6016,7 +6016,7 @@ Also bleibt wohl nur das SGNFDNT.</Value>
               </Field>
               <Field Type="Localization" Hint="The text that is spoken by the actor.">
                 <Title>Dialogue Text</Title>
-                <Value>Oh doch. Mein Gedächtnis ist nicht mehr das Beste. Aber ich habe nur noch den Zettel mit der ersten Nummer. Hier ist er.$§ItemID:016 </Value>
+                <Value>Oh doch. Mein Gedächtnis ist nicht mehr das Beste. Aber ich habe nur noch den Zettel mit der ersten Nummer. Hier ist er.</Value>
               </Field>
               <Field Type="Text" Hint="A description of what is going on during this dialogue.">
                 <Title>Parenthetical</Title>

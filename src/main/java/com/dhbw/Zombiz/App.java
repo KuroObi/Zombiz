@@ -92,11 +92,12 @@ public class App
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 frame.setResizable(false);
 		
-		
+               
+        		
 		Runtime r = new Runtime(true,frame);
 		
-		Menu menu = new Menu();
-		menu.mainMenu(frame);
+		Menu menu = new Menu(frame);
+		
 
 		frame.setVisible(true);
     	
