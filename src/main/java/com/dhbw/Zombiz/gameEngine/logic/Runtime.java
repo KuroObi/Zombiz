@@ -48,6 +48,7 @@ public class Runtime{
 	//Runtime Variables
 
 	private static List <Item> inventory = new ArrayList<Item>();	//List of Items the play have
+        private static List <Item> remItems = new ArrayList<Item> () ;
 	private static List <Actor> metActors = null;		//List of already meet Actors
 	private static List <Room> enterdRooms = null;		//List of already entered Rooms
 	private static List <Room> enterableRooms = null;	//List of Rooms the player is able to enter
@@ -55,6 +56,11 @@ public class Runtime{
 	private static int gameState = 0;                       //Monitores the flowcontrol
 	public static int currRoomId = 5 ;					//Gives the current Room ID, mainuse for save and starting a new Game
         private static boolean firstConv = true;
+        public static int conditionCounter = 0;
+        public static boolean dontDraw = false;
+        public static boolean receiveYes=false;
+        public static boolean profNotMet=true;
+        public static int chosenRoom=0;
 	/** Constructor for a new Game
 	 * 
 	 * @param newGame 1 for a new game; 0 for load game
@@ -64,7 +70,7 @@ public class Runtime{
 		if(newGame){
 			//Hier kommt der Prolog hin ... 
 			setCurrRoomId(5);
-                        gameState=2;
+                        gameState=0;
 		}else{
 			loadGame();
 		}
@@ -78,7 +84,7 @@ public class Runtime{
          * @deprecated 
          */
         public static void changeRoom (int id, JFrame frame){
-            BuildRoom br = new BuildRoom(id, frame);
+//            BuildRoom br = new BuildRoom(id, frame);
         }
  
         /**
@@ -96,9 +102,37 @@ public class Runtime{
         
         public static void checkDialog(int dialogId, int convId){
             switch (convId){
-                case 2: if (dialogId==13) break;
+                case 12: if (dialogId==57) receiveYes=true; break;
+                case 9:  if (dialogId==16) chosenRoom=21;
+                         else if (dialogId==11) chosenRoom=23; break;
+                case 10: if (dialogId==16) chosenRoom=21;
+                         else if (dialogId==11) chosenRoom=23; break; 
                 default: break;
             }
+        }        
+        
+        public static void checkInteraction (int roomObjId, int itemId){
+            //using key on door
+            if (roomObjId==1 && itemId==1){
+                gameState=2;
+                conditionCounter=0;
+            }
+            //using sponge on beamer
+            else if (roomObjId==8 && itemId==9){
+                conditionCounter+=1;
+                dontDraw=true;
+                System.out.println("You combined the sponge and the Beamer. Your Counter is "+conditionCounter);
+            }
+            //all conditions for repairing the elevator
+            else if ((roomObjId==11&&itemId==8)||(roomObjId==34&&itemId==14)||(roomObjId==14&&itemId==10))
+                conditionCounter+=1;
+            //if you get the last note by a combination you change the game state
+            if (gameState==6&&conditionCounter==3){
+                gameState=7;
+            }
+            //changing the state if the elevator is repaired
+            else if (gameState==8&&conditionCounter==3)
+                gameState=9;            
         }        
        
         public static boolean checkStep (int id, char type, char origin){
@@ -106,32 +140,55 @@ public class Runtime{
             
             //This is the section where the id of the roomobjects will be checked 
             if (type=='o'){
-                switch (gameState){
+                int blackList = 0;
+                if (id==8&&dontDraw){possible=false;}
+                //the prohibitions for the gameStates 2-5 are the same, so it would only result in code duplication to write 4 cases.
+                if (gameState==2||gameState==3||gameState==4||gameState==5){
+                    if (id==3||id==1||id==9) possible=false;
+                    }
+                else {
+                    switch (gameState){
                     case 0: if(id==33) possible=false; break;
                     case 1: if (id==28||id==16) possible=false; break;
-                    case 2: if (id==3||id==1) possible=false; break;
-                    case 3: if (id==3||id==1) possible=false; break;
+                    /*case 2: if (id==3||id==1||id==9) possible=false; break;
+                    case 3: if (id==3||id==1||id==9) possible=false; break;
+                    case 4: if (id==3||id==1||id==9) possible=false; break;
+                    case 5: if (id==3||id==1||id==9) possible=false; break;*/
+                    case 6: if (id==3||id==1) possible=false; break;
+                    case 7: if (id==3||id==1) possible=false; break;
+                    case 8: if (id==1)  possible=false; 
+                            if (origin=='u'){
+                                if(id==26)firstConv=true;
+                                if(id==16||id==15||id==17) possible=false;
+                                if(chosenRoom!=0){
+                                    if (id!=chosenRoom) possible=false;
+                                }
+                            }
+                            break;
+                    
                     default: possible=true;
-                            
                             }
                 }
+            }
                                                            
             //This is the section where the id of the items will be checked
+            // 'p'=pickup; 'd'= draw
+            /**
+             * TODO: Add the contained Items
+             */
             else if (type=='i'){
-                if (id==1&&origin=='p'){gameState=1;}
-                if (id==16&&origin=='d') possible=false;
-                if (id==2&&origin=='d') possible=false;
-                if (id==8&&origin=='d') possible=false;
+                 if (id==1&&origin=='p'){gameState=1;}
+                 else if (origin=='d'&&(id==16||id==2||id==3||id==8||id==10||id==11||id==17)) possible=false;
             }
             //This is the section where the id of the actors is checked
             else if (type=='a'){
             }
             //This is the section where the id of the rooms will be checked
-            if (type=='r'){
+            else if (type=='r'){
                 switch (gameState){
-                    case 3: possible=true; break; 
-                    //if (id==1){gameState=4; DialogOutput dout = new DialogOutput(frame, BuildRoom.getParser().getConversationById(4), BuildRoom.backgroundImage, BuildRoom.getParser().getListOfActors(), 1); possible=false;}; break;
-                    default: possible = true;
+                    case 8: if(id==21) chosenRoom=21;
+                            else if (id==23) chosenRoom=23; break;
+                    default: possible = true; break;
                 }
             }
             return possible;
@@ -141,29 +198,64 @@ public class Runtime{
             boolean triggerSet= false;
             switch (gameState){
                 case 2: if (id==1&&firstConv){System.out.println("Yout want to automatically display a conv."); BuildRoom.convStatic=1; BuildRoom.option='b'; triggerSet=true; firstConv=false;}; break;
-                case 3: if (id==1&&firstConv){System.out.println("I changed the trigger. ");BuildRoom.convStatic=4; BuildRoom.option='b'; triggerSet=true; firstConv=false;} break;
+                case 3: if (id==1&&firstConv){System.out.println("I changed the trigger. ");BuildRoom.convStatic=4; BuildRoom.option='b'; triggerSet=true; gameState=4;} break;
+                case 4: break;
                 default: triggerSet=false;
             }
             System.out.println("I was called and I want to trigger "+triggerSet+ " I have this state " + gameState + " and I am the firstConv "+firstConv);
             return triggerSet;
         }
         
-        
+        //possibility for 'you shall not pass' replacement: actorId 0 stands for automatically called dialog, ergo a monologue displayed when doing something
         public static int chooseConv (int actorId, int roomId){
             int conv=14;
             switch (roomId){
-                case 7: if(gameState==2){conv=2; gameState=3;}
+                case 2: if (!receiveYes) {conv=12;}
+                        else {conv=13;} break;
+                case 7: if(gameState==2){conv=2; gameState=3; firstConv=true;}
                         else if(gameState==3||gameState==4) conv=3;
-                        else if(gameState==5) conv=5;
-                        else if(gameState==6) {conv=7; gameState=7;}; break;
+                        else if(gameState==5)  {conv=5; gameState=6; remItemFromInventory(11);}
+                        else if(gameState==7) {
+                           conv=7; gameState=8; conditionCounter=0; firstConv=false; 
+                           remItemFromInventory(3); remItemFromInventory(15);remItemFromInventory(16); remItemFromInventory(17);
+                        }; break;
+                case 14: if (firstConv){conv=8; profNotMet=false; firstConv=false;}; break;
+                case 10: if (firstConv) {conv=10;}
+                         else conv=11; break;
             }
             return conv;
         }
         
-        public static int checkAutoItem(int convId){
-            int itemId=0;
-            switch (convId){
-                case 2: itemId=16; 
+        public static int checkAutoItem(int id, char type ,char origin){
+            int itemId=0; 
+            //origin C=Conversation; r=Combination, i=Inspection; in this case the id of the roomObject is contained in id
+            // type c=conversation; i=item; r=roomObject
+            //during a conversation you receive an item
+            if (origin=='c'){
+                switch (id){
+                    case 2: itemId=16; break;
+                    case 5: itemId=10; break;
+                    case 12: if (receiveYes){ itemId=8;} break;
+                }
+            }
+            // for adding an item as a result of a combination
+            else if (origin =='r')
+                switch (id){
+                    case 8: itemId=3; conditionCounter+=1; 
+                    if (conditionCounter==3) gameState=7; break;
+                }
+            //when you inspect an RoomObject and find an Item in it
+            else if (origin =='i'){
+                //you inspect a roomObj
+                if (type=='r')
+                    switch (id){
+                        case 9: itemId=17; conditionCounter+=1; if (conditionCounter==3) gameState=7; break;
+                        case 10: itemId=11; gameState=5; break;
+                    }
+                else if (type=='i'){
+                    System.out.println("You want to find something and inspected item " + id);                    
+                }
+                
             }
             return itemId;
         }
@@ -235,24 +327,21 @@ public class Runtime{
 	 * @param item the item to add into the Inventory
 	 */
 	public static void addItemToInventory(Item item){
-                System.out.println("I want to add item " + item);
 		Runtime.inventory.add(item);
-		System.out.println("Added Item "+item.getName());
+                Runtime.remItems.add(item);
+                System.out.println("I added Item " +item.getName());
 	}
 	/**removes a item from the Inventory
 	 * 
 	 * @param item the item to remove
 	 */
-	public static void remItemFromInventory(Item item){
-		int remItemId = item.getId();
+	public static void remItemFromInventory(int item){
 		int remIndex = 0;
 		for(int cnt = 0; cnt < Runtime.inventory.size(); cnt++){
-			int indexInInventory = Runtime.inventory.get(cnt).getId();
-			
-			if(remItemId == indexInInventory)
-				remIndex = indexInInventory;
-		}
-		
+			int indexInInventory = Runtime.inventory.get(cnt).getId();			
+			if(item == indexInInventory)
+			 remIndex = cnt;
+		}		
 		Runtime.inventory.remove(remIndex);
 		
 	}
@@ -337,6 +426,15 @@ public class Runtime{
 	public static void setInventory(List<Item> inventory) {
 		Runtime.inventory = inventory;
 	}
+
+        public static List<Item> getRemItems() {
+            return remItems;
+        }
+
+        public static void setRemItems(List<Item> remItems) {
+            Runtime.remItems = remItems;
+        }
+       
 	/**Returns the current Room ID
 	 * 
 	 * @return current Room ID
@@ -366,7 +464,7 @@ public class Runtime{
         Runtime.gameState = gameState;
     }
 	
-       public static boolean isFirstConv() {
+    public static boolean isFirstConv() {
         return firstConv;
     }
 

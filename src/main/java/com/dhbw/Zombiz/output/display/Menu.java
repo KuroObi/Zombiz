@@ -128,12 +128,14 @@ public class Menu {
             @Override
             public void mouseClicked(MouseEvent me) {
                 System.out.println("Credits ...");
+                Credits c = new Credits(frame);
             }
         });
         creditsGamelabel2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent me) {
                 System.out.println("Credits ...");
+                Credits c = new Credits(frame);
             }
         });
         exitGamelabel.addMouseListener(new MouseAdapter() {
